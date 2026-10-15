@@ -2,17 +2,22 @@ import "./globals.css";
 import CinematicIntro from "../components/CinematicIntro";
 
 export const metadata = {
-  title: "Kebun Alpukat Rancamaya — Tumbuh dari Alam, Dipetik dengan Hati",
+  metadataBase: new URL("https://kebun-bardja.vercel.app"),
+  title: "Kebun Alpukat Rancamaya | Alpukat, Varietas & Peluang Kebun",
   description:
-    "Mengenal Kebun Alpukat Rancamaya, kebun alpukat yang dirawat dengan perhatian pada alam, kualitas, dan proses yang berkelanjutan.",
+    "Jelajahi Kebun Alpukat Rancamaya, kenali varietas alpukat populer, pelajari peluang usaha alpukat Indonesia, dan mulai rencanakan langkah kebun Anda.",
   applicationName: "Kebun Alpukat Rancamaya",
-  keywords: ["Kebun Alpukat Rancamaya", "alpukat Rancamaya", "kebun alpukat", "perkebunan buah Indonesia"],
+  keywords: ["Kebun Alpukat Rancamaya", "alpukat Rancamaya", "varietas alpukat", "peluang usaha alpukat", "budidaya alpukat Indonesia", "kebun alpukat"],
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Kebun Alpukat Rancamaya — Tumbuh dari Alam, Dipetik dengan Hati",
-    description: "Cerita kebun alpukat, buah pilihan, dan proses yang tumbuh bersama alam.",
+    description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya.",
     type: "website",
-    locale: "id_ID"
+    locale: "id_ID",
+    siteName: "Kebun Alpukat Rancamaya",
+    url: "https://kebun-bardja.vercel.app/"
   },
+  twitter: { card: "summary_large_image", title: "Kebun Alpukat Rancamaya | Alpukat & Peluang Kebun", description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya." },
   robots: { index: true, follow: true },
   icons: { icon: "/leaf.svg" }
 };
