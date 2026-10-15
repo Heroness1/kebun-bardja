@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import TrustSection from "../../components/TrustSection";
-import { StorySlide, HarvestSlide, VarietySlide, ManifestoSlide, ProcessSlide, ContactSlide, GalleryFooter } from "../../components/gallery/GallerySlides";
+import { StorySlide, HarvestSlide, VarietySlide, ManifestoSlide, ProcessSlide, ContactSlide } from "../../components/gallery/GallerySlides";
+import CinematicFooter from "../../components/gallery/CinematicFooter";
 import {
   ArrowUpRight, Menu, X, Sprout
 } from "lucide-react";
@@ -106,20 +107,13 @@ export default function Home() {
       </header>
 
       <StorySlide />
-
       <TrustSection />
-
       <HarvestSlide activeFruit={activeFruit} setActiveFruit={setActiveFruit} />
-
       <VarietySlide />
-
       <ManifestoSlide />
-
       <ProcessSlide />
-
       <ContactSlide />
-
-      <GalleryFooter />
+      <CinematicFooter />
     </main>
   );
 }
