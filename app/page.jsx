@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import TrustSection from "../components/TrustSection";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Menu, X, Sprout,
   Leaf, Sun, MapPin, Instagram, MessageCircle, CircleDot, TreeDeciduous
@@ -29,6 +30,7 @@ const fruits = [
 
 const navItems = [
   ["Cerita Kami", "#cerita"],
+  ["Profil Kebun", "#kepercayaan"],
   ["Hasil Kebun", "#hasil-kebun"],
   ["Proses", "#proses"],
   ["Hubungi", "#hubungi"]
@@ -118,6 +120,8 @@ export default function Home() {
           <div className="photo-caption"><span>01 — ALAM ADALAH AWALNYA</span><Leaf size={17} /></div>
         </div>
       </section>
+
+      <TrustSection />
 
       <section className="fruit-section section-pad" id="hasil-kebun">
         <div className="section-heading reveal" data-reveal>
