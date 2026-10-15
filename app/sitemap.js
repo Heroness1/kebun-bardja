@@ -6,6 +6,7 @@ export default function sitemap() {
 
   return [
     { url: siteUrl, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: `${siteUrl}/jelajahi`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/potensi-ekonomi-alpukat`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     ...varietySlugs.map((slug) => ({
       url: `${siteUrl}/alpukat/${slug}`,

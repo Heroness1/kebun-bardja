@@ -358,3 +358,17 @@ body,.site-header,.footer{background:#edf2e8}
 .nature-audio-error a{text-decoration:underline;text-underline-offset:2px}
 @media(max-width:760px){.falling-leaf:nth-child(n+8){display:none}.nature-audio{right:12px;bottom:12px}.nature-audio-toggle{min-height:42px;padding:0 12px;gap:8px}.nature-audio-credit{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.falling-leaves{display:none}.nature-audio-toggle{transition:none}}
+
+
+/* Full-screen opening experience: the next content lives on /jelajahi. */
+.hero.hero--landing {
+  height: calc(100svh - 119px);
+  min-height: calc(100svh - 119px);
+  max-height: none;
+}
+@media (max-width: 760px) {
+  .hero.hero--landing {
+    height: calc(100svh - 103px);
+    min-height: calc(100svh - 103px);
+  }
+}
