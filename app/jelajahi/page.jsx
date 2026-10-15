@@ -59,29 +59,21 @@ export default function Home() {
       event.preventDefault();
       goAdjacent(event.deltaY > 0 ? 1 : -1);
     };
+    // Keep native touch scrolling on phones so taller slides remain fully readable.
     const onTouchStart = (event) => { gestureStartY.current = event.touches[0]?.clientY ?? null; };
-    const onTouchMove = (event) => { if (gestureStartY.current !== null) event.preventDefault(); };
-    const onTouchEnd = (event) => {
-      if (gestureStartY.current === null) return;
-      const endY = event.changedTouches[0]?.clientY ?? gestureStartY.current;
-      const delta = gestureStartY.current - endY;
-      gestureStartY.current = null;
-      if (Math.abs(delta) > 45) goAdjacent(delta > 0 ? 1 : -1);
-    };
+    const onTouchEnd = () => { gestureStartY.current = null; };
     const onKeyDown = (event) => {
       if (["ArrowDown", "PageDown"].includes(event.key)) { event.preventDefault(); goAdjacent(1); }
       if (["ArrowUp", "PageUp"].includes(event.key)) { event.preventDefault(); goAdjacent(-1); }
     };
     window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: false });
     window.addEventListener("touchend", onTouchEnd, { passive: true });
     window.addEventListener("keydown", onKeyDown);
     return () => {
       root.classList.remove("gallery-mode");
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("keydown", onKeyDown);
     };
