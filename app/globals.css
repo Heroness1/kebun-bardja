@@ -372,3 +372,38 @@ body,.site-header,.footer{background:#edf2e8}
     min-height: calc(100svh - 103px);
   }
 }
+
+
+/* Explore page: unified color hierarchy and readable copy */
+:root{--forest:#183b2b;--forest-deep:#102d22;--leaf:#426b45;--sage:#dce7d5;--cream:#edf2e8;--paper:#f5f6f0;--ink:#203326;--muted:#596657;--line:rgba(32,51,38,.18)}
+body{color:var(--ink);background:var(--paper)}
+.announcement{background:var(--forest-deep);color:#f0f4eb}
+.site-header,.footer{background:var(--paper)}
+.brand-copy strong{color:var(--forest-deep)}.brand-copy small{color:#596b58}
+.nav-links{color:#35483a}.nav-cta{background:var(--forest);color:#fff}.nav-cta:hover{background:#315b3e}
+.section-index,.overline{color:#526b4e}
+.intro,.process{background:var(--paper)}.intro-main h2 em,.section-heading h2 em,.process h2 em{color:#58734f}
+.body-copy,.heading-aside{color:#4f5d4d;line-height:1.9}.intro-main .body-copy{max-width:54ch;font-size:14px}
+.signature small{color:#596657}.fruit-section{background:#e5ecdf}
+.fruit-info p,.variety-directory-heading p{color:#4f5d4d;line-height:1.8}.fruit-english{color:#52684c}
+.fruit-footnote{color:#4f5d4d;line-height:1.8}.variety-directory-note{color:#52604f;font-size:11px;line-height:1.8}
+.variety-directory-link>span{color:#53674e}.variety-directory-link strong{color:var(--ink)}
+.variety-economy-home-link{background:#dce7d5;border-color:#c1d1b9}.variety-economy-home-link small{color:#435343;line-height:1.8}
+.trust-section{background:var(--paper)!important;color:var(--ink)}.trust-heading>p{color:#4f5d4d;line-height:1.9}
+.profile-facts span{color:#586955}.profile-facts strong{color:#263d2b}
+.trust-principle p,.trust-note p{color:#4f5d4d;line-height:1.85}.trust-principle h3{color:var(--ink)}
+.trust-note{background:#e3ebdd!important;border:1px solid #d0dcc9}
+.manifesto-content>p,.contact-text>p{font-size:14px;line-height:1.9;color:#edf2e8}
+.process-copy p{font-size:13px;color:#4f5d4d;line-height:1.8}.process-num,.process-side{color:#596957}
+.contact-disclaimer{font-size:11px;color:#d6e2d1;line-height:1.7}.contact-note{background:var(--paper);color:var(--forest)}
+.footer>p,.footer-meta{color:#596657}
+a:focus-visible,button:focus-visible{outline:3px solid #739768;outline-offset:4px}
+@media(max-width:760px){
+.intro-main .body-copy{font-size:14px}.heading-aside{font-size:13px;line-height:1.8}
+.fruit-info p{font-size:12px;max-width:100%;line-height:1.8}.fruit-footnote{font-size:12px}
+.variety-directory-heading p{font-size:13px}.variety-directory-note{font-size:11px}.variety-economy-home-link small{font-size:12px}
+.trust-heading>p,.trust-principle p,.trust-note p{font-size:13px;line-height:1.85}
+.profile-facts span{font-size:10px}.profile-facts strong{font-size:18px}.process-copy p{font-size:12px}
+.manifesto-content>p,.contact-text>p{font-size:14px}.contact-disclaimer{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.fruit-card[data-reveal],.reveal{opacity:1;transform:none}}
