@@ -98,78 +98,7 @@ export default function PotensiEkonomiAlpukatPage() {
       <section className="economy-cta"><span className="economy-kicker">KEBUN ALPUKAT RANCAMAYA</span><h2>Kenali varietasnya.<br /><em>Pahami peluangnya.</em></h2><p>Jelajahi halaman varietas untuk membaca karakter buah dan sumber referensinya.</p><Link href="/alpukat/hass" className="economy-button">Jelajahi katalog alpukat <ArrowRight size={16} /></Link></section>
       <footer className="economy-footer"><Link href="/" className="economy-brand"><span><Sprout size={22} /></span><strong>kebun alpukat rancamaya</strong></Link><span>DATA PRODUKSI: BPS · DIOLAH UNTUK EDUKASI</span><Link href="/#hasil-kebun">KEMBALI KE KEBUN ↑</Link></footer>
 
-      <style jsx global>{`
-        .economy-page{background:#edf2e8;color:#203326;min-height:100vh;font-family:var(--sans)}
-        .economy-topline{height:34px;background:#183b2b;color:#dce7d5;padding:0 5.2%;display:flex;align-items:center;gap:9px;font-size:8px;letter-spacing:.15em}
-        .economy-topline>span{width:5px;height:5px;border-radius:50%;background:#b7ce9f}
-        .economy-topline>a{margin-left:auto;display:flex;align-items:center;gap:6px;letter-spacing:.05em}
-        .economy-header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #20332618}
-        .economy-brand{display:flex;align-items:center;gap:10px}
-        .economy-brand>span{width:38px;height:38px;border:1px solid #b6c9ae;border-radius:50%;display:grid;place-items:center;color:#244b35}
-        .economy-brand strong{font:500 20px var(--serif)}
-        .economy-header>span,.economy-footer>span,.economy-footer>a:last-child{font-size:8px;letter-spacing:.13em;color:#788472}
-        .economy-hero{min-height:580px;height:min(72vw,700px);max-height:740px;position:relative;isolation:isolate;display:flex;align-items:center;color:white;overflow:hidden}
-        .economy-hero-art{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,43,29,.9),rgba(15,43,29,.45)),url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2200&q=90") center/cover}
-        .economy-hero-content{margin-left:10%;width:min(760px,80%);padding:70px 0}
-        .economy-eyebrow{display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:.17em;color:#d7e4d0}
-        .economy-hero h1{font:400 clamp(47px,7vw,83px)/1.07 var(--serif);letter-spacing:-1.7px;margin:28px 0 20px}
-        .economy-hero h1 em,.economy-intro h2 em,.economy-opportunities h2 em,.economy-business h2 em,.economy-market h2 em,.economy-sources h2 em,.economy-cta h2 em{font-weight:400;color:#c4d6b8}
-        .economy-hero-content>p{max-width:570px;font-size:13px;line-height:1.9;color:#e1e9dd}
-        .economy-button{display:inline-flex;align-items:center;gap:14px;margin-top:20px;padding:15px 18px;background:#f5f7f0;color:#244b35;font-size:11px;font-weight:600}
-        .economy-hero-foot{position:absolute;bottom:25px;right:5%;font-size:8px;letter-spacing:.16em;color:#dce7d5}
-        .economy-intro{display:grid;grid-template-columns:28% 1fr;gap:35px;padding:100px 12% 75px}
-        .economy-section-label{display:flex;align-items:flex-start;gap:10px;font-size:8px;letter-spacing:.15em;color:#72806c}
-        .economy-kicker{font-size:8px;letter-spacing:.18em;color:#6f8068}
-        .economy-intro h2,.economy-opportunities h2,.economy-business h2,.economy-market h2,.economy-sources h2,.economy-cta h2{font:400 clamp(36px,4.6vw,58px)/1.15 var(--serif);letter-spacing:-1px;margin:18px 0 24px}
-        .economy-intro h2 em,.economy-opportunities h2 em,.economy-business h2 em,.economy-market h2 em,.economy-sources h2 em{color:#70886a}
-        .economy-copy{font-size:13px;line-height:1.95;color:#657161;max-width:750px}
-        .economy-stats{display:grid;grid-template-columns:repeat(3,1fr);margin:0 8% 20px;border:1px solid #cad7c4}
-        .economy-stat{padding:29px 25px;border-right:1px solid #cad7c4}
-        .economy-stat:last-child{border-right:0}
-        .economy-stat-highlight{background:#dfe9d9}
-        .economy-stat>span{font-size:8px;letter-spacing:.15em;color:#71816a}
-        .economy-stat strong{display:block;font:400 clamp(31px,4vw,48px)/1.2 var(--serif);margin:15px 0}
-        .economy-stat strong small{font:400 15px var(--sans)}
-        .economy-stat p,.economy-data-note{font-size:10px;line-height:1.8;color:#71806b}
-        .economy-data-note{margin:0 8% 100px}
-        .economy-opportunities{padding:85px 10% 100px;background:#e1eadb}
-        .economy-opportunities-heading{margin-bottom:36px}
-        .economy-opportunities h2{margin:14px 0}
-        .economy-opportunity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #c4d2bd;border-left:1px solid #c4d2bd}
-        .economy-opportunity-grid article{position:relative;padding:29px 30px 32px;border-right:1px solid #c4d2bd;border-bottom:1px solid #c4d2bd;min-height:270px}
-        .economy-card-num{position:absolute;right:22px;top:22px;font-size:9px;color:#7b8c73}
-        .economy-card-icon{color:#587b54;margin-bottom:24px}
-        .economy-opportunity-grid h3{font:400 25px/1.25 var(--serif);margin:0 0 13px}
-        .economy-opportunity-grid p{font-size:11px;line-height:1.9;color:#657161;margin:0}
-        .economy-business{display:grid;grid-template-columns:1fr 1fr;gap:65px;padding:100px 12%}
-        .economy-business h2{margin-top:17px}
-        .economy-business-copy>p{font-size:12px;line-height:1.95;color:#657161}
-        .economy-formula{background:#183b2b;color:white;padding:24px;margin:25px 0}
-        .economy-formula>span{font-size:8px;letter-spacing:.16em;color:#c2d4b7}
-        .economy-formula strong{display:block;font:400 23px/1.35 var(--serif);margin:14px 0}
-        .economy-formula p{font-size:10px;line-height:1.8;color:#d5e0d1;margin:0}
-        .economy-market{padding:85px 12%;background:#f5f6f0;display:grid;grid-template-columns:1fr 1fr;gap:65px}
-        .economy-market-list>div{display:grid;grid-template-columns:30px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid #d8e0d2}
-        .economy-market-list>div:first-child{border-top:1px solid #d8e0d2}
-        .economy-market-list>div>span{font-size:9px;color:#72866b;padding-top:3px}
-        .economy-market-list p{font-size:11px;line-height:1.9;color:#657161;margin:0}
-        .economy-market-list strong{color:#203326}
-        .economy-sources{padding:95px 12%}
-        .economy-sources h2{margin:15px 0}
-        .economy-sources>p{max-width:580px;font-size:11px;line-height:1.9;color:#687565}
-        .economy-source-list{margin-top:28px;border-top:1px solid #cad7c4}
-        .economy-source-list>a{display:grid;grid-template-columns:30px 1fr 18px;gap:15px;align-items:center;padding:20px 0;border-bottom:1px solid #cad7c4}
-        .economy-source-list>a>span{font-size:9px;color:#7b8b75}
-        .economy-source-list>a>strong{font:400 18px/1.4 var(--serif)}
-        .economy-source-list>a>svg{color:#71866a}
-        .economy-cta{padding:80px 12%;background:#183b2b;color:white}
-        .economy-cta .economy-kicker{color:#c2d4b7}
-        .economy-cta h2{margin:18px 0}
-        .economy-cta>p{font-size:12px;line-height:1.9;color:#d5e0d1;max-width:490px}
-        .economy-cta h2 em{color:#c2d4b7}
-        .economy-footer{padding:27px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #d3ddcd}
-        @media(max-width:760px){.economy-topline{padding:0 5%;font-size:7px}.economy-header{height:72px;padding:0 5%}.economy-brand strong{font-size:16px}.economy-header>span{font-size:7px}.economy-hero{height:660px;min-height:580px}.economy-hero-content{margin-left:7%;width:86%;padding:50px 0}.economy-hero h1{font-size:clamp(43px,10vw,63px)}.economy-intro{grid-template-columns:1fr;gap:22px;padding:75px 7% 50px}.economy-stats{grid-template-columns:1fr;margin:0 6% 15px}.economy-stat{border-right:0;border-bottom:1px solid #cad7c4;padding:23px}.economy-stat:last-child{border-bottom:0}.economy-data-note{margin:0 6% 70px}.economy-opportunities{padding:70px 6%}.economy-opportunity-grid{grid-template-columns:1fr}.economy-opportunity-grid article{min-height:0;padding:25px 22px}.economy-business,.economy-market{grid-template-columns:1fr;gap:25px;padding:75px 7%}.economy-sources{padding:75px 7%}.economy-cta{padding:70px 7%}.economy-footer{align-items:flex-start;flex-direction:column;padding:25px 6%}.economy-footer>span{line-height:1.7}}
-      `}</style>
+      
     </main>
   );
 }
