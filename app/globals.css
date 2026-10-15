@@ -500,3 +500,36 @@ html.gallery-mode body{overscroll-behavior-y:contain}
   .gallery-slide#hubungi{display:grid;grid-template-columns:1fr}
   .gallery-controls{left:50%;right:auto;bottom:64px;transform:translateX(-50%)}
 }
+
+
+/* Mobile gallery: allow content to flow beyond one viewport and use native scrolling. */
+@media(max-width:760px){
+  html.gallery-mode{
+    scroll-snap-type:y proximity;
+    scroll-padding-top:0;
+    overscroll-behavior-y:auto;
+  }
+  html.gallery-mode body{overscroll-behavior-y:auto}
+  .gallery-slide{
+    height:auto;
+    min-height:100svh;
+    justify-content:flex-start;
+    scroll-snap-stop:normal;
+    overflow:visible;
+  }
+  .gallery-slide#cerita,
+  .gallery-slide#kepercayaan,
+  .gallery-slide#hasil-kebun,
+  .gallery-slide.variety-catalog-slide,
+  .gallery-slide#proses,
+  .gallery-slide#hubungi,
+  .gallery-slide.footer{
+    height:auto;
+    min-height:100svh;
+  }
+  .gallery-slide#kepercayaan .trust-inner{width:100%;min-width:0}
+  .gallery-slide#hasil-kebun .fruit-grid{min-width:0}
+  .gallery-slide#hubungi .contact-text,
+  .gallery-slide#hubungi .contact-art{min-width:0}
+  .gallery-slide.footer{justify-content:center}
+}
