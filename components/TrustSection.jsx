@@ -35,6 +35,11 @@ export default function TrustSection() {
             Tanyakan ketersediaan <ArrowUpRight size={16} />
           </a>
         </div>
+        <div className="profile-facts" aria-label="Ringkasan profil Kebun Bardja">
+          <div><span>FOKUS HASIL KEBUN</span><strong>Alpukat &amp; durian</strong></div>
+          <div><span>INFORMASI PANEN</span><strong>Dikonfirmasi per musim</strong></div>
+          <div><span>PRINSIP KAMI</span><strong>Terbuka dan apa adanya</strong></div>
+        </div>
         <div className="trust-principles">
           {principles.map(({ icon: Icon, number, title, body }) => (
             <article className="trust-principle" key={number}>
@@ -62,7 +67,11 @@ export default function TrustSection() {
         .trust-heading>p{font-family:var(--sans);font-size:13px;line-height:1.95;color:#697063;margin:0 0 4px;max-width:440px}
         .trust-contact{grid-column:1/-1;display:inline-flex;align-items:center;gap:12px;width:max-content;margin-top:25px;padding-bottom:8px;border-bottom:1px solid #9aab91;font-family:var(--sans);font-size:11px;font-weight:600;color:#173d2d}
         .trust-contact svg{transition:transform .2s}.trust-contact:hover svg{transform:translate(2px,-2px)}
-        .trust-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:62px}
+        .profile-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:38px;padding:20px 0;border-top:1px solid #d7dbd0;border-bottom:1px solid #d7dbd0}
+        .profile-facts>div{display:flex;flex-direction:column;gap:8px}
+        .profile-facts span{font-family:var(--sans);font-size:8px;letter-spacing:.16em;color:#818a78}
+        .profile-facts strong{font-family:var(--serif);font-size:18px;font-weight:400;color:#263d2b}
+        .trust-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:46px}
         .trust-principle{border-top:1px solid #cfd5c8;padding:22px 10px 0 0}
         .trust-principle-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
         .trust-icon{width:43px;height:43px;display:grid;place-items:center;border:1px solid #ccd5c5;border-radius:50%;color:#587653}
@@ -73,7 +82,7 @@ export default function TrustSection() {
         .trust-note-icon{flex-shrink:0;color:#587653;padding-top:2px}
         .trust-note p{font-family:var(--sans);font-size:10px;line-height:1.9;color:#697063;margin:0}
         .trust-note strong{color:#263d2b;font-weight:600}
-        @media(max-width:760px){.trust-section{padding:76px 6% 78px}.trust-heading{grid-template-columns:1fr;gap:18px}.section-index{margin-bottom:0}.trust-heading>p{font-size:12px;max-width:500px}.trust-contact{margin-top:2px}.trust-principles{grid-template-columns:1fr;gap:24px;margin-top:42px}.trust-principle{padding-top:18px}.trust-principle-top{margin-bottom:17px}.trust-principle h3{font-size:21px}.trust-principle p{font-size:11px;max-width:440px}.trust-note{margin-top:33px;padding:17px 15px}}
+        @media(max-width:760px){.trust-section{padding:76px 6% 78px}.trust-heading{grid-template-columns:1fr;gap:18px}.section-index{margin-bottom:0}.trust-heading>p{font-size:12px;max-width:500px}.trust-contact{margin-top:2px}.profile-facts{grid-template-columns:1fr;gap:15px;margin-top:30px;padding:18px 0}.profile-facts>div{gap:5px}.profile-facts strong{font-size:17px}.trust-principles{grid-template-columns:1fr;gap:24px;margin-top:35px}.trust-principle{padding-top:18px}.trust-principle-top{margin-bottom:17px}.trust-principle h3{font-size:21px}.trust-principle p{font-size:11px;max-width:440px}.trust-note{margin-top:33px;padding:17px 15px}}
         @media(prefers-reduced-motion:reduce){.trust-contact svg{transition:none}}
       `}</style>
     </section>
