@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, BarChart3, Boxes, Leaf, Sprout, Tr
 
 const sources = [
   { name: "Badan Pusat Statistik — Produksi buah-buahan dan sayuran tahunan, 2025", url: "https://www.bps.go.id/id/statistics-table/3/WXpSVU5uUTBOSEl5WVhGQmVESTVSVnBSVlhWeVVUMDkjMw%3D%3D/produksi-buah-buahan-dan-sayuran-tahunan-menurut-jenis-tanaman--2023.html" },
-  { name: "BPS — Statistik Hortikultura 2024", url: "https://www.bps.go.id/id/publication/2025/06/10/aab67e4d36ea6d7bed30d79f/statistik-" },
+  { name: "BPS — Statistik Hortikultura 2024", url: "https://www.bps.go.id/id/publication/2025/06/10/aab67e4d36ea6d7bed30d79f/statistik-hortikultura-2024.html" },
   { name: "Kementerian Pertanian — Buku Lapang Budidaya Alpukat (2021)", url: "https://repository.pertanian.go.id/items/3e63baa4-aee6-4230-8383-c92c80212de1" },
   { name: "Kementerian Pertanian — Penerapan SNI dan Potensi Usaha Alpukat (2023)", url: "https://repository.pertanian.go.id/items/1bd694c1-0f0a-48d7-bd10-7f9e115e32e3" }
 ];
@@ -22,7 +22,7 @@ export const metadata = {
     url: "https://kebun-bardja.vercel.app/potensi-ekonomi-alpukat",
     images: [{ url: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85", width: 1200, height: 630, alt: "Peluang usaha dan pertanian alpukat Indonesia" }]
   },
-  twitter: { card: "summary_large_image", title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026", description: "Data produksi BPS dan peluang agribisnis alpukat Indonesia.", images: ["https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85"] },
+  twitter: { card: "summary_large_image", title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar", description: "Data produksi BPS dan peluang agribisnis alpukat Indonesia.", images: ["https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85"] },
   robots: { index: true, follow: true }
 };
 
