@@ -38,7 +38,7 @@ const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export default function CinematicIntro({
-  title = "KEBUN BARDJA",
+  title = "KEBUN ALPUKAT RANCAMAYA",
   eyebrow = "",
   tagline = "",
   duration = 3400,

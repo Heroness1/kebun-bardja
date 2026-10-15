@@ -62,13 +62,13 @@ export default function Home() {
       <div className="announcement">
         <span className="announcement-dot" />
         <span>BUAH DARI KEBUN, CERITA DARI ALAM</span>
-        <span className="announcement-right">Kebun Bardja <ArrowUpRight size={12} /></span>
+        <span className="announcement-right">Kebun Alpukat Rancamaya <ArrowUpRight size={12} /></span>
       </div>
 
       <header className="site-header">
-        <a className="brand" href="#beranda" aria-label="Kebun Bardja, beranda" onClick={closeMenu}>
+        <a className="brand" href="#beranda" aria-label="Kebun Alpukat Rancamaya, beranda" onClick={closeMenu}>
           <span className="brand-mark"><Sprout size={23} strokeWidth={1.6} /></span>
-          <span className="brand-copy"><strong>kebun bardja</strong><small>GROWN WITH CARE</small></span>
+          <span className="brand-copy"><strong>kebun alpukat rancamaya</strong><small>GROWN WITH CARE</small></span>
         </a>
         <nav className={menuOpen ? "nav-links nav-open" : "nav-links"} aria-label="Navigasi utama">
           {navItems.map(([label, href]) => (
@@ -97,9 +97,9 @@ export default function Home() {
         <div className="hero-bottom">
           <span><span className="tiny-sun"><Sun size={15} /></span> DIRAWAT DENGAN ALAM</span>
           <span className="hero-coordinate">INDONESIA · TROPICAL GROWING</span>
-          <a href="#cerita" aria-label="Gulir ke cerita Kebun Bardja"><ArrowDownRight size={20} /></a>
+          <a href="#cerita" aria-label="Gulir ke cerita Kebun Alpukat Rancamaya"><ArrowDownRight size={20} /></a>
         </div>
-        <div className="hero-stamp"><span>EST.</span><strong>KB</strong><span>GROW<br />SLOW</span></div>
+        <div className="hero-stamp"><span>EST.</span><strong>KAR</strong><span>GROW<br />SLOW</span></div>
       </section>
 
       <section className="intro section-pad" id="cerita">
@@ -111,8 +111,8 @@ export default function Home() {
           <p className="overline">LEBIH DARI SEKADAR KEBUN</p>
           <h2>Setiap buah punya<br />akar. <em>Begitu juga kami.</em></h2>
           <div className="intro-bottom">
-            <p className="body-copy">Kebun Bardja adalah perjalanan merawat tanaman, memahami musim, dan menjaga hubungan baik dengan alam. Dari alpukat hingga durian, kami ingin setiap hasil kebun membawa cerita tentang proses yang dijalani dengan sungguh-sungguh.</p>
-            <div className="signature"><span className="signature-leaf"><Leaf size={23} /></span><span><strong>Kebun Bardja</strong><small>Tumbuh, satu musim demi satu musim.</small></span></div>
+            <p className="body-copy">Kebun Alpukat Rancamaya adalah perjalanan merawat tanaman, memahami musim, dan menjaga hubungan baik dengan alam. Dari alpukat hingga durian, kami ingin setiap hasil kebun membawa cerita tentang proses yang dijalani dengan sungguh-sungguh.</p>
+            <div className="signature"><span className="signature-leaf"><Leaf size={23} /></span><span><strong>Kebun Alpukat Rancamaya</strong><small>Tumbuh, satu musim demi satu musim.</small></span></div>
           </div>
         </div>
         <div className="intro-art reveal" data-reveal>
@@ -158,7 +158,7 @@ export default function Home() {
           <p>Kami belajar untuk menghargai proses. Memperhatikan tanah, memahami cuaca, dan memberi waktu bagi setiap pohon untuk bertumbuh.</p>
           <a className="text-link light-link" href="#proses">Nilai yang kami jaga <ArrowRight size={16} /></a>
         </div>
-        <div className="manifesto-index">GROW AT NATURE'S PACE · KB</div>
+        <div className="manifesto-index">GROW AT NATURE'S PACE · KAR</div>
       </section>
 
       <section className="process section-pad" id="proses">
@@ -177,20 +177,20 @@ export default function Home() {
         <div className="contact-text reveal" data-reveal>
           <span className="section-index light-index">05 / MARI TERHUBUNG</span>
           <h2>Punya cerita<br />atau rencana <em>bersama?</em></h2>
-          <p>Untuk informasi hasil kebun, peluang kerja sama, atau sekadar ingin mengenal Kebun Bardja lebih dekat, kami terbuka untuk berbincang.</p>
-          <a className="button button-light contact-button" href="https://wa.me/?text=Halo%20Kebun%20Bardja%2C%20saya%20ingin%20bertanya%20tentang%20kebun%20dan%20hasil%20buahnya." target="_blank" rel="noreferrer"><MessageCircle size={17} /> Hubungi melalui WhatsApp <ArrowUpRight size={16} /></a>
+          <p>Untuk informasi hasil kebun, peluang kerja sama, atau sekadar ingin mengenal Kebun Alpukat Rancamaya lebih dekat, kami terbuka untuk berbincang.</p>
+          <a className="button button-light contact-button" href="https://wa.me/?text=Halo%20Kebun%20Alpukat%20Rancamaya%2C%20saya%20ingin%20bertanya%20tentang%20kebun%20dan%20hasil%20buahnya." target="_blank" rel="noreferrer"><MessageCircle size={17} /> Hubungi melalui WhatsApp <ArrowUpRight size={16} /></a>
           <small className="contact-disclaimer">Tautan WhatsApp akan membuka percakapan. Nomor resmi dapat ditambahkan saat informasi kontak tersedia.</small>
         </div>
         <div className="contact-art">
           <div className="contact-ring ring-one" /><div className="contact-ring ring-two" /><div className="contact-leaf"><Sprout size={105} strokeWidth={0.8} /></div>
-          <div className="contact-note"><span>KEBUN BARDJA</span><strong>Grow well.<br />Live rooted.</strong><Leaf size={19} /></div>
+          <div className="contact-note"><span>KEBUN ALPUKAT RANCAMAYA</span><strong>Grow well.<br />Live rooted.</strong><Leaf size={19} /></div>
         </div>
       </section>
 
       <footer className="footer">
-        <a className="brand footer-brand" href="#beranda"><span className="brand-mark"><Sprout size={23} strokeWidth={1.6} /></span><span className="brand-copy"><strong>kebun bardja</strong><small>GROWN WITH CARE</small></span></a>
+        <a className="brand footer-brand" href="#beranda"><span className="brand-mark"><Sprout size={23} strokeWidth={1.6} /></span><span className="brand-copy"><strong>kebun alpukat rancamaya</strong><small>GROWN WITH CARE</small></span></a>
         <p>Dirawat dengan hati. Tumbuh bersama alam.</p>
-        <div className="footer-meta"><span>© {new Date().getFullYear()} KEBUN BARDJA</span><a href="#beranda">KEMBALI KE ATAS <ArrowUpRight size={13} /></a></div>
+        <div className="footer-meta"><span>© {new Date().getFullYear()} KEBUN ALPUKAT RANCAMAYA</span><a href="#beranda">KEMBALI KE ATAS <ArrowUpRight size={13} /></a></div>
       </footer>
     </main>
   );
