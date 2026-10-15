@@ -92,7 +92,7 @@ export default function TrustSection() {
             </div>
             <figcaption>
               <span>SEBUAH CERITA DARI KEBUN</span>
-              <span>01 / 03</span>
+              <a href="https://unsplash.com/photos/a-bunch-of-avocados-hanging-from-a-tree-zmbzKaJ3C1w" target="_blank" rel="noreferrer">FOTO STOK · UNSPLASH ↗</a>
             </figcaption>
           </motion.figure>
 
