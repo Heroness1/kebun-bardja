@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import TrustSection from "../components/TrustSection";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Menu, X, Sprout,
@@ -39,6 +40,7 @@ const navItems = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFruit, setActiveFruit] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const nodes = document.querySelectorAll("[data-reveal]");
@@ -82,17 +84,38 @@ export default function Home() {
       </header>
 
       <section className="hero" id="beranda">
-        <div className="hero-image" role="img" aria-label="Pepohonan hijau di perkebunan tropis">
+        <div className="hero-image" aria-hidden="true">
+          <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2200&q=90">
+            <source src="https://videos.pexels.com/video-files/36846238/36846238-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          </video>
           <div className="hero-image-shade" />
         </div>
         <div className="hero-content">
-          <div className="eyebrow light-eyebrow"><span className="eyebrow-line" /> SEBUAH KEBUN, BANYAK CERITA</div>
-          <h1>Tumbuh dari alam.<br /><em>Dipetik dengan hati.</em></h1>
-          <p>Kami percaya hal-hal baik tidak tumbuh dalam semalam. Mereka dirawat, diberi ruang, dan tumbuh bersama waktu.</p>
-          <div className="hero-actions">
+          <motion.div
+            className="eyebrow light-eyebrow"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18, filter: "blur(5px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 0.12, ease: [0.2, 0.7, 0.2, 1] }}
+          ><span className="eyebrow-line" /> SEBUAH KEBUN, BANYAK CERITA</motion.div>
+          <motion.h1
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 22, filter: "blur(5px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.9, delay: 0.24, ease: [0.2, 0.7, 0.2, 1] }}
+          >Tumbuh dari alam.<br /><em>Dipetik dengan hati.</em></motion.h1>
+          <motion.p
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.36, ease: [0.2, 0.7, 0.2, 1] }}
+          >Kami percaya hal-hal baik tidak tumbuh dalam semalam. Mereka dirawat, diberi ruang, dan tumbuh bersama waktu.</motion.p>
+          <motion.div
+            className="hero-actions"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.48, ease: [0.2, 0.7, 0.2, 1] }}
+          >
             <a className="button button-light" href="#cerita">Kenali kebun kami <ArrowDownRight size={17} /></a>
             <a className="text-link light-link" href="#hasil-kebun">Jelajahi hasil kebun <ArrowRight size={16} /></a>
-          </div>
+          </motion.div>
         </div>
         <div className="hero-bottom">
           <span><span className="tiny-sun"><Sun size={15} /></span> DIRAWAT DENGAN ALAM</span>

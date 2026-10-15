@@ -24,6 +24,7 @@ button{font:inherit}
 .menu-toggle{display:none;background:none;border:0;color:var(--forest);padding:8px}
 .hero{position:relative;min-height:min(690px,calc(100svh - 119px));height:650px;max-height:760px;background:#294b36;color:#fff;overflow:hidden;isolation:isolate}
 .hero-image,.manifesto-image{position:absolute;inset:0;z-index:-2;background-image:url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2200&q=90');background-position:center 48%;background-size:cover;animation:hero-drift 22s ease-in-out infinite alternate;transform:scale(1.025)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;transform:scale(1.025);animation:hero-drift 22s ease-in-out infinite alternate;display:block}
 .hero-image-shade,.manifesto-image-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,35,23,.84) 0%,rgba(18,43,28,.62) 44%,rgba(14,33,22,.13) 100%),linear-gradient(0deg,rgba(12,29,20,.36),transparent 38%)}
 .hero-content{position:absolute;left:10.1%;top:50%;transform:translateY(-49%);width:min(680px,78%);animation:hero-enter .9s cubic-bezier(.2,.7,.2,1) both}
 .eyebrow,.section-index,.overline{font-size:9px;letter-spacing:.2em;font-weight:600}
@@ -172,4 +173,4 @@ body,.site-header,.footer{background:#edf2e8}
 .contact-note{background:#edf2e8;box-shadow:none}
 .trust-note{background:#e2ebdc!important}
 @media(max-width:760px){.nav-links{background:#edf2e8}}
-@media(prefers-reduced-motion:reduce){.hero-image,.manifesto-image{animation:none;transform:none}}
+@media(prefers-reduced-motion:reduce){.hero-image,.manifesto-image,.hero-video{animation:none;transform:none}.hero-video{display:none}.hero-content .light-eyebrow,.hero-content h1,.hero-content>p,.hero-content .hero-actions{animation:none;opacity:1;filter:none}}
