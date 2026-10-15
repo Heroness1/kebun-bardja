@@ -168,6 +168,28 @@ export default function Home() {
           ))}
         </div>
         <div className="fruit-footnote"><Sprout size={16} /><span>Musim, ketersediaan, dan varietas dapat berbeda. Hubungi kami untuk informasi terbaru.</span></div>
+        <div className="variety-directory">
+          <div className="variety-directory-heading"><span className="section-index">KATALOG VARIETAS</span><p>Jelajahi halaman tiap varietas alpukat.</p></div>
+          <div className="variety-directory-grid">
+            {[
+              ["01", "Alpukat Hass", "hass"],
+              ["02", "Alpukat Miki", "miki"],
+              ["03", "Alpukat Aligator", "aligator"],
+              ["04", "Alpukat Kendil", "kendil"],
+              ["05", "Alpukat Wina", "wina"],
+              ["06", "Alpukat Pluwang", "pluwang"]
+            ].map(([number, name, slug]) => (
+              <a className="variety-directory-link" href={`/alpukat/${slug}`} key={slug}>
+                <span>{number}</span><strong>{name}</strong><ArrowUpRight size={17} />
+              </a>
+            ))}
+          </div>
+          <p className="variety-directory-note">Daftar ini berisi contoh varietas untuk edukasi; varietas yang benar-benar ditanam di kebun perlu dikonfirmasi.</p>
+        </div>
+        <a className="variety-economy-home-link" href="/potensi-ekonomi-alpukat">
+          <span><span className="section-index">BACAAN KHUSUS</span><strong>Potensi ekonomi alpukat Indonesia</strong><small>Data produksi BPS terbaru, peluang nilai tambah, dan cara membaca kelayakan usaha.</small></span>
+          <ArrowUpRight size={20} />
+        </a>
       </section>
 
       <section className="manifesto">
