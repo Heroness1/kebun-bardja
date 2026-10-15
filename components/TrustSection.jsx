@@ -25,7 +25,7 @@ const principles = [
 
 export default function TrustSection() {
   return (
-    <section className="trust-section" id="kepercayaan" aria-labelledby="trust-title">
+    <section className="trust-section gallery-slide" id="kepercayaan" data-gallery-slide aria-labelledby="trust-title">
       <div className="trust-inner">
         <div className="trust-heading">
           <span className="section-index">PANDUAN MEMILIH · KEBUN ALPUKAT RANCAMAYA</span>
