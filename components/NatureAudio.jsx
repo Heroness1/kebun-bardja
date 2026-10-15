@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Volume2, VolumeX, Play, Pause, Music2 } from "lucide-react";
 
 const TRACK_URL = "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catrik2w-ind.ogg";
-const TRACK_PAGE = "https://commons.wikimedia.org/wiki/Category:Kacapi";
+const TRACK_PAGE = "https://commons.wikimedia.org/wiki/File:Catrik2w-ind.ogg";
 
 export default function NatureAudio() {
   const audioRef = useRef(null);
@@ -59,7 +59,7 @@ export default function NatureAudio() {
         </p>
       )}
       <span className="nature-audio-credit">
-        <VolumeX size={11} /> Putar sesuai keinginan
+        <VolumeX size={11} /> Kacapi Sunda · Wikimedia Commons
       </span>
     </aside>
   );
