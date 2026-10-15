@@ -20,7 +20,7 @@ export const metadata = {
     locale: "id_ID",
     siteName: "Kebun Alpukat Rancamaya",
     url: "https://kebun-bardja.vercel.app/potensi-ekonomi-alpukat"
-  }
+  },
   twitter: { card: "summary_large_image", title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026", description: "Data produksi BPS dan peluang agribisnis alpukat Indonesia." },
   robots: { index: true, follow: true }
 };
