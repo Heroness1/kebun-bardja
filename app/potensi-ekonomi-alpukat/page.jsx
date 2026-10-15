@@ -9,12 +9,12 @@ const sources = [
 ];
 
 export const metadata = {
-  title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026 | Rancamaya",
+  title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar",
   description: "Cari peluang usaha alpukat dari bibit, buah segar hingga olahan. Pelajari data produksi BPS 2025 dan strategi membaca pasar alpukat Indonesia.",
   keywords: ["peluang usaha alpukat", "bisnis alpukat Indonesia", "potensi ekonomi alpukat", "budidaya alpukat", "pasar alpukat", "Kebun Alpukat Rancamaya"],
   alternates: { canonical: "/potensi-ekonomi-alpukat" },
   openGraph: {
-    title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026",
+    title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar",
     description: "Data produksi BPS dan ide peluang usaha dari pembibitan, buah segar, produk olahan, hingga rantai pasok alpukat.",
     type: "article",
     locale: "id_ID",
@@ -69,6 +69,18 @@ export default function PotensiEkonomiAlpukatPage() {
           <article><span className="economy-card-num">02</span><div className="economy-card-icon"><Leaf size={23} /></div><h3>Buah segar dengan mutu terpilah</h3><p>Sortasi berdasarkan ukuran, kematangan, kondisi kulit, dan kerusakan dapat membantu penjual melayani segmen berbeda. Pasar rumah tangga, toko buah, pedagang grosir, hotel, restoran, dan kafe bisa memiliki standar dan pola pembelian yang berbeda.</p></article>
           <article><span className="economy-card-num">03</span><div className="economy-card-icon"><Boxes size={23} /></div><h3>Produk olahan dan nilai tambah</h3><p>Alpukat dapat menjadi bahan minuman, puree, saus, dessert, dan produk makanan lain. Pengolahan berpotensi menyerap buah dengan tampilan kurang seragam, tetapi tetap memerlukan standar keamanan pangan, pengendalian oksidasi, umur simpan, kemasan, dan izin yang sesuai.</p></article>
           <article><span className="economy-card-num">04</span><div className="economy-card-icon"><TrendingUp size={23} /></div><h3>Pengumpulan dan rantai pasok</h3><p>Pengumpulan hasil dari beberapa kebun, penanganan pascapanen, kemasan, dan pengiriman yang tepat dapat membantu menjaga mutu hingga pembeli. Susut buah dan ketidaksesuaian kematangan merupakan biaya yang perlu dicatat, bukan dianggap sepele.</p></article>
+        </div>
+      </section>
+
+      <section className="economy-variety-links">
+        <span className="economy-kicker">PILIHAN VARIETAS</span>
+        <h2>Kenali karakter yang paling <em>sesuai dengan tujuan Anda.</em></h2>
+        <p>Setiap varietas punya ciri dan pertimbangan berbeda. Mulai dari profil singkat sebelum membandingkan kebutuhan konsumsi atau rencana budidaya.</p>
+        <div className="economy-variety-grid">
+          {[
+            ["Alpukat Hass", "hass"], ["Alpukat Miki", "miki"], ["Alpukat Aligator", "aligator"],
+            ["Alpukat Kendil", "kendil"], ["Alpukat Wina", "wina"], ["Alpukat Pluwang", "pluwang"]
+          ].map(([name, slug]) => <Link href={`/alpukat/${slug}`} key={slug}><span>{name}</span><ArrowUpRight size={16} /></Link>)}
         </div>
       </section>
 
