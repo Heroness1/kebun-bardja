@@ -407,3 +407,86 @@ a:focus-visible,button:focus-visible{outline:3px solid #739768;outline-offset:4p
 .manifesto-content>p,.contact-text>p{font-size:14px}.contact-disclaimer{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){.fruit-card[data-reveal],.reveal{opacity:1;transform:none}}
+
+
+/* Full-screen, next/previous gallery experience for /jelajahi only. */
+html.gallery-mode{scroll-snap-type:y mandatory;scroll-padding-top:0}
+html.gallery-mode body{overscroll-behavior-y:contain}
+.gallery-slide{position:relative;min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;overflow:hidden}
+.gallery-slide#cerita{padding-top:clamp(34px,6vh,70px);padding-bottom:clamp(44px,7vh,76px);grid-template-columns:15% 1fr 25%;gap:22px}
+.gallery-slide#kepercayaan{padding-top:clamp(30px,5vh,56px)!important;padding-bottom:clamp(38px,6vh,65px)!important}
+.gallery-slide#hasil-kebun{padding-top:clamp(36px,6vh,66px);padding-bottom:clamp(62px,9vh,90px)}
+.gallery-slide#hasil-kebun .section-heading{margin-bottom:clamp(18px,3vh,30px)}
+.gallery-slide#hasil-kebun .fruit-photo{height:clamp(190px,36vh,330px)}
+.gallery-slide#hasil-kebun .fruit-footnote{margin-top:18px}
+.variety-catalog-slide{background:#edf2e8;padding-top:clamp(36px,6vh,66px);padding-bottom:clamp(70px,9vh,90px)}
+.variety-catalog-slide .section-heading{margin-bottom:clamp(15px,3vh,28px)}
+.variety-catalog-slide .variety-directory{margin-top:0}
+.variety-catalog-slide .variety-directory-link{min-height:clamp(52px,8vh,74px)}
+.variety-catalog-slide .variety-economy-home-link{margin-top:14px;padding:16px 22px}
+.gallery-slide.manifesto{min-height:100svh}
+.gallery-slide#proses{padding-top:clamp(42px,7vh,78px);padding-bottom:clamp(60px,9vh,90px)}
+.gallery-slide#proses .process-top{margin-bottom:clamp(24px,4vh,40px)}
+.gallery-slide#hubungi{min-height:100svh}
+.gallery-slide.footer{min-height:100svh;padding-top:clamp(30px,6vh,60px);padding-bottom:clamp(70px,9vh,100px);align-content:center}
+.gallery-controls{position:fixed;z-index:80;right:22px;bottom:20px;display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid #d6e0d0;background:rgba(245,246,240,.94);backdrop-filter:blur(14px);border-radius:999px;box-shadow:0 8px 28px rgba(16,45,34,.12);color:#203326}
+.gallery-counter{font-size:10px;font-variant-numeric:tabular-nums;white-space:nowrap;color:#405643;padding:0 5px}
+.gallery-counter i{font-style:normal;color:#8b9786;padding:0 3px}
+.gallery-dots{display:flex;align-items:center;gap:5px;padding:0 4px}
+.gallery-dot{width:6px;height:6px;padding:0;border:0;border-radius:99px;background:#b6c5b0;cursor:pointer;transition:width .2s,background .2s}
+.gallery-dot-active{width:18px;background:#244b35}
+.gallery-arrow{display:grid;place-items:center;width:31px;height:31px;border:1px solid #cad7c4;border-radius:50%;background:#f9faf6;color:#244b35;cursor:pointer}
+.gallery-arrow:hover:not(:disabled){background:#dce7d5}
+.gallery-arrow:disabled{opacity:.35;cursor:not-allowed}
+.gallery-arrow:focus-visible,.gallery-dot:focus-visible{outline:2px solid #426b45;outline-offset:3px}
+@media(max-width:760px){
+  html.gallery-mode{scroll-snap-type:y proximity}
+  .gallery-slide{min-height:100svh;padding-left:6%;padding-right:6%;overflow:visible}
+  .gallery-slide#cerita{padding-top:34px;padding-bottom:72px;grid-template-columns:1fr;gap:16px}
+  .gallery-slide#cerita .intro-art{display:none}
+  .gallery-slide#kepercayaan{padding-top:34px!important;padding-bottom:78px!important}
+  .gallery-slide#kepercayaan .profile-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+  .gallery-slide#kepercayaan .profile-facts strong{font-size:13px;line-height:1.3}
+  .gallery-slide#kepercayaan .profile-facts span{font-size:7px;line-height:1.4}
+  .gallery-slide#kepercayaan .trust-principles{grid-template-columns:1fr;gap:12px;margin-top:20px}
+  .gallery-slide#kepercayaan .trust-principle{padding-top:12px}
+  .gallery-slide#kepercayaan .trust-principle-top{margin-bottom:8px}
+  .gallery-slide#kepercayaan .trust-icon{width:32px;height:32px}
+  .gallery-slide#kepercayaan .trust-principle h3{font-size:17px;margin-bottom:4px}
+  .gallery-slide#kepercayaan .trust-principle p{font-size:10px;line-height:1.55}
+  .gallery-slide#kepercayaan .trust-note{margin-top:16px;padding:12px}
+  .gallery-slide#kepercayaan .trust-note p{font-size:9px;line-height:1.55}
+  .gallery-slide#hasil-kebun{padding-top:40px;padding-bottom:80px}
+  .gallery-slide#hasil-kebun .fruit-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .gallery-slide#hasil-kebun .fruit-photo{height:clamp(170px,30vh,260px)}
+  .gallery-slide#hasil-kebun .fruit-info{gap:4px}
+  .gallery-slide#hasil-kebun .fruit-info h3{font-size:24px}
+  .gallery-slide#hasil-kebun .fruit-info p{max-width:100%;font-size:10px}
+  .gallery-slide#hasil-kebun .fruit-tag{font-size:7px}
+  .variety-catalog-slide{padding-top:40px;padding-bottom:82px}
+  .variety-catalog-slide .variety-directory-grid{grid-template-columns:1fr 1fr}
+  .variety-catalog-slide .variety-directory-link{min-height:56px;padding:10px;grid-template-columns:18px 1fr 15px;gap:5px}
+  .variety-catalog-slide .variety-directory-link strong{font-size:14px}
+  .variety-catalog-slide .variety-directory-note{font-size:9px}
+  .variety-catalog-slide .variety-economy-home-link strong{font-size:17px}
+  .variety-catalog-slide .variety-economy-home-link small{font-size:10px}
+  .gallery-slide#proses{padding-top:40px;padding-bottom:82px}
+  .gallery-slide#proses .process-row{min-height:82px}
+  .gallery-slide#hubungi{padding-bottom:70px}
+  .gallery-slide.footer{padding-top:40px;padding-bottom:82px;min-height:100svh;display:flex;align-items:flex-start;justify-content:center;gap:20px}
+  .gallery-controls{right:10px;bottom:10px;gap:6px;padding:6px 8px}
+  .gallery-counter{font-size:9px;padding:0 2px}
+  .gallery-dots{gap:4px;padding:0 2px}
+  .gallery-dot{width:5px;height:5px}
+  .gallery-dot-active{width:13px}
+  .gallery-arrow{width:29px;height:29px}
+}
+@media(max-height:700px) and (min-width:761px){
+  .gallery-slide#kepercayaan .trust-principles{margin-top:20px}
+  .gallery-slide#kepercayaan .trust-note{margin-top:20px;padding:14px 18px}
+  .gallery-slide#kepercayaan .profile-facts{margin-top:22px;padding:14px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html.gallery-mode{scroll-behavior:auto}
+  .gallery-dot{transition:none}
+}
