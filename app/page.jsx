@@ -82,7 +82,10 @@ export default function Home() {
       </header>
 
       <section className="hero" id="beranda">
-        <div className="hero-image" role="img" aria-label="Pepohonan hijau di perkebunan tropis">
+        <div className="hero-image" aria-hidden="true">
+          <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2200&q=90">
+            <source src="https://videos.pexels.com/video-files/36846238/36846238-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          </video>
           <div className="hero-image-shade" />
         </div>
         <div className="hero-content">
