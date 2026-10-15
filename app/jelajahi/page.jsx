@@ -5,7 +5,7 @@ import { useReducedMotion } from "framer-motion";
 import TrustSection from "../../components/TrustSection";
 import { StorySlide, HarvestSlide, VarietySlide, ManifestoSlide, ProcessSlide, ContactSlide, GalleryFooter } from "../../components/gallery/GallerySlides";
 import {
-  ArrowUpRight, ChevronLeft, ChevronRight, Menu, X, Sprout
+  ArrowUpRight, ChevronLeft, Menu, X, Sprout
 } from "lucide-react";
 
 const navItems = [
@@ -161,7 +161,6 @@ export default function Home() {
           ))}
         </div>
         <button className="gallery-arrow" onClick={() => goToSlide(-1)} disabled={activeSlide === 0} aria-label="Halaman sebelumnya"><ChevronLeft size={18} /></button>
-        <button className="gallery-arrow gallery-next" onClick={() => goToSlide(1)} disabled={activeSlide >= 7} aria-label="Halaman berikutnya"><ChevronRight size={18} /></button>
       </nav>
     </main>
   );
