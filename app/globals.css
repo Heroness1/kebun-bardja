@@ -25,11 +25,6 @@ button{font:inherit}
 .hero{position:relative;min-height:min(690px,calc(100svh - 119px));height:650px;max-height:760px;background:#294b36;color:#fff;overflow:hidden;isolation:isolate}
 .hero-image,.manifesto-image{position:absolute;inset:0;z-index:-2;background-image:url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2200&q=90');background-position:center 48%;background-size:cover;animation:hero-drift 22s ease-in-out infinite alternate;transform:scale(1.025)}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;transform:scale(1.025);animation:hero-drift 22s ease-in-out infinite alternate;display:block}
-.hero-content .light-eyebrow{animation:hero-child-enter .8s .12s both}
-.hero-content h1{animation:hero-child-enter .9s .24s both}
-.hero-content>p{animation:hero-child-enter .9s .36s both}
-.hero-content .hero-actions{animation:hero-child-enter .9s .48s both}
-@keyframes hero-child-enter{from{opacity:0;transform:translate3d(0,18px,0);filter:blur(5px)}to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}}
 .hero-image-shade,.manifesto-image-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,35,23,.84) 0%,rgba(18,43,28,.62) 44%,rgba(14,33,22,.13) 100%),linear-gradient(0deg,rgba(12,29,20,.36),transparent 38%)}
 .hero-content{position:absolute;left:10.1%;top:50%;transform:translateY(-49%);width:min(680px,78%);animation:hero-enter .9s cubic-bezier(.2,.7,.2,1) both}
 .eyebrow,.section-index,.overline{font-size:9px;letter-spacing:.2em;font-weight:600}
