@@ -2,17 +2,23 @@ import "./globals.css";
 import CinematicIntro from "../components/CinematicIntro";
 
 export const metadata = {
-  title: "Kebun Alpukat Rancamaya — Tumbuh dari Alam, Dipetik dengan Hati",
+  metadataBase: new URL("https://kebun-bardja.vercel.app"),
+  title: "Kebun Alpukat Rancamaya | Varietas & Peluang Usaha",
   description:
-    "Mengenal Kebun Alpukat Rancamaya, kebun alpukat yang dirawat dengan perhatian pada alam, kualitas, dan proses yang berkelanjutan.",
+    "Jelajahi Kebun Alpukat Rancamaya, kenali varietas alpukat populer, pelajari peluang usaha alpukat Indonesia, dan mulai rencanakan langkah kebun Anda.",
   applicationName: "Kebun Alpukat Rancamaya",
-  keywords: ["Kebun Alpukat Rancamaya", "alpukat Rancamaya", "kebun alpukat", "perkebunan buah Indonesia"],
+  keywords: ["Kebun Alpukat Rancamaya", "alpukat Rancamaya", "varietas alpukat", "peluang usaha alpukat", "budidaya alpukat Indonesia", "kebun alpukat"],
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Kebun Alpukat Rancamaya — Tumbuh dari Alam, Dipetik dengan Hati",
-    description: "Cerita kebun alpukat, buah pilihan, dan proses yang tumbuh bersama alam.",
+    description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya.",
     type: "website",
-    locale: "id_ID"
+    locale: "id_ID",
+    siteName: "Kebun Alpukat Rancamaya",
+    url: "https://kebun-bardja.vercel.app/",
+    images: [{ url: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85", width: 1200, height: 630, alt: "Suasana hijau alami untuk Kebun Alpukat Rancamaya" }]
   },
+  twitter: { card: "summary_large_image", title: "Kebun Alpukat Rancamaya | Varietas & Peluang Usaha", description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya.", images: ["https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85"] },
   robots: { index: true, follow: true },
   icons: { icon: "/leaf.svg" }
 };

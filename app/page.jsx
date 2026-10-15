@@ -101,7 +101,7 @@ export default function Home() {
             initial={shouldReduceMotion ? false : { opacity: 0, y: 22, filter: "blur(5px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.9, delay: 0.24, ease: [0.2, 0.7, 0.2, 1] }}
-          >Tumbuh dari alam.<br /><em>Dipetik dengan hati.</em></motion.h1>
+          >Kebun Alpukat Rancamaya.<br /><em>Dipetik dengan hati.</em></motion.h1>
           <motion.p
             initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -201,7 +201,7 @@ export default function Home() {
           <span className="manifesto-quote">“</span>
           <h2>Alam tak pernah<br />terburu-buru.<br /><em>Ia tetap tumbuh.</em></h2>
           <p>Kami belajar untuk menghargai proses. Memperhatikan tanah, memahami cuaca, dan memberi waktu bagi setiap pohon untuk bertumbuh.</p>
-          <a className="text-link light-link" href="#proses">Nilai yang kami jaga <ArrowRight size={16} /></a>
+          <a className="text-link light-link" href="#proses">Kenali kebun kami <ArrowRight size={16} /></a>
         </div>
         <div className="manifesto-index">GROW AT NATURE'S PACE · KAR</div>
       </section>

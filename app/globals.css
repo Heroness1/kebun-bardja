@@ -320,3 +320,23 @@ body,.site-header,.footer{background:#edf2e8}
         .variety-footer>span,.variety-footer>a:last-child{font-size:8px;letter-spacing:.1em;color:#788472}
         @media(max-width:760px){.variety-topline{padding:0 5%;font-size:7px}.variety-topline>a{font-size:7px}.variety-header{height:72px;padding:0 5%}.variety-brand strong{font-size:17px}.variety-brand-mark{width:34px;height:34px}.variety-header-label{font-size:7px}.variety-hero{height:650px;min-height:560px;max-height:760px}.variety-hero-image{background-position:58% center}.variety-hero-content{margin-left:7%;width:86%;padding:50px 0}.variety-hero h1{font-size:clamp(43px,10vw,64px)}.variety-hero-content>p{font-size:12px}.variety-profile{grid-template-columns:1fr;gap:22px;padding:75px 7% 80px}.variety-profile h2,.variety-more h2{font-size:clamp(37px,9vw,49px)}.variety-contact{padding:70px 7%}.variety-economic-link{padding:55px 7%;align-items:flex-start;flex-direction:column;gap:8px}.variety-more{padding:70px 6%}.variety-more-grid{grid-template-columns:1fr}.variety-more-card{min-height:76px}.variety-footer{align-items:flex-start;flex-direction:column;padding:25px 6%}.variety-footer>span{line-height:1.7}}
         @media(prefers-reduced-motion:reduce){.variety-button,.variety-more-card{transition:none}}
+
+/* Conversion-focused editorial CTAs and variety copy. */
+.variety-selling-copy{margin-top:18px;padding:18px 20px;border-left:2px solid #6f8e62;background:#e3ecdd;color:#314c38}
+.economy-cta-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:24px}
+.economy-secondary-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 19px;border:1px solid #d5e0cf;color:#eef4e9;font-size:11px;letter-spacing:.04em;transition:background .2s,color .2s}
+.economy-secondary-button:hover{background:#e5eddf;color:#1d402d}
+@media(max-width:600px){.economy-cta-actions{align-items:stretch;flex-direction:column}.economy-cta-actions>a{width:100%}}
+
+
+/* SEO-friendly internal variety directory in the economic article. */
+.economy-variety-links{padding:80px 10%;background:#e4ecdf}
+.economy-variety-links h2{max-width:740px;font:400 clamp(32px,4vw,48px)/1.15 var(--serif);margin:16px 0}
+.economy-variety-links h2 em{color:#71866a}
+.economy-variety-links>p{max-width:640px;color:#697565;font-size:13px;line-height:1.9}
+.economy-variety-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px;border-top:1px solid #cbd7c5;border-left:1px solid #cbd7c5}
+.economy-variety-grid a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:66px;padding:16px;border-right:1px solid #cbd7c5;border-bottom:1px solid #cbd7c5;color:#203326;transition:background .2s}
+.economy-variety-grid a:hover{background:#d7e4d1}
+.economy-variety-grid a span{font:400 17px var(--serif)}
+.economy-variety-grid a svg{flex-shrink:0;color:#71866a}
+@media(max-width:760px){.economy-variety-links{padding:62px 6%}.economy-variety-grid{grid-template-columns:1fr}}
