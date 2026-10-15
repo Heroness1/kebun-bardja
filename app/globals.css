@@ -349,14 +349,14 @@ body,.site-header,.footer{background:#edf2e8}
 .hero-content,.hero-bottom,.hero-stamp{z-index:2}
 @keyframes leaf-fall{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(var(--leaf-rotate))}9%{opacity:.72}76%{opacity:.65}100%{opacity:0;transform:translate3d(var(--leaf-drift),115vh,0) rotate(calc(var(--leaf-rotate) + 260deg))}}
 @keyframes leaf-flutter{from{transform:rotate(-13deg) translateX(-3px)}to{transform:rotate(17deg) translateX(4px)}}
-.nature-audio{position:fixed;right:18px;bottom:18px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:5px;max-width:calc(100vw - 24px);font-family:var(--sans)}
+.nature-audio{position:fixed;left:18px;right:auto;bottom:18px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:5px;max-width:calc(100vw - 24px);font-family:var(--sans)}
 .nature-audio-toggle{display:flex;align-items:center;justify-content:center;gap:10px;min-height:45px;padding:0 15px;border:1px solid rgba(219,231,210,.75);border-radius:999px;background:rgba(20,55,38,.94);color:#f1f4ec;box-shadow:0 8px 28px rgba(15,42,27,.2);backdrop-filter:blur(12px);font-size:11px;cursor:pointer;transition:transform .2s,background .2s}
 .nature-audio-toggle:hover{transform:translateY(-2px);background:#28543a}
 .nature-audio-toggle:focus-visible{outline:2px solid #b9d2a9;outline-offset:3px}
 .nature-audio-credit{display:flex;align-items:center;gap:4px;padding:4px 9px;border-radius:99px;background:rgba(237,242,232,.94);color:#5d6f58;font-size:9px}
 .nature-audio-error{max-width:260px;margin:0;padding:8px 10px;border-radius:8px;background:#fff8eb;color:#684b22;font-size:10px;line-height:1.6}
 .nature-audio-error a{text-decoration:underline;text-underline-offset:2px}
-@media(max-width:760px){.falling-leaf:nth-child(n+8){display:none}.nature-audio{right:12px;bottom:12px}.nature-audio-toggle{min-height:42px;padding:0 12px;gap:8px}.nature-audio-credit{font-size:8px}}
+@media(max-width:760px){.falling-leaf:nth-child(n+8){display:none}.nature-audio{left:12px;right:auto;bottom:12px}.nature-audio-toggle{min-height:42px;padding:0 12px;gap:8px}.nature-audio-credit{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.falling-leaves{display:none}.nature-audio-toggle{transition:none}}
 
 
@@ -410,7 +410,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #739768;outline-offset:4p
 
 
 /* Full-screen, next/previous gallery experience for /jelajahi only. */
-html.gallery-mode{scroll-snap-type:y mandatory;scroll-padding-top:0}
+html.gallery-mode{scroll-snap-type:y mandatory;scroll-padding-top:0;overscroll-behavior:none}
 html.gallery-mode body{overscroll-behavior-y:contain}
 .gallery-slide{position:relative;min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;overflow:hidden}
 .gallery-slide#cerita{padding-top:clamp(34px,6vh,70px);padding-bottom:clamp(44px,7vh,76px);grid-template-columns:15% 1fr 25%;gap:22px}
@@ -440,7 +440,7 @@ html.gallery-mode body{overscroll-behavior-y:contain}
 .gallery-arrow:disabled{opacity:.35;cursor:not-allowed}
 .gallery-arrow:focus-visible,.gallery-dot:focus-visible{outline:2px solid #426b45;outline-offset:3px}
 @media(max-width:760px){
-  html.gallery-mode{scroll-snap-type:y proximity}
+  html.gallery-mode{scroll-snap-type:y mandatory;overscroll-behavior:none}
   .gallery-slide{min-height:100svh;padding-left:6%;padding-right:6%;overflow:visible}
   .gallery-slide#cerita{padding-top:34px;padding-bottom:72px;grid-template-columns:1fr;gap:16px}
   .gallery-slide#cerita .intro-art{display:none}
