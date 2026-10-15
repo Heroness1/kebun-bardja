@@ -9,20 +9,26 @@ const sources = [
 ];
 
 export const metadata = {
-  title: "Potensi Ekonomi Alpukat Indonesia | Kebun Alpukat Rancamaya",
-  description: "Pelajari data produksi alpukat Indonesia terbaru, peluang nilai tambah, rantai pasok, dan faktor yang menentukan kelayakan usaha alpukat.",
+  title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026 | Rancamaya",
+  description: "Cari peluang usaha alpukat dari bibit, buah segar hingga olahan. Pelajari data produksi BPS 2025 dan strategi membaca pasar alpukat Indonesia.",
+  keywords: ["peluang usaha alpukat", "bisnis alpukat Indonesia", "potensi ekonomi alpukat", "budidaya alpukat", "pasar alpukat", "Kebun Alpukat Rancamaya"],
   alternates: { canonical: "/potensi-ekonomi-alpukat" },
   openGraph: {
-    title: "Potensi Ekonomi Alpukat Indonesia",
-    description: "Data produksi nasional dan peluang agribisnis alpukat berdasarkan sumber pemerintah.",
+    title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026",
+    description: "Data produksi BPS dan ide peluang usaha dari pembibitan, buah segar, produk olahan, hingga rantai pasok alpukat.",
     type: "article",
-    locale: "id_ID"
+    locale: "id_ID",
+    siteName: "Kebun Alpukat Rancamaya",
+    url: "https://kebun-bardja.vercel.app/potensi-ekonomi-alpukat"
   }
+  twitter: { card: "summary_large_image", title: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026", description: "Data produksi BPS dan peluang agribisnis alpukat Indonesia." },
+  robots: { index: true, follow: true }
 };
 
 export default function PotensiEkonomiAlpukatPage() {
   return (
     <main className="economy-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: "Peluang Usaha Alpukat Indonesia: Potensi & Pasar 2026", description: "Data produksi BPS dan peluang usaha alpukat dari pembibitan, buah segar, produk olahan, hingga rantai pasok.", inLanguage: "id-ID", dateModified: "2026-10-15", author: { "@type": "Organization", name: "Kebun Alpukat Rancamaya" }, publisher: { "@type": "Organization", name: "Kebun Alpukat Rancamaya" }, mainEntityOfPage: "https://kebun-bardja.vercel.app/potensi-ekonomi-alpukat" }) }} />
       <div className="economy-topline"><span /> EDUKASI HORTIKULTURA <Link href="/#hasil-kebun"><ArrowLeft size={13} /> Kembali ke kebun</Link></div>
       <header className="economy-header">
         <Link href="/" className="economy-brand"><span><Sprout size={22} /></span><strong>kebun alpukat rancamaya</strong></Link>
@@ -31,10 +37,10 @@ export default function PotensiEkonomiAlpukatPage() {
       <section className="economy-hero">
         <div className="economy-hero-art" aria-hidden="true" />
         <div className="economy-hero-content">
-          <span className="economy-eyebrow"><BarChart3 size={15} /> DATA PRODUKSI & PELUANG USAHA</span>
-          <h1>Alpukat Indonesia:<br /><em>buah dengan peluang.</em></h1>
-          <p>Di balik buah yang dinikmati sehari-hari, terdapat rantai usaha dari pembibitan, budidaya, panen, distribusi, hingga produk olahan. Peluangnya perlu dibaca bersama data dan perhitungan usaha yang realistis.</p>
-          <a href="#data-produksi" className="economy-button">Lihat data nasional <ArrowRight size={16} /></a>
+          <span className="economy-eyebrow"><BarChart3 size={15} /> PELUANG USAHA · DATA PASAR INDONESIA</span>
+          <h1>Peluang Usaha<br /><em>Alpukat Indonesia.</em></h1>
+          <p>Dari memilih varietas hingga membangun jalur penjualan, alpukat membuka ruang usaha di banyak tahap. Temukan gambaran pasar, peluang nilai tambah, dan langkah untuk menyusun rencana bisnis yang lebih siap dijalankan.</p>
+          <a href="#peluang-usaha" className="economy-button">Temukan peluangnya <ArrowRight size={16} /></a>
         </div>
         <span className="economy-hero-foot">KEBUN · PASCAPANEN · PASAR</span>
       </section>
@@ -42,8 +48,8 @@ export default function PotensiEkonomiAlpukatPage() {
       <section className="economy-intro">
         <div className="economy-section-label">01 / GAMBARAN NASIONAL <Leaf size={18} /></div>
         <div>
-          <p className="economy-kicker">APA YANG DITUNJUKKAN DATA?</p>
-          <h2>Produksi meningkat.<br /><em>Mutu dan pasar tetap menentukan.</em></h2>
+          <p className="economy-kicker">PASAR ALPUKAT DALAM ANGKA</p>
+          <h2>Permintaan dan peluang<br /><em>dimulai dari strategi yang tepat.</em></h2>
           <p className="economy-copy">Badan Pusat Statistik mencatat produksi alpukat Indonesia sekitar 9,20 juta kuintal pada 2024 dan 10,70 juta kuintal pada 2025. Dengan konversi 1 kuintal = 100 kilogram, angka itu setara dengan sekitar 919,5 ribu ton dan 1,07 juta ton. Kenaikan tahunannya sekitar 16,3% berdasarkan angka pada tabel BPS.</p>
           <p className="economy-copy">Angka produksi menggambarkan skala komoditas, bukan otomatis nilai omzet atau keuntungan petani. Untuk menghitung nilai ekonomi secara akurat, data volume perlu dipadukan dengan harga di tingkat petani, susut panen, biaya input, tenaga kerja, pengemasan, transportasi, dan bagian hasil yang memenuhi standar pembeli.</p>
         </div>
@@ -56,8 +62,8 @@ export default function PotensiEkonomiAlpukatPage() {
       </section>
       <p className="economy-data-note">Sumber angka: BPS, tabel Produksi Tanaman Buah-buahan dan Sayuran Tahunan Menurut Jenis Tanaman, 2024 dan 2025. Nilai tonase dan persentase merupakan konversi/perhitungan dari angka kuintal yang diterbitkan BPS.</p>
 
-      <section className="economy-opportunities">
-        <div className="economy-opportunities-heading"><span className="economy-kicker">02 / DI MANA NILAI EKONOMINYA?</span><h2>Peluang tumbuh di<br /><em>sepanjang rantai usaha.</em></h2></div>
+      <section className="economy-opportunities" id="peluang-usaha">
+        <div className="economy-opportunities-heading"><span className="economy-kicker">02 / DI MANA NILAI EKONOMINYA?</span><h2>Empat jalur untuk membangun<br /><em>nilai dari alpukat.</em></h2></div>
         <div className="economy-opportunity-grid">
           <article><span className="economy-card-num">01</span><div className="economy-card-icon"><Sprout size={23} /></div><h3>Pembibitan dan tanaman produktif</h3><p>Permintaan bibit berkualitas membuka peluang bagi pembibitan yang mampu menjelaskan identitas varietas, asal bahan tanam, kesehatan bibit, dan panduan perawatan. Kepercayaan dan ketepatan varietas lebih penting daripada klaim cepat berbuah yang tidak didukung bukti.</p></article>
           <article><span className="economy-card-num">02</span><div className="economy-card-icon"><Leaf size={23} /></div><h3>Buah segar dengan mutu terpilah</h3><p>Sortasi berdasarkan ukuran, kematangan, kondisi kulit, dan kerusakan dapat membantu penjual melayani segmen berbeda. Pasar rumah tangga, toko buah, pedagang grosir, hotel, restoran, dan kafe bisa memiliki standar dan pola pembelian yang berbeda.</p></article>
@@ -95,7 +101,7 @@ export default function PotensiEkonomiAlpukatPage() {
         <div className="economy-source-list">{sources.map((source, i) => <a href={source.url} target="_blank" rel="noreferrer" key={source.url}><span>0{i + 1}</span><strong>{source.name}</strong><ArrowUpRight size={16} /></a>)}</div>
       </section>
 
-      <section className="economy-cta"><span className="economy-kicker">KEBUN ALPUKAT RANCAMAYA</span><h2>Kenali varietasnya.<br /><em>Pahami peluangnya.</em></h2><p>Jelajahi halaman varietas untuk membaca karakter buah dan sumber referensinya.</p><Link href="/alpukat/hass" className="economy-button">Jelajahi katalog alpukat <ArrowRight size={16} /></Link></section>
+      <section className="economy-cta"><span className="economy-kicker">LANGKAH BERIKUTNYA</span><h2>Peluang lebih jelas<br /><em>dimulai dari pilihan tepat.</em></h2><p>Bandingkan karakter enam varietas alpukat, kenali cirinya, lalu susun pertanyaan yang tepat sebelum menentukan pilihan untuk kebun atau kebutuhan usaha.</p><div className="economy-cta-actions"><Link href="/alpukat/miki" className="economy-button">Kenali varietas alpukat <ArrowRight size={16} /></Link><Link href="/#hubungi" className="economy-secondary-button">Diskusikan peluang kerja sama <ArrowUpRight size={16} /></Link></div></section>
       <footer className="economy-footer"><Link href="/" className="economy-brand"><span><Sprout size={22} /></span><strong>kebun alpukat rancamaya</strong></Link><span>DATA PRODUKSI: BPS · DIOLAH UNTUK EDUKASI</span><Link href="/#hasil-kebun">KEMBALI KE KEBUN ↑</Link></footer>
 
       
