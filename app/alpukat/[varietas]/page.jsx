@@ -5,7 +5,7 @@ const varieties = [
   {
     slug: "hass", name: "Alpukat Hass", short: "Hass", number: "01",
     image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=1500&q=85",
-    seoTitle: "Alpukat Hass: Ciri, Rasa & Potensi Pasar | Kebun Rancamaya",
+    seoTitle: "Alpukat Hass: Ciri & Potensi Pasar | Rancamaya",
     seoDescription: "Kenali alpukat Hass, dari kulit yang berubah gelap saat matang hingga daging creamy yang populer untuk konsumsi segar dan olahan.",
     intro: "Tekstur creamy, tampilan khas, dan reputasi global menjadikan alpukat Hass menarik untuk dikenali oleh pencinta buah maupun pelaku usaha pangan.",
     selling: "Kenali ciri Hass sebelum memilih varietas untuk konsumsi, menu kuliner, atau rencana budidaya.",
@@ -16,7 +16,7 @@ const varieties = [
   {
     slug: "miki", name: "Alpukat Miki", short: "Miki", number: "02",
     image: "https://images.unsplash.com/photo-1601039641847-7857b994d704?auto=format&fit=crop&w=1500&q=85",
-    seoTitle: "Alpukat Miki: Ciri Buah, Rasa & Potensi | Kebun Rancamaya",
+    seoTitle: "Alpukat Miki: Ciri, Rasa & Potensi | Rancamaya",
     seoDescription: "Pelajari ciri alpukat Miki, tekstur daging, karakter rasa, serta potensi pemanfaatannya dari referensi pertanian Indonesia.",
     intro: "Alpukat Miki punya karakter yang menarik untuk pasar buah tropis: daging tebal, warna kuning cerah, dan cita rasa gurih sedikit manis dalam laporan panen pemerintah.",
     selling: "Cari tahu apa yang membuat Miki menarik, lalu sesuaikan pilihan dengan tujuan konsumsi atau rencana kebun Anda.",
@@ -27,7 +27,7 @@ const varieties = [
   {
     slug: "aligator", name: "Alpukat Aligator", short: "Aligator", number: "03",
     image: "https://images.unsplash.com/photo-1592982537447-6f2a6a0b2f53?auto=format&fit=crop&w=1500&q=85",
-    seoTitle: "Alpukat Aligator: Ciri Buah Besar & Potensi | Kebun Rancamaya",
+    seoTitle: "Alpukat Aligator: Ciri & Potensi | Rancamaya",
     seoDescription: "Kenali alpukat Aligator yang dikenal dengan bentuk memanjang dan ukuran besar, termasuk hal penting sebelum memilih untuk budidaya.",
     intro: "Bentuk memanjang dan ukuran buah yang mencolok membuat alpukat Aligator mudah menarik perhatian. Kenali cirinya sebelum menentukan pilihan.",
     selling: "Untuk rencana budidaya, cocokkan karakter Aligator dengan kondisi lahan, perawatan, dan kebutuhan pasar yang dituju.",
@@ -38,7 +38,7 @@ const varieties = [
   {
     slug: "kendil", name: "Alpukat Kendil", short: "Kendil", number: "04",
     image: "https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?auto=format&fit=crop&w=1500&q=85",
-    seoTitle: "Alpukat Kendil: Ciri, Ukuran & Potensi Budidaya | Kebun Rancamaya",
+    seoTitle: "Alpukat Kendil: Ciri & Potensi Budidaya | Rancamaya",
     seoDescription: "Mengenal alpukat Kendil dari referensi pertanian, termasuk catatan bobot buah dan pertimbangan penting untuk rencana budidaya.",
     intro: "Alpukat Kendil dikenal lewat catatan buah berukuran besar dalam referensi budidaya. Informasi varietas yang tepat membantu perencanaan kebun lebih terarah.",
     selling: "Pelajari referensi Kendil dan gunakan data kebun setempat untuk menilai kecocokannya dengan target panen Anda.",
@@ -49,7 +49,7 @@ const varieties = [
   {
     slug: "wina", name: "Alpukat Wina", short: "Wina", number: "05",
     image: "https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=1500&q=85",
-    seoTitle: "Alpukat Wina: Ciri Buah & Potensi Budidaya | Kebun Rancamaya",
+    seoTitle: "Alpukat Wina: Ciri & Potensi Budidaya | Rancamaya",
     seoDescription: "Kenali alpukat Wina atau Wina Bandungan, ciri yang tercatat dalam referensi pertanian, dan pertimbangan sebelum menanam.",
     intro: "Wina Bandungan termasuk varietas yang tercatat dalam sumber perbenihan pemerintah dan dikenal dengan buah besar serta daging tebal.",
     selling: "Pertimbangkan Wina dengan melihat asal bibit, kondisi lokasi, serta tujuan panen agar rencana kebun lebih matang.",
@@ -60,7 +60,7 @@ const varieties = [
   {
     slug: "pluwang", name: "Alpukat Pluwang", short: "Pluwang", number: "06",
     image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=1500&q=85",
-    seoTitle: "Alpukat Pluwang: Ciri Buah & Tips Memilih Bibit | Kebun Rancamaya",
+    seoTitle: "Alpukat Pluwang: Ciri & Tips Bibit | Rancamaya",
     seoDescription: "Cari tahu hal yang perlu diperhatikan tentang alpukat Pluwang, klaim ukuran buah, bukti asal bibit, dan kecocokan untuk budidaya.",
     intro: "Pluwang sering menarik minat karena promosi ukuran buahnya. Bekali pilihan Anda dengan informasi bibit dan bukti performa yang relevan.",
     selling: "Sebelum memilih Pluwang, minta bukti asal varietas dan catatan panen yang sesuai dengan kondisi tumbuh Anda.",
