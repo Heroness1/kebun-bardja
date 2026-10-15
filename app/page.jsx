@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import FallingLeaves from "../components/FallingLeaves";
-import { ArrowDownRight, ArrowUpRight, Menu, X, Sprout, Sun } from "lucide-react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Menu, X, Sprout, Sun } from "lucide-react";
 
 const navItems = [
   ["Cerita Kami", "/jelajahi#cerita"],
