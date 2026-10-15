@@ -39,6 +39,7 @@ const navItems = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeFruit, setActiveFruit] = useState(0);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -110,7 +111,7 @@ export default function Home() {
         </div>
         <div className="fruit-grid">
           {fruits.map((fruit, i) => (
-            <article className="fruit-card" key={fruit.number} data-reveal>
+            <article className={activeFruit === i ? "fruit-card fruit-active" : "fruit-card"} key={fruit.number} onMouseEnter={() => setActiveFruit(i)} data-reveal>
               <div className="fruit-photo">
                 <img src={fruit.image} alt={fruit.alt} loading="lazy" />
                 <span className="fruit-number">{fruit.number}</span>
