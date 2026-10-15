@@ -35,7 +35,7 @@ export default function Home() {
           {navItems.map(([label, href]) => (
             <a href={href} key={href} onClick={closeMenu}>{label}</a>
           ))}
-          <a className="nav-cta" href="#hubungi" onClick={closeMenu}>Mari terhubung <ArrowUpRight size={15} /></a>
+          <a className="nav-cta" href="/jelajahi#hubungi" onClick={closeMenu}>Mari terhubung <ArrowUpRight size={15} /></a>
         </nav>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Tutup menu" : "Buka menu"} aria-expanded={menuOpen}>
           {menuOpen ? <X size={23} /> : <Menu size={23} />}
