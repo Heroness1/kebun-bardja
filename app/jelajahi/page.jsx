@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import TrustSection from "../components/TrustSection";
+import TrustSection from "../../components/TrustSection";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Menu, X, Sprout,
   Leaf, Sun, MapPin, Instagram, MessageCircle, CircleDot, TreeDeciduous
