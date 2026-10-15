@@ -2,14 +2,14 @@ import "./globals.css";
 import CinematicIntro from "../components/CinematicIntro";
 
 export const metadata = {
-  title: "Kebun Bardja — Tumbuh dari Alam, Dipetik dengan Hati",
+  title: "Kebun Alpukat Rancamaya — Tumbuh dari Alam, Dipetik dengan Hati",
   description:
-    "Mengenal Kebun Bardja, kebun buah yang menumbuhkan alpukat dan durian dengan perhatian pada alam, kualitas, dan proses yang berkelanjutan.",
-  applicationName: "Kebun Bardja",
-  keywords: ["Kebun Bardja", "kebun alpukat", "kebun durian", "perkebunan buah Indonesia"],
+    "Mengenal Kebun Alpukat Rancamaya, kebun alpukat yang dirawat dengan perhatian pada alam, kualitas, dan proses yang berkelanjutan.",
+  applicationName: "Kebun Alpukat Rancamaya",
+  keywords: ["Kebun Alpukat Rancamaya", "alpukat Rancamaya", "kebun alpukat", "perkebunan buah Indonesia"],
   openGraph: {
-    title: "Kebun Bardja — Tumbuh dari Alam, Dipetik dengan Hati",
-    description: "Cerita kebun, buah pilihan, dan proses yang tumbuh bersama alam.",
+    title: "Kebun Alpukat Rancamaya — Tumbuh dari Alam, Dipetik dengan Hati",
+    description: "Cerita kebun alpukat, buah pilihan, dan proses yang tumbuh bersama alam.",
     type: "website",
     locale: "id_ID"
   },
