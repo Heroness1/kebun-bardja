@@ -126,7 +126,7 @@ export default function CinematicIntro({
     return () => window.clearTimeout(timer);
   }, [phase, storageKey]);
 
-  // Lock background scrolling, support Escape and trap keyboard focus in the dialog.
+  // Lock background scrolling while the intro is visible; it cannot be skipped.
   useEffect(() => {
     if (!active) return;
 
@@ -142,7 +142,7 @@ export default function CinematicIntro({
         previousFocusRef.current.focus({ preventScroll: true });
       }
     };
-  }, [active, leave]);
+  }, [active]);
 
   if (phase === "idle" || phase === "done") return null;
 
