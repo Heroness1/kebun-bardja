@@ -184,8 +184,12 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <p className="variety-directory-note">Daftar ini masih berupa dummy untuk pengembangan website. Varietas yang benar-benar ditanam perlu dikonfirmasi.</p>
+          <p className="variety-directory-note">Daftar ini berisi contoh varietas untuk edukasi; varietas yang benar-benar ditanam di kebun perlu dikonfirmasi.</p>
         </div>
+        <a className="variety-economy-home-link" href="/potensi-ekonomi-alpukat">
+          <span><span className="section-index">BACAAN KHUSUS</span><strong>Potensi ekonomi alpukat Indonesia</strong><small>Data produksi BPS terbaru, peluang nilai tambah, dan cara membaca kelayakan usaha.</small></span>
+          <ArrowUpRight size={20} />
+        </a>
       </section>
 
       <section className="manifesto">
