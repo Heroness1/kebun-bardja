@@ -1,15 +1,55 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Leaf, Sprout } from "lucide-react";
 
 const varieties = [
-  { slug: "hass", name: "Alpukat Hass", short: "Hass", number: "01", image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=1500&q=85", intro: "Halaman pengenalan varietas Hass sebagai contoh katalog varietas alpukat Kebun Alpukat Rancamaya.", note: "Profil, karakter buah, dan informasi ketersediaan varietas ini dapat dilengkapi setelah data kebun dikonfirmasi." },
-  { slug: "miki", name: "Alpukat Miki", short: "Miki", number: "02", image: "https://images.unsplash.com/photo-1601039641847-7857b994d704?auto=format&fit=crop&w=1500&q=85", intro: "Halaman pengenalan varietas Miki sebagai contoh katalog varietas alpukat Kebun Alpukat Rancamaya.", note: "Detail karakter buah, masa panen, dan ketersediaan akan disesuaikan dengan informasi kebun yang terverifikasi." },
-  { slug: "aligator", name: "Alpukat Aligator", short: "Aligator", number: "03", image: "https://images.unsplash.com/photo-1592982537447-6f2a6a0b2f53?auto=format&fit=crop&w=1500&q=85", intro: "Halaman pengenalan varietas Aligator sebagai contoh katalog varietas alpukat Kebun Alpukat Rancamaya.", note: "Informasi ukuran, karakter buah, dan status penanaman perlu dikonfirmasi sebelum dipakai sebagai klaim komersial." },
-  { slug: "kendil", name: "Alpukat Kendil", short: "Kendil", number: "04", image: "https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?auto=format&fit=crop&w=1500&q=85", intro: "Halaman pengenalan varietas Kendil sebagai contoh katalog varietas alpukat Kebun Alpukat Rancamaya.", note: "Profil ini masih berupa dummy dan dapat diperbarui dengan foto serta spesifikasi asli dari kebun." },
-  { slug: "wina", name: "Alpukat Wina", short: "Wina", number: "05", image: "https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=1500&q=85", intro: "Halaman pengenalan varietas Wina sebagai contoh katalog varietas alpukat Kebun Alpukat Rancamaya.", note: "Deskripsi varietas dan informasi ketersediaan akan dilengkapi setelah diverifikasi oleh pengelola kebun." },
-  { slug: "pluwang", name: "Alpukat Pluwang", short: "Pluwang", number: "06", image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=1500&q=85", intro: "Halaman pengenalan varietas Pluwang sebagai contoh katalog varietas alpukat Kebun Alpukat Rancamaya.", note: "Halaman ini disiapkan sebagai struktur awal; foto, detail tanaman, dan ketersediaan perlu diganti dengan data aktual." }
+  {
+    slug: "hass", name: "Alpukat Hass", short: "Hass", number: "01",
+    image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=1500&q=85",
+    intro: "Varietas alpukat yang dikenal luas di pasar internasional karena tekstur dagingnya yang lembut dan kaya.",
+    note: "Hass umumnya berbentuk oval, memiliki kulit bertekstur agak kasar yang berubah dari hijau menjadi ungu gelap hingga kehitaman saat matang. Dagingnya berwarna hijau pucat hingga kekuningan dengan tekstur creamy dan rasa khas. Karakter tersebut membuat Hass banyak digunakan untuk sajian segar, salad, dan olahan seperti guacamole. Ciri dan mutu buah tetap dipengaruhi kematangan, kondisi tumbuh, serta penanganan pascapanen.",
+    sourceName: "California Avocado Commission — panduan varietas Hass",
+    sourceUrl: "https://californiaavocado.com/wp-content/uploads/2020/12/2020-CAC-Foodservice-Culinary-Education-Module-Lesson-2.pdf"
+  },
+  {
+    slug: "miki", name: "Alpukat Miki", short: "Miki", number: "02",
+    image: "https://images.unsplash.com/photo-1601039641847-7857b994d704?auto=format&fit=crop&w=1500&q=85",
+    intro: "Varietas lokal yang menarik untuk dibahas dalam pengembangan alpukat tropis Indonesia.",
+    note: "Dalam laporan panen BRMP Jambi pada April 2026, Miki digambarkan sebagai varietas berumur genjah. Buah yang dipanen di lokasi tersebut berbobot sekitar 400–600 gram, berdaging tebal berwarna kuning cerah, bertekstur lembut dan pulen, dengan cita rasa gurih sedikit manis. Laporan itu juga mencatat hasil per pohon berbeda menurut umur dan perawatan. Angka tersebut adalah hasil pengamatan di lokasi tersebut, bukan jaminan produktivitas untuk semua kebun.",
+    sourceName: "BRMP Jambi, 17 April 2026 — panen alpukat Miki",
+    sourceUrl: "https://jambi.brmp.pertanian.go.id/berita/sukses-panen-alpukat-miki-bukti-keseriusan-ip2mp-brmp-jambi-kembangkan-hortikultura"
+  },
+  {
+    slug: "aligator", name: "Alpukat Aligator", short: "Aligator", number: "03",
+    image: "https://images.unsplash.com/photo-1592982537447-6f2a6a0b2f53?auto=format&fit=crop&w=1500&q=85",
+    intro: "Nama varietas yang sering dikaitkan dengan buah berukuran besar dan bentuk memanjang.",
+    note: "Publikasi Jogja Benih milik Pemerintah Daerah DI Yogyakarta menyebut ciri Aligator berupa buah memanjang, kulit hijau, dan ukuran yang dapat sangat besar. Bobot aktual buah di lapangan bisa berbeda menurut bahan tanam, umur pohon, kondisi lingkungan, dan teknik budidaya. Untuk menilai potensi komersialnya, ukuran perlu diimbangi dengan mutu daging, tingkat kematangan, kerusakan saat pengiriman, dan permintaan pembeli.",
+    sourceName: "Jogja Benih — jenis alpukat unggul",
+    sourceUrl: "https://jogjabenih.jogjaprov.go.id/read/cc229c031526992d8ed99a3cc64fb0b86b0a0a33f4abf231057967662f9d5ea53300"
+  },
+  {
+    slug: "kendil", name: "Alpukat Kendil", short: "Kendil", number: "04",
+    image: "https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?auto=format&fit=crop&w=1500&q=85",
+    intro: "Varietas alpukat lokal yang tercatat dalam sumber perbenihan resmi Kementerian Pertanian.",
+    note: "Kendil tercantum dalam daftar varietas alpukat yang dikelola sebagai sumber benih oleh BRMP Buah Tropika. Buku Lapang Budidaya Alpukat dari Direktorat Buah dan Florikultura juga mencatat Kendil dengan asal Boja, Kendal, dan rentang bobot buah sekitar 900–1.150 gram. Rentang tersebut merupakan data referensi budidaya, bukan ukuran yang pasti diperoleh pada setiap panen.",
+    sourceName: "BRMP — daftar sumber benih; Buku Lapang Budidaya Alpukat (2021)",
+    sourceUrl: "https://repository.pertanian.go.id/items/3e63baa4-aee6-4230-8383-c92c80212de1"
+  },
+  {
+    slug: "wina", name: "Alpukat Wina", short: "Wina", number: "05",
+    image: "https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=1500&q=85",
+    intro: "Varietas lokal yang juga dikenal dengan nama Wina Bandungan dalam sumber perbenihan pemerintah.",
+    note: "Wina Bandungan tercantum dalam daftar sumber benih alpukat BRMP Buah Tropika. Buku Lapang Budidaya Alpukat mencatat varietas Wina dikembangkan di wilayah Bandungan, Kabupaten Semarang, dan melaporkan buah berukuran besar dengan daging tebal. Karakter yang muncul di kebun dapat berbeda, sehingga pemilihan varietas sebaiknya disertai informasi asal bibit dan pengamatan hasil di lokasi tanam.",
+    sourceName: "BRMP — daftar sumber benih; Buku Lapang Budidaya Alpukat (2021)",
+    sourceUrl: "https://repository.pertanian.go.id/items/3e63baa4-aee6-4230-8383-c92c80212de1"
+  },
+  {
+    slug: "pluwang", name: "Alpukat Pluwang", short: "Pluwang", number: "06",
+    image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=1500&q=85",
+    intro: "Varietas yang sering dipromosikan karena ukuran buahnya, tetapi klaim hasil perlu ditimbang dengan data kebun.",
+    note: "Informasi populer tentang Pluwang sering menonjolkan ukuran buah dan daging yang tebal. Namun, sumber teknis pemerintah yang kami temukan belum cukup untuk menetapkan angka baku bobot, produktivitas, atau harga jual varietas ini. Karena itu, halaman ini tidak menjanjikan hasil tertentu. Untuk keputusan usaha, minta identitas bibit, catatan panen dari penjual, serta bukti performa pada kondisi agroklimat yang serupa.",
+    sourceName: "Jogja Benih — artikel pengenalan varietas (referensi umum; bukan standar teknis)",
+    sourceUrl: "https://jogjabenih.jogjaprov.go.id/read/cc229c031526992d8ed99a3cc64fb0b86b0a0a33f4abf231057967662f9d5ea53300"
+  }
 ];
 
 export function generateStaticParams() {
@@ -22,7 +62,7 @@ export async function generateMetadata({ params }) {
   if (!item) return { title: "Varietas Alpukat | Kebun Alpukat Rancamaya" };
   return {
     title: `${item.name} | Kebun Alpukat Rancamaya`,
-    description: `Kenali ${item.name} melalui halaman katalog Kebun Alpukat Rancamaya. Informasi varietas dan ketersediaan masih dalam tahap konfirmasi.`,
+    description: `${item.name}: informasi karakter varietas, pemanfaatan, dan referensi sumber. Ketersediaan di Kebun Alpukat Rancamaya perlu dikonfirmasi.`,
     alternates: { canonical: `/alpukat/${item.slug}` },
     openGraph: { title: `${item.name} | Kebun Alpukat Rancamaya`, description: `Profil ${item.name} di katalog Kebun Alpukat Rancamaya.`, type: "website", locale: "id_ID" }
   };
@@ -57,9 +97,11 @@ export default async function VarietyPage({ params }) {
           <p className="variety-kicker">MENGENAL LEBIH DEKAT</p>
           <h2>Setiap varietas punya<br /><em>cerita pertumbuhannya.</em></h2>
           <p className="variety-body">{item.note}</p>
-          <div className="variety-notice"><Sprout size={19} /><p><strong>Catatan katalog dummy</strong><br />Nama varietas pada halaman ini merupakan contoh untuk pengembangan website. Penanaman, foto, karakter, musim panen, dan ketersediaan belum dikonfirmasi oleh pengelola Kebun Alpukat Rancamaya.</p></div>
+          <p className="variety-source">Referensi: <a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} <ArrowUpRight size={13} /></a></p>
+          <div className="variety-notice"><Sprout size={19} /><p><strong>Catatan editorial</strong><br />Konten ini menjelaskan karakter varietas berdasarkan referensi yang ditautkan, bukan bukti bahwa varietas tersebut ditanam atau tersedia di Kebun Alpukat Rancamaya. Foto ilustrasi, ketersediaan, dan hasil panen kebun perlu dikonfirmasi secara terpisah.</p></div>
         </div>
       </section>
+      <section className="variety-economic-link"><div><span className="variety-kicker">DARI KEBUN KE PASAR</span><h2>Pelajari potensi ekonomi <em>alpukat Indonesia.</em></h2><p>Lihat data produksi nasional terbaru, peluang nilai tambah, dan hal-hal yang perlu dihitung sebelum memulai usaha.</p></div><Link className="variety-button" href="/potensi-ekonomi-alpukat">Baca analisis ekonomi <ArrowRight size={16} /></Link></section>
       <section className="variety-contact">
         <span className="variety-kicker">MARI TERHUBUNG</span>
         <h2>Ingin tahu lebih lanjut<br /><em>tentang hasil kebun?</em></h2>
@@ -98,7 +140,7 @@ export default async function VarietyPage({ params }) {
         .variety-profile-main{max-width:670px}
         .variety-profile h2,.variety-more h2{font:400 clamp(36px,4.6vw,58px)/1.17 var(--serif);letter-spacing:-1px;margin:19px 0 24px}
         .variety-profile h2 em,.variety-more h2 em{color:#70886a}
-        .variety-body{font-size:13px;line-height:1.95;color:#687364;max-width:570px}
+        .variety-body{font-size:13px;line-height:1.95;color:#687364;max-width:570px}.variety-source{font-size:11px;line-height:1.8;color:#71806b;margin-top:20px}.variety-source a{display:inline-flex;align-items:center;gap:4px;text-decoration:underline;text-underline-offset:3px;color:#31583c}.variety-economic-link{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:65px 12%;background:#e1eadb}.variety-economic-link h2{font:400 clamp(30px,4vw,44px)/1.15 var(--serif);margin:13px 0}.variety-economic-link h2 em{color:#70886a;font-weight:400}.variety-economic-link p{font-size:12px;line-height:1.8;max-width:530px;color:#687364}.variety-economic-link .variety-button{flex-shrink:0;background:#183b2b;color:white}
         .variety-notice{display:flex;align-items:flex-start;gap:14px;padding:20px;margin-top:30px;background:#e1eadb;border:1px solid #d0ddc9;color:#426047}
         .variety-notice svg{flex-shrink:0;margin-top:2px}
         .variety-notice p{font-size:11px;line-height:1.8;margin:0;color:#52654f}
@@ -119,7 +161,7 @@ export default async function VarietyPage({ params }) {
         .variety-more-card svg{color:#71866a}
         .variety-footer{padding:27px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #d3ddcd}
         .variety-footer>span,.variety-footer>a:last-child{font-size:8px;letter-spacing:.1em;color:#788472}
-        @media(max-width:760px){.variety-topline{padding:0 5%;font-size:7px}.variety-topline>a{font-size:7px}.variety-header{height:72px;padding:0 5%}.variety-brand strong{font-size:17px}.variety-brand-mark{width:34px;height:34px}.variety-header-label{font-size:7px}.variety-hero{height:650px;min-height:560px;max-height:760px}.variety-hero-image{background-position:58% center}.variety-hero-content{margin-left:7%;width:86%;padding:50px 0}.variety-hero h1{font-size:clamp(43px,10vw,64px)}.variety-hero-content>p{font-size:12px}.variety-profile{grid-template-columns:1fr;gap:22px;padding:75px 7% 80px}.variety-profile h2,.variety-more h2{font-size:clamp(37px,9vw,49px)}.variety-contact{padding:70px 7%}.variety-more{padding:70px 6%}.variety-more-grid{grid-template-columns:1fr}.variety-more-card{min-height:76px}.variety-footer{align-items:flex-start;flex-direction:column;padding:25px 6%}.variety-footer>span{line-height:1.7}}
+        @media(max-width:760px){.variety-topline{padding:0 5%;font-size:7px}.variety-topline>a{font-size:7px}.variety-header{height:72px;padding:0 5%}.variety-brand strong{font-size:17px}.variety-brand-mark{width:34px;height:34px}.variety-header-label{font-size:7px}.variety-hero{height:650px;min-height:560px;max-height:760px}.variety-hero-image{background-position:58% center}.variety-hero-content{margin-left:7%;width:86%;padding:50px 0}.variety-hero h1{font-size:clamp(43px,10vw,64px)}.variety-hero-content>p{font-size:12px}.variety-profile{grid-template-columns:1fr;gap:22px;padding:75px 7% 80px}.variety-profile h2,.variety-more h2{font-size:clamp(37px,9vw,49px)}.variety-contact{padding:70px 7%}.variety-economic-link{padding:55px 7%;align-items:flex-start;flex-direction:column;gap:8px}.variety-more{padding:70px 6%}.variety-more-grid{grid-template-columns:1fr}.variety-more-card{min-height:76px}.variety-footer{align-items:flex-start;flex-direction:column;padding:25px 6%}.variety-footer>span{line-height:1.7}}
         @media(prefers-reduced-motion:reduce){.variety-button,.variety-more-card{transition:none}}
       `}</style>
     </main>
