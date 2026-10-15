@@ -3,7 +3,7 @@ import CinematicIntro from "../components/CinematicIntro";
 
 export const metadata = {
   metadataBase: new URL("https://kebun-bardja.vercel.app"),
-  title: "Kebun Alpukat Rancamaya | Alpukat, Varietas & Peluang Kebun",
+  title: "Kebun Alpukat Rancamaya | Varietas & Peluang Usaha",
   description:
     "Jelajahi Kebun Alpukat Rancamaya, kenali varietas alpukat populer, pelajari peluang usaha alpukat Indonesia, dan mulai rencanakan langkah kebun Anda.",
   applicationName: "Kebun Alpukat Rancamaya",
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "Kebun Alpukat Rancamaya",
     url: "https://kebun-bardja.vercel.app/"
   },
-  twitter: { card: "summary_large_image", title: "Kebun Alpukat Rancamaya | Alpukat & Peluang Kebun", description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya." },
+  twitter: { card: "summary_large_image", title: "Kebun Alpukat Rancamaya | Varietas & Peluang Usaha", description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya." },
   robots: { index: true, follow: true },
   icons: { icon: "/leaf.svg" }
 };
