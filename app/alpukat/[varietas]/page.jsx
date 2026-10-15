@@ -83,8 +83,8 @@ export async function generateMetadata({ params }) {
     description: item.seoDescription,
     keywords: [item.name, `${item.short} unggul`, `ciri ${item.short}`, `budidaya ${item.short}`, "varietas alpukat Indonesia", "Kebun Alpukat Rancamaya"],
     alternates: { canonical: `/alpukat/${item.slug}` },
-    openGraph: { title: item.seoTitle, description: item.seoDescription, type: "article", locale: "id_ID", siteName: "Kebun Alpukat Rancamaya", url: `https://kebun-bardja.vercel.app/alpukat/${item.slug}` },
-    twitter: { card: "summary_large_image", title: item.seoTitle, description: item.seoDescription },
+    openGraph: { title: item.seoTitle, description: item.seoDescription, type: "article", locale: "id_ID", siteName: "Kebun Alpukat Rancamaya", url: `https://kebun-bardja.vercel.app/alpukat/${item.slug}`, images: [{ url: item.image, alt: `${item.name} — foto ilustrasi varietas alpukat` }] },
+    twitter: { card: "summary_large_image", title: item.seoTitle, description: item.seoDescription, images: [item.image] },
     robots: { index: true, follow: true }
   };
 }
