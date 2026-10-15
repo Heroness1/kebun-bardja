@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import TrustSection from "../components/TrustSection";
+import FallingLeaves from "../components/FallingLeaves";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Menu, X, Sprout,
   Leaf, Sun, MapPin, Instagram, MessageCircle, CircleDot, TreeDeciduous
@@ -90,6 +91,7 @@ export default function Home() {
           </video>
           <div className="hero-image-shade" />
         </div>
+        <FallingLeaves />
         <div className="hero-content">
           <motion.div
             className="eyebrow light-eyebrow"
