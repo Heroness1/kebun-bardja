@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import TrustSection from "../../components/TrustSection";
 import { StorySlide, HarvestSlide, VarietySlide, ManifestoSlide, ProcessSlide, ContactSlide, GalleryFooter } from "../../components/gallery/GallerySlides";
 import {
