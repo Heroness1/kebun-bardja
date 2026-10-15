@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import TrustSection from "../../components/TrustSection";
 import {
@@ -41,6 +41,8 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFruit, setActiveFruit] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
+  const gestureStartY = useRef(null);
+  const navigationLocked = useRef(false);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -71,11 +73,53 @@ export default function Home() {
       });
     }, { threshold: [0.45, 0.65] });
     slides.forEach((slide) => observer.observe(slide));
+    const goAdjacent = (direction) => {
+      if (navigationLocked.current) return;
+      const currentSlides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
+      const current = Math.max(0, currentSlides.findIndex((slide) => {
+        const rect = slide.getBoundingClientRect();
+        return rect.top >= -window.innerHeight * 0.45 && rect.top < window.innerHeight * 0.55;
+      }));
+      const next = Math.max(0, Math.min(currentSlides.length - 1, current + direction));
+      if (next === current) return;
+      navigationLocked.current = true;
+      currentSlides[next]?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
+      setActiveSlide(next);
+      window.setTimeout(() => { navigationLocked.current = false; }, 750);
+    };
+    const onWheel = (event) => {
+      if (Math.abs(event.deltaY) < 12) return;
+      event.preventDefault();
+      goAdjacent(event.deltaY > 0 ? 1 : -1);
+    };
+    const onTouchStart = (event) => { gestureStartY.current = event.touches[0]?.clientY ?? null; };
+    const onTouchMove = (event) => { if (gestureStartY.current !== null) event.preventDefault(); };
+    const onTouchEnd = (event) => {
+      if (gestureStartY.current === null) return;
+      const endY = event.changedTouches[0]?.clientY ?? gestureStartY.current;
+      const delta = gestureStartY.current - endY;
+      gestureStartY.current = null;
+      if (Math.abs(delta) > 45) goAdjacent(delta > 0 ? 1 : -1);
+    };
+    const onKeyDown = (event) => {
+      if (["ArrowDown", "PageDown"].includes(event.key)) { event.preventDefault(); goAdjacent(1); }
+      if (["ArrowUp", "PageUp"].includes(event.key)) { event.preventDefault(); goAdjacent(-1); }
+    };
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("keydown", onKeyDown);
     return () => {
       observer.disconnect();
       root.classList.remove("gallery-mode");
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("keydown", onKeyDown);
     };
-  }, []);
+  }, [shouldReduceMotion]);
 
   const goToSlide = (direction) => {
     const slides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
