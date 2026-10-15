@@ -1,5 +1,6 @@
 import "./globals.css";
 import CinematicIntro from "../components/CinematicIntro";
+import NatureAudio from "../components/NatureAudio";
 
 export const metadata = {
   metadataBase: new URL("https://kebun-bardja.vercel.app"),
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
       <body>
         <CinematicIntro />
         {children}
+        <NatureAudio />
       </body>
     </html>
   );
