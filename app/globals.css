@@ -490,3 +490,13 @@ html.gallery-mode body{overscroll-behavior-y:contain}
   html.gallery-mode{scroll-behavior:auto}
   .gallery-dot{transition:none}
 }
+
+
+/* Gallery layout overrides: preserve each section's intended composition. */
+.gallery-slide#cerita{display:grid}
+.gallery-slide#hubungi{display:grid;grid-template-columns:1.05fr .95fr}
+.gallery-controls{left:50%;right:auto;bottom:74px;transform:translateX(-50%)}
+@media(max-width:760px){
+  .gallery-slide#hubungi{display:grid;grid-template-columns:1fr}
+  .gallery-controls{left:50%;right:auto;bottom:64px;transform:translateX(-50%)}
+}
