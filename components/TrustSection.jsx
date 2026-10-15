@@ -19,7 +19,7 @@ const principles = [
     icon: MessageCircle,
     number: "03",
     title: "Bertanya sebelum memilih",
-    body: "Belum yakin buah mana yang sesuai? Hubungi Kebun Bardja untuk mendiskusikan kebutuhan Anda."
+    body: "Belum yakin buah mana yang sesuai? Hubungi Kebun Alpukat Rancamaya untuk mendiskusikan kebutuhan Anda."
   }
 ];
 
@@ -28,14 +28,14 @@ export default function TrustSection() {
     <section className="trust-section" id="kepercayaan" aria-labelledby="trust-title">
       <div className="trust-inner">
         <div className="trust-heading">
-          <span className="section-index">PANDUAN MEMILIH · KEBUN BARDJA</span>
+          <span className="section-index">PANDUAN MEMILIH · KEBUN ALPUKAT RANCAMAYA</span>
           <h2 id="trust-title">Kepercayaan tumbuh<br /><em>dari keterbukaan.</em></h2>
           <p>Buah adalah hasil dari proses yang tidak selalu sama setiap musim. Karena itu, informasi yang jelas dan komunikasi langsung menjadi bagian penting sebelum Anda memilih.</p>
-          <a className="trust-contact" href="https://wa.me/?text=Halo%20Kebun%20Bardja%2C%20saya%20ingin%20bertanya%20tentang%20ketersediaan%20buah." target="_blank" rel="noreferrer">
+          <a className="trust-contact" href="https://wa.me/?text=Halo%20Kebun%20Alpukat%20Rancamaya%2C%20saya%20ingin%20bertanya%20tentang%20ketersediaan%20buah." target="_blank" rel="noreferrer">
             Tanyakan ketersediaan <ArrowUpRight size={16} />
           </a>
         </div>
-        <div className="profile-facts" aria-label="Ringkasan profil Kebun Bardja">
+        <div className="profile-facts" aria-label="Ringkasan profil Kebun Alpukat Rancamaya">
           <div><span>FOKUS HASIL KEBUN</span><strong>Alpukat &amp; durian</strong></div>
           <div><span>INFORMASI PANEN</span><strong>Dikonfirmasi per musim</strong></div>
           <div><span>PRINSIP KAMI</span><strong>Terbuka dan apa adanya</strong></div>
