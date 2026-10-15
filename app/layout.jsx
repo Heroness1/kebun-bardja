@@ -1,4 +1,5 @@
 import "./globals.css";
+import CinematicIntro from "../components/CinematicIntro";
 
 export const metadata = {
   title: "Kebun Bardja — Tumbuh dari Alam, Dipetik dengan Hati",
@@ -25,7 +26,10 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body>{children}</body>
+      <body>
+        <CinematicIntro />
+        {children}
+      </body>
     </html>
   );
 }
