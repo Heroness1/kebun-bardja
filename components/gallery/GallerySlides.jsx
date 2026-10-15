@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, Sprout, Leaf, Sun, MessageCircle, TreeDeciduous } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 
 const fruits = [
   {
