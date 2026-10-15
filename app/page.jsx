@@ -178,7 +178,7 @@ export default function Home() {
           <span className="section-index light-index">05 / MARI TERHUBUNG</span>
           <h2>Punya cerita<br />atau rencana <em>bersama?</em></h2>
           <p>Untuk informasi hasil kebun, peluang kerja sama, atau sekadar ingin mengenal Kebun Alpukat Rancamaya lebih dekat, kami terbuka untuk berbincang.</p>
-          <a className="button button-light contact-button" href="https://wa.me/?text=Halo%20Kebun%20Bardja%2C%20saya%20ingin%20bertanya%20tentang%20kebun%20dan%20hasil%20buahnya." target="_blank" rel="noreferrer"><MessageCircle size={17} /> Hubungi melalui WhatsApp <ArrowUpRight size={16} /></a>
+          <a className="button button-light contact-button" href="https://wa.me/?text=Halo%20Kebun%20Alpukat%20Rancamaya%2C%20saya%20ingin%20bertanya%20tentang%20kebun%20dan%20hasil%20buahnya." target="_blank" rel="noreferrer"><MessageCircle size={17} /> Hubungi melalui WhatsApp <ArrowUpRight size={16} /></a>
           <small className="contact-disclaimer">Tautan WhatsApp akan membuka percakapan. Nomor resmi dapat ditambahkan saat informasi kontak tersedia.</small>
         </div>
         <div className="contact-art">
