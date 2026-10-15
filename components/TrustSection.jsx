@@ -58,7 +58,7 @@ export default function TrustSection() {
         </div>
       </div>
       <style jsx>{`
-        .trust-section{background:#f8f7f0;padding:104px 10.1% 100px;color:#202c22}
+        .trust-section{background:#edf2e8;padding:88px 10.1% 84px;color:#202c22}
         .trust-inner{max-width:1240px;margin:0 auto}
         .trust-heading{display:grid;grid-template-columns:1fr 1fr;column-gap:55px;align-items:end}
         .section-index{grid-column:1/-1;font-family:var(--sans);font-size:9px;letter-spacing:.2em;color:#6f7e68;margin-bottom:23px}
@@ -78,11 +78,11 @@ export default function TrustSection() {
         .trust-number{font-family:var(--serif);font-size:15px;color:#899482}
         .trust-principle h3{font-family:var(--serif);font-size:22px;font-weight:400;margin:0 0 11px}
         .trust-principle p{font-family:var(--sans);font-size:11px;line-height:1.9;color:#737b6d;margin:0;max-width:290px}
-        .trust-note{display:flex;gap:13px;align-items:flex-start;background:#eeeee5;margin-top:45px;padding:20px 22px}
+        .trust-note{display:flex;gap:13px;align-items:flex-start;background:#e2ebdc;margin-top:45px;padding:20px 22px}
         .trust-note-icon{flex-shrink:0;color:#587653;padding-top:2px}
         .trust-note p{font-family:var(--sans);font-size:10px;line-height:1.9;color:#697063;margin:0}
         .trust-note strong{color:#263d2b;font-weight:600}
-        @media(max-width:760px){.trust-section{padding:76px 6% 78px}.trust-heading{grid-template-columns:1fr;gap:18px}.section-index{margin-bottom:0}.trust-heading>p{font-size:12px;max-width:500px}.trust-contact{margin-top:2px}.profile-facts{grid-template-columns:1fr;gap:15px;margin-top:30px;padding:18px 0}.profile-facts>div{gap:5px}.profile-facts strong{font-size:17px}.trust-principles{grid-template-columns:1fr;gap:24px;margin-top:35px}.trust-principle{padding-top:18px}.trust-principle-top{margin-bottom:17px}.trust-principle h3{font-size:21px}.trust-principle p{font-size:11px;max-width:440px}.trust-note{margin-top:33px;padding:17px 15px}}
+        @media(max-width:760px){.trust-section{padding:64px 6% 66px}.trust-heading{grid-template-columns:1fr;gap:18px}.section-index{margin-bottom:0}.trust-heading>p{font-size:12px;max-width:500px}.trust-contact{margin-top:2px}.profile-facts{grid-template-columns:1fr;gap:15px;margin-top:30px;padding:18px 0}.profile-facts>div{gap:5px}.profile-facts strong{font-size:17px}.trust-principles{grid-template-columns:1fr;gap:24px;margin-top:35px}.trust-principle{padding-top:18px}.trust-principle-top{margin-bottom:17px}.trust-principle h3{font-size:21px}.trust-principle p{font-size:11px;max-width:440px}.trust-note{margin-top:33px;padding:17px 15px}}
         @media(prefers-reduced-motion:reduce){.trust-contact svg{transition:none}}
       `}</style>
     </section>
