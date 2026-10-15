@@ -15,9 +15,10 @@ export const metadata = {
     type: "website",
     locale: "id_ID",
     siteName: "Kebun Alpukat Rancamaya",
-    url: "https://kebun-bardja.vercel.app/"
+    url: "https://kebun-bardja.vercel.app/",
+    images: [{ url: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85", width: 1200, height: 630, alt: "Suasana hijau alami untuk Kebun Alpukat Rancamaya" }]
   },
-  twitter: { card: "summary_large_image", title: "Kebun Alpukat Rancamaya | Varietas & Peluang Usaha", description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya." },
+  twitter: { card: "summary_large_image", title: "Kebun Alpukat Rancamaya | Varietas & Peluang Usaha", description: "Kenali varietas alpukat dan peluang usaha dari Kebun Alpukat Rancamaya.", images: ["https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85"] },
   robots: { index: true, follow: true },
   icons: { icon: "/leaf.svg" }
 };
