@@ -184,7 +184,7 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="manifesto">
+      <section className="manifesto gallery-slide" data-gallery-slide>
         <div className="manifesto-image" role="img" aria-label="Suasana hijau alami di bawah kanopi pepohonan">
           <div className="manifesto-image-overlay" />
         </div>
@@ -229,6 +229,21 @@ export default function Home() {
         <p>Dirawat dengan hati. Tumbuh bersama alam.</p>
         <div className="footer-meta"><span>© {new Date().getFullYear()} KEBUN ALPUKAT RANCAMAYA</span><a href="#jelajahi-top">KEMBALI KE ATAS <ArrowUpRight size={13} /></a></div>
       </footer>
+
+      <nav className="gallery-controls" aria-label="Navigasi galeri kebun">
+        <span className="gallery-counter">{String(activeSlide + 1).padStart(2, "0")} <i>/</i> 08</span>
+        <div className="gallery-dots" aria-label="Pilih halaman galeri">
+          {Array.from({ length: 8 }, (_, index) => index).map((index) => (
+            <button key={index} className={activeSlide === index ? "gallery-dot gallery-dot-active" : "gallery-dot"} onClick={() => {
+              const slides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
+              slides[index]?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
+              setActiveSlide(index);
+            }} aria-label={`Buka halaman ${index + 1}`} aria-current={activeSlide === index ? "step" : undefined} />
+          ))}
+        </div>
+        <button className="gallery-arrow" onClick={() => goToSlide(-1)} disabled={activeSlide === 0} aria-label="Halaman sebelumnya"><ChevronLeft size={18} /></button>
+        <button className="gallery-arrow gallery-next" onClick={() => goToSlide(1)} disabled={activeSlide >= 7} aria-label="Halaman berikutnya"><ChevronRight size={18} /></button>
+      </nav>
     </main>
   );
 }
