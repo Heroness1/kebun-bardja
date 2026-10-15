@@ -5,7 +5,7 @@ import { useReducedMotion } from "framer-motion";
 import TrustSection from "../../components/TrustSection";
 import { StorySlide, HarvestSlide, VarietySlide, ManifestoSlide, ProcessSlide, ContactSlide, GalleryFooter } from "../../components/gallery/GallerySlides";
 import {
-  ArrowUpRight, ChevronLeft, Menu, X, Sprout
+  ArrowUpRight, Menu, X, Sprout
 } from "lucide-react";
 
 const navItems = [
@@ -19,7 +19,6 @@ const navItems = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFruit, setActiveFruit] = useState(0);
-  const [activeSlide, setActiveSlide] = useState(0);
   const gestureStartY = useRef(null);
   const navigationLocked = useRef(false);
   const shouldReduceMotion = useReducedMotion();
@@ -42,16 +41,6 @@ export default function Home() {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.add("gallery-mode");
-    const slides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
-          const index = slides.indexOf(entry.target);
-          if (index >= 0) setActiveSlide(index);
-        }
-      });
-    }, { threshold: [0.45, 0.65] });
-    slides.forEach((slide) => observer.observe(slide));
     const goAdjacent = (direction) => {
       if (navigationLocked.current) return;
       const currentSlides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
@@ -63,7 +52,6 @@ export default function Home() {
       if (next === current) return;
       navigationLocked.current = true;
       currentSlides[next]?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
-      setActiveSlide(next);
       window.setTimeout(() => { navigationLocked.current = false; }, 750);
     };
     const onWheel = (event) => {
@@ -90,7 +78,6 @@ export default function Home() {
     window.addEventListener("touchend", onTouchEnd, { passive: true });
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      observer.disconnect();
       root.classList.remove("gallery-mode");
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
@@ -99,13 +86,6 @@ export default function Home() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [shouldReduceMotion]);
-
-  const goToSlide = (direction) => {
-    const slides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
-    const next = Math.max(0, Math.min(slides.length - 1, activeSlide + direction));
-    slides[next]?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
-    setActiveSlide(next);
-  };
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -148,20 +128,6 @@ export default function Home() {
       <ContactSlide />
 
       <GalleryFooter />
-
-      <nav className="gallery-controls" aria-label="Navigasi galeri kebun">
-        <span className="gallery-counter">{String(activeSlide + 1).padStart(2, "0")} <i>/</i> 08</span>
-        <div className="gallery-dots" aria-label="Pilih halaman galeri">
-          {Array.from({ length: 8 }, (_, index) => index).map((index) => (
-            <button key={index} className={activeSlide === index ? "gallery-dot gallery-dot-active" : "gallery-dot"} onClick={() => {
-              const slides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
-              slides[index]?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
-              setActiveSlide(index);
-            }} aria-label={`Buka halaman ${index + 1}`} aria-current={activeSlide === index ? "step" : undefined} />
-          ))}
-        </div>
-        <button className="gallery-arrow" onClick={() => goToSlide(-1)} disabled={activeSlide === 0} aria-label="Halaman sebelumnya"><ChevronLeft size={18} /></button>
-      </nav>
     </main>
   );
 }
