@@ -47,7 +47,6 @@ export default function CinematicIntro({
   const [phase, setPhase] = useState("idle");
   const rootRef = useRef(null);
   const countRef = useRef(null);
-  const skipRef = useRef(null);
   const previousFocusRef = useRef(null);
 
   const words = useMemo(() => {
@@ -137,44 +136,13 @@ export default function CinematicIntro({
       document.activeElement instanceof HTMLElement ? document.activeElement : null;
     root.style.overflow = "hidden";
 
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        leave();
-        return;
-      }
-
-      if (event.key !== "Tab") return;
-      const focusable = rootRef.current?.querySelectorAll(
-        'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      );
-      if (!focusable?.length) return;
-
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-
-    window.addEventListener("keydown", onKeyDown);
     return () => {
       root.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
       if (previousFocusRef.current?.isConnected) {
         previousFocusRef.current.focus({ preventScroll: true });
       }
     };
   }, [active, leave]);
-
-  useEffect(() => {
-    if (phase === "playing") skipRef.current?.focus({ preventScroll: true });
-  }, [phase]);
 
   if (phase === "idle" || phase === "done") return null;
 
@@ -253,15 +221,6 @@ export default function CinematicIntro({
         <span className="kb-intro__progress" aria-hidden="true">
           <i />
         </span>
-        <button
-          ref={skipRef}
-          type="button"
-          className="kb-intro__skip"
-          onClick={leave}
-          aria-label="Lewati intro"
-        >
-          SKIP INTRO <span aria-hidden="true">↗</span>
-        </button>
       </div>
     </div>
   );
