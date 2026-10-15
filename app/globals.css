@@ -349,14 +349,14 @@ body,.site-header,.footer{background:#edf2e8}
 .hero-content,.hero-bottom,.hero-stamp{z-index:2}
 @keyframes leaf-fall{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(var(--leaf-rotate))}9%{opacity:.72}76%{opacity:.65}100%{opacity:0;transform:translate3d(var(--leaf-drift),115vh,0) rotate(calc(var(--leaf-rotate) + 260deg))}}
 @keyframes leaf-flutter{from{transform:rotate(-13deg) translateX(-3px)}to{transform:rotate(17deg) translateX(4px)}}
-.nature-audio{position:fixed;left:18px;right:auto;bottom:18px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:5px;max-width:calc(100vw - 24px);font-family:var(--sans)}
+.nature-audio{position:fixed;right:18px;left:auto;bottom:18px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:5px;max-width:calc(100vw - 24px);font-family:var(--sans)}
 .nature-audio-toggle{display:flex;align-items:center;justify-content:center;gap:10px;min-height:45px;padding:0 15px;border:1px solid rgba(219,231,210,.75);border-radius:999px;background:rgba(20,55,38,.94);color:#f1f4ec;box-shadow:0 8px 28px rgba(15,42,27,.2);backdrop-filter:blur(12px);font-size:11px;cursor:pointer;transition:transform .2s,background .2s}
 .nature-audio-toggle:hover{transform:translateY(-2px);background:#28543a}
 .nature-audio-toggle:focus-visible{outline:2px solid #b9d2a9;outline-offset:3px}
 .nature-audio-credit{display:flex;align-items:center;gap:4px;padding:4px 9px;border-radius:99px;background:rgba(237,242,232,.94);color:#5d6f58;font-size:9px}
 .nature-audio-error{max-width:260px;margin:0;padding:8px 10px;border-radius:8px;background:#fff8eb;color:#684b22;font-size:10px;line-height:1.6}
 .nature-audio-error a{text-decoration:underline;text-underline-offset:2px}
-@media(max-width:760px){.falling-leaf:nth-child(n+8){display:none}.nature-audio{left:12px;right:auto;bottom:12px}.nature-audio-toggle{min-height:42px;padding:0 12px;gap:8px}.nature-audio-credit{font-size:8px}}
+@media(max-width:760px){.falling-leaf:nth-child(n+8){display:none}.nature-audio{right:12px;left:auto;bottom:12px}.nature-audio-toggle{min-height:42px;padding:0 12px;gap:8px}.nature-audio-credit{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.falling-leaves{display:none}.nature-audio-toggle{transition:none}}
 
 
