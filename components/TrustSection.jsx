@@ -117,9 +117,9 @@ export default function TrustSection() {
           min-height: 100svh;
           height: auto;
           justify-content: center;
-          overflow: visible;
+          overflow: visible !important;
           padding: clamp(54px, 8vh, 90px) 10.1%;
-          background: #edf2e8;
+          background: #edf2e8 !important;
           color: #203326;
         }
 
