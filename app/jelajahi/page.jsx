@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import TrustSection from "../../components/TrustSection";
 import {
-  ArrowDownRight, ArrowRight, ArrowUpRight, Menu, X, Sprout,
+  ArrowDownRight, ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Menu, X, Sprout,
   Leaf, Sun, MapPin, Instagram, MessageCircle, CircleDot, TreeDeciduous
 } from "lucide-react";
 
@@ -40,6 +40,7 @@ const navItems = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFruit, setActiveFruit] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -56,6 +57,32 @@ export default function Home() {
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.add("gallery-mode");
+    const slides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+          const index = slides.indexOf(entry.target);
+          if (index >= 0) setActiveSlide(index);
+        }
+      });
+    }, { threshold: [0.45, 0.65] });
+    slides.forEach((slide) => observer.observe(slide));
+    return () => {
+      observer.disconnect();
+      root.classList.remove("gallery-mode");
+    };
+  }, []);
+
+  const goToSlide = (direction) => {
+    const slides = Array.from(document.querySelectorAll("[data-gallery-slide]"));
+    const next = Math.max(0, Math.min(slides.length - 1, activeSlide + direction));
+    slides[next]?.scrollIntoView({ behavior: shouldReduceMotion ? "auto" : "smooth", block: "start" });
+    setActiveSlide(next);
+  };
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -83,7 +110,7 @@ export default function Home() {
         </button>
       </header>
 
-      <section className="intro section-pad" id="cerita">
+      <section className="intro section-pad gallery-slide" id="cerita" data-gallery-slide>
         <div className="intro-label reveal" data-reveal>
           <span className="section-index">01 / CERITA KAMI</span>
           <span className="vertical-note">AKAR YANG MENJAGA</span>
@@ -104,7 +131,7 @@ export default function Home() {
 
       <TrustSection />
 
-      <section className="fruit-section section-pad" id="hasil-kebun">
+      <section className="fruit-section section-pad gallery-slide" id="hasil-kebun" data-gallery-slide>
         <div className="section-heading reveal" data-reveal>
           <div><span className="section-index">02 / HASIL KEBUN</span><h2>Yang tumbuh<br /><em>dengan baik.</em></h2></div>
           <p className="heading-aside">Mengenal hasil kebun kami.<br />Dirawat dengan perhatian,<br />menunggu waktu yang tepat.</p>
@@ -126,6 +153,13 @@ export default function Home() {
           ))}
         </div>
         <div className="fruit-footnote"><Sprout size={16} /><span>Musim, ketersediaan, dan varietas dapat berbeda. Hubungi kami untuk informasi terbaru.</span></div>
+      </section>
+
+      <section className="variety-catalog-slide section-pad gallery-slide" id="katalog-varietas" data-gallery-slide>
+        <div className="section-heading reveal" data-reveal>
+          <div><span className="section-index">03 / KATALOG VARIETAS</span><h2>Kenali pilihan<br /><em>alpukat lebih dekat.</em></h2></div>
+          <p className="heading-aside">Buka halaman varietas untuk<br />membaca informasi lebih lengkap.</p>
+        </div>
         <div className="variety-directory">
           <div className="variety-directory-heading"><span className="section-index">KATALOG VARIETAS</span><p>Jelajahi halaman tiap varietas alpukat.</p></div>
           <div className="variety-directory-grid">
@@ -164,7 +198,7 @@ export default function Home() {
         <div className="manifesto-index">GROW AT NATURE'S PACE · KAR</div>
       </section>
 
-      <section className="process section-pad" id="proses">
+      <section className="process section-pad gallery-slide" id="proses" data-gallery-slide>
         <div className="process-top reveal" data-reveal>
           <div><span className="section-index">04 / DARI WAKTU KE WAKTU</span><h2>Proses yang<br /><em>punya arti.</em></h2></div>
           <p className="body-copy">Buah yang baik berawal dari perhatian pada hal-hal kecil. Inilah prinsip yang ingin kami bawa dalam setiap langkah.</p>
@@ -176,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section" id="hubungi">
+      <section className="contact-section gallery-slide" id="hubungi" data-gallery-slide>
         <div className="contact-text reveal" data-reveal>
           <span className="section-index light-index">05 / MARI TERHUBUNG</span>
           <h2>Punya cerita<br />atau rencana <em>bersama?</em></h2>
@@ -190,7 +224,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="footer">
+      <footer className="footer gallery-slide" data-gallery-slide>
         <a className="brand footer-brand" href="#jelajahi-top"><span className="brand-mark"><Sprout size={23} strokeWidth={1.6} /></span><span className="brand-copy"><strong>kebun alpukat rancamaya</strong><small>GROWN WITH CARE</small></span></a>
         <p>Dirawat dengan hati. Tumbuh bersama alam.</p>
         <div className="footer-meta"><span>© {new Date().getFullYear()} KEBUN ALPUKAT RANCAMAYA</span><a href="#jelajahi-top">KEMBALI KE ATAS <ArrowUpRight size={13} /></a></div>
