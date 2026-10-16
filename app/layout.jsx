@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./cinematic-nature.css";
 import CinematicIntro from "../components/CinematicIntro";
 import NatureAudio from "../components/NatureAudio";
 
