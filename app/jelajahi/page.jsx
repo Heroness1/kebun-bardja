@@ -212,7 +212,7 @@ export default function Home() {
       <ContactSlide />
       <GalleryFooter />
 
-      <nav className="gallery-progress" aria-label="Navigasi bagian galeri">
+      <nav className="gallery-progress" data-active={activeSlide} aria-label="Navigasi bagian galeri">
         {galleryLabels.map((label, index) => (
           <button
             key={label}
