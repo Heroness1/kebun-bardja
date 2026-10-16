@@ -1,0 +1,162 @@
+/* Navigation refinement: clearer spacing, touch targets, and a quieter section navigator. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-width: 0;
+  gap: clamp(16px, 2vw, 32px);
+  box-shadow: 0 8px 24px rgba(16, 45, 34, 0.035);
+}
+
+.nav-links {
+  min-width: 0;
+  gap: clamp(12px, 1.55vw, 25px);
+  font-size: clamp(10px, 0.82vw, 12px);
+}
+
+.nav-links > a {
+  white-space: nowrap;
+}
+
+.nav-cta {
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 11px 14px;
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  transition: background .2s ease, color .2s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  background: #dfe9d9;
+  outline-offset: 3px;
+}
+
+.gallery-progress {
+  gap: 7px;
+  padding: 10px 8px;
+  border-color: rgba(222, 232, 213, .24);
+  background: rgba(5, 18, 10, .76);
+}
+
+.gallery-progress button {
+  width: 22px;
+  height: 22px;
+}
+
+.gallery-progress button span {
+  width: 5px;
+  height: 5px;
+}
+
+.gallery-progress button[aria-current="step"] span {
+  width: 7px;
+  height: 7px;
+}
+
+@media (max-width: 1000px) and (min-width: 761px) {
+  .site-header {
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+    gap: 14px;
+  }
+
+  .brand-copy strong {
+    font-size: clamp(17px, 2vw, 20px);
+  }
+
+  .nav-links {
+    gap: clamp(9px, 1.2vw, 15px);
+    font-size: 10px;
+  }
+
+  .nav-cta {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    padding-left: 5%;
+    padding-right: 4%;
+  }
+
+  .nav-links {
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    gap: 0;
+    max-height: calc(100svh - 105px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 10px 6% 22px;
+    border-top: 1px solid rgba(32, 51, 38, .07);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 18px 32px rgba(16, 45, 34, .12);
+  }
+
+  .nav-links > a:not(.nav-cta) {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 2px;
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    min-height: 46px;
+    margin-top: 14px;
+    padding: 0 15px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  .gallery-progress {
+    right: 50%;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    gap: 4px;
+    padding: 7px 9px;
+    border-radius: 999px;
+    max-width: calc(100vw - 28px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+  }
+
+  .gallery-progress button {
+    width: 19px;
+    height: 20px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand-copy strong {
+    font-size: 18px;
+  }
+
+  .brand-copy small {
+    font-size: 7px;
+  }
+
+  .gallery-progress {
+    gap: 2px;
+    padding: 6px 7px;
+  }
+
+  .gallery-progress button {
+    width: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle {
+    transition: none;
+  }
+}
