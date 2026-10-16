@@ -1,3 +1,5 @@
+"use client";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Sprout, Leaf, Sun, MessageCircle, TreeDeciduous } from "lucide-react";
 
 const fruits = [
@@ -122,11 +124,6 @@ export function ManifestoSlide() {
           </section>
   );
 }
-
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-import { Sprout, Sun, TreeDeciduous } from "lucide-react";
 
 const PROCESS_EASE = [0.22, 1, 0.36, 1];
 
