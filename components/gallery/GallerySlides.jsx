@@ -241,8 +241,8 @@ export function ProcessSlide() {
           <motion.span
             className="proc-line"
             aria-hidden="true"
-            initial={{ scaleX: 0, opacity: 0 }}
-            whileInView={{ scaleX: 1, opacity: 1 }}
+            initial={{ scaleX: 0, scaleY: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, scaleY: 1, opacity: 1 }}
             viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: reduce ? 0 : 1.3, ease: PROCESS_EASE }}
           />
