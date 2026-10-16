@@ -59,7 +59,6 @@ body { background: #f3f3eb; }
 .hero-bottom > a { transition: transform .35s var(--cinema-ease), background .25s ease; }
 .hero-bottom > a:hover { transform: translateY(4px); }
 
-.falling-leaf { animation-duration: calc(var(--leaf-duration) * 1.12); }
 .falling-leaf svg { transform-origin: center; }
 .falling-leaves { mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%); }
 
