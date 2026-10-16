@@ -123,19 +123,459 @@ export function ManifestoSlide() {
   );
 }
 
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { Sprout, Sun, TreeDeciduous } from "lucide-react";
+
+const PROCESS_EASE = [0.22, 1, 0.36, 1];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Merawat",
+    subtitle: "CARE COMES FIRST",
+    description:
+      "Perjalanan kebun dimulai dari perhatian pada pohon dan lingkungan tempatnya tumbuh.",
+    icon: Sprout,
+    idle: { rotate: [-5, 5, -5], duration: 4.5, origin: "50% 100%" },
+  },
+  {
+    number: "02",
+    title: "Menunggu",
+    subtitle: "GROW AT ITS OWN PACE",
+    description:
+      "Setiap buah membutuhkan waktu. Kami menghargai proses alami dan perubahan musim.",
+    icon: Sun,
+    idle: { rotate: 360, duration: 28, origin: "50% 50%", linear: true },
+  },
+  {
+    number: "03",
+    title: "Menjaga",
+    subtitle: "ROOTED IN NATURE",
+    description:
+      "Menjaga kebun berarti ikut merawat ruang hidup yang akan terus tumbuh dari musim ke musim.",
+    icon: TreeDeciduous,
+    idle: { rotate: [-3, 3, -3], duration: 5.5, origin: "50% 100%" },
+  },
+];
+
 export function ProcessSlide() {
+  const reduce = useReducedMotion();
+  const rise = {
+    hidden: { opacity: reduce ? 1 : 0, y: reduce ? 0 : 22 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: reduce ? 0 : 0.75, ease: PROCESS_EASE },
+    },
+  };
+  const group = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: reduce ? 0 : 0.12,
+        delayChildren: reduce ? 0 : 0.12,
+      },
+    },
+  };
+
   return (
-    <section className="process section-pad gallery-slide" id="proses" data-gallery-slide>
-            <div className="process-top reveal" data-reveal>
-              <div><span className="section-index">04 / DARI WAKTU KE WAKTU</span><h2>Proses yang<br /><em>punya arti.</em></h2></div>
-              <p className="body-copy">Buah yang baik berawal dari perhatian pada hal-hal kecil. Inilah prinsip yang ingin kami bawa dalam setiap langkah.</p>
-            </div>
-            <div className="process-list">
-              <div className="process-row reveal" data-reveal><span className="process-num">01</span><div className="process-icon"><Sprout size={23} /></div><div className="process-copy"><h3>Merawat</h3><p>Memberi perhatian pada pohon dan lingkungan tempatnya tumbuh.</p></div><span className="process-side">CARE</span></div>
-              <div className="process-row reveal" data-reveal><span className="process-num">02</span><div className="process-icon"><Sun size={23} /></div><div className="process-copy"><h3>Menunggu</h3><p>Menghormati musim dan waktu alami, bukan sekadar mengejar cepat.</p></div><span className="process-side">PATIENCE</span></div>
-              <div className="process-row reveal" data-reveal><span className="process-num">03</span><div className="process-icon"><TreeDeciduous size={23} /></div><div className="process-copy"><h3>Menjaga</h3><p>Terus belajar agar kebun tetap menjadi ruang hidup yang berharga.</p></div><span className="process-side">RESPECT</span></div>
-            </div>
-          </section>
+    <section
+      className="proc-slide gallery-slide"
+      id="proses"
+      data-gallery-slide
+      aria-labelledby="proses-title"
+    >
+      <div className="proc-photo-panel">
+        <img
+          className="proc-photo"
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=88"
+          alt="Hamparan kebun hijau di bawah cahaya matahari"
+          loading="lazy"
+        />
+        <div className="proc-photo-shade" />
+        <motion.div
+          className="proc-photo-frame"
+          aria-hidden="true"
+          animate={reduce ? undefined : { rotate: [0, 1.2, 0, -1.2, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div className="proc-photo-stamp" variants={rise}>
+          <Sprout size={20} strokeWidth={1.25} />
+          <span>DITUMBUHKAN DENGAN SABAR</span>
+        </motion.div>
+        <div className="proc-photo-caption">
+          <span>KEBUN ALPUKAT RANCAMAYA</span>
+          <span>MALANGBONG · JAWA BARAT</span>
+        </div>
+      </div>
+
+      <div className="proc-content">
+        <motion.div
+          className="proc-heading"
+          variants={group}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.35 }}
+        >
+          <motion.span className="proc-index" variants={rise}>
+            CERITA DI BALIK PERTUMBUHAN
+          </motion.span>
+          <motion.h2 id="proses-title" variants={rise}>
+            Proses yang
+            <br />
+            <em>punya arti.</em>
+          </motion.h2>
+          <motion.p variants={rise}>
+            Buah yang kita nikmati hanyalah satu bagian dari cerita. Ada
+            perhatian, waktu, dan kepedulian yang menyertai perjalanan sebuah
+            kebun.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="proc-steps"
+          variants={group}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <motion.span
+            className="proc-line"
+            aria-hidden="true"
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: reduce ? 0 : 1.3, ease: PROCESS_EASE }}
+          />
+          {processSteps.map(({ number, title, subtitle, description, icon: Icon, idle }) => (
+            <motion.article
+              className="proc-step"
+              key={number}
+              variants={rise}
+              whileHover={reduce ? undefined : { y: -3 }}
+            >
+              <motion.span className="proc-icon" variants={rise}>
+                <motion.span
+                  className="proc-icon-inner"
+                  style={{ transformOrigin: idle.origin }}
+                  animate={reduce ? undefined : { rotate: idle.rotate }}
+                  transition={{
+                    duration: idle.duration,
+                    repeat: Infinity,
+                    ease: idle.linear ? "linear" : "easeInOut",
+                  }}
+                >
+                  <Icon size={21} strokeWidth={1.45} />
+                </motion.span>
+              </motion.span>
+              <div className="proc-copy">
+                <span className="proc-meta">
+                  <b>{number}</b>
+                  <i>{subtitle}</i>
+                </span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+              <span className="proc-step-mark" aria-hidden="true">↗</span>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        <motion.div className="proc-footer" variants={rise}>
+          <span className="proc-footer-line" />
+          <span>DIRAWAT DENGAN HATI · TUMBUH BERSAMA ALAM</span>
+          <Sprout size={16} strokeWidth={1.35} />
+        </motion.div>
+      </div>
+
+      <style jsx global>{`
+        .proc-slide.gallery-slide#proses {
+          display: grid;
+          grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+          gap: clamp(28px, 5vw, 76px);
+          align-items: stretch;
+          height: 100svh;
+          min-height: 620px;
+          padding: clamp(38px, 6vh, 68px) 8.2%;
+          overflow: hidden;
+          background: #f1f2e9;
+          color: #203b2b;
+        }
+        .proc-photo-panel {
+          position: relative;
+          align-self: stretch;
+          min-height: 0;
+          overflow: hidden;
+          isolation: isolate;
+          background: #718568;
+        }
+        .proc-photo {
+          position: absolute;
+          inset: 0;
+          z-index: -2;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          transform: scale(1.025);
+          animation: proc-photo-drift 24s ease-in-out infinite alternate;
+        }
+        .proc-photo-shade {
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          background: linear-gradient(180deg, #11281c18 25%, #11281ca8 100%);
+        }
+        .proc-photo-frame {
+          position: absolute;
+          inset: 16px;
+          border: 1px solid #f5f5e78c;
+          pointer-events: none;
+        }
+        .proc-photo-frame::before,
+        .proc-photo-frame::after {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          border-color: #e0e9cb;
+          border-style: solid;
+        }
+        .proc-photo-frame::before {
+          top: -1px;
+          left: -1px;
+          border-width: 2px 0 0 2px;
+        }
+        .proc-photo-frame::after {
+          right: -1px;
+          bottom: -1px;
+          border-width: 0 2px 2px 0;
+        }
+        .proc-photo-stamp {
+          position: absolute;
+          top: 34px;
+          left: 34px;
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          max-width: calc(100% - 68px);
+          padding: 10px 12px;
+          background: #f5f5e9e8;
+          color: #274a32;
+          font: 600 8px/1.4 var(--sans);
+          letter-spacing: .12em;
+        }
+        .proc-photo-caption {
+          position: absolute;
+          right: 30px;
+          bottom: 29px;
+          left: 30px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 8px 16px;
+          color: #f4f4e8;
+          font: 500 8px/1.5 var(--sans);
+          letter-spacing: .14em;
+        }
+        .proc-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-width: 0;
+          padding: 6px 0;
+        }
+        .proc-index {
+          display: block;
+          color: #6a8061;
+          font: 600 9px/1.6 var(--sans);
+          letter-spacing: .18em;
+        }
+        .proc-heading h2 {
+          margin: clamp(12px, 2vh, 20px) 0 15px;
+          color: #203b2b;
+          font: 400 clamp(36px, 4vw, 55px)/1.08 var(--serif);
+          letter-spacing: -.055em;
+        }
+        .proc-heading h2 em {
+          color: #69845d;
+          font-weight: 400;
+        }
+        .proc-heading > p {
+          max-width: 430px;
+          margin: 0;
+          color: #596b57;
+          font: 400 12px/1.85 var(--sans);
+        }
+        .proc-steps {
+          position: relative;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: clamp(12px, 1.8vw, 24px);
+          margin-top: clamp(26px, 4vh, 42px);
+        }
+        .proc-line {
+          position: absolute;
+          top: 23px;
+          left: 23px;
+          right: 0;
+          height: 1px;
+          transform-origin: left center;
+          background: linear-gradient(90deg, #91aa7b9c, #91aa7b00);
+          pointer-events: none;
+        }
+        .proc-step { position: relative; min-width: 0; }
+        .proc-icon {
+          position: relative;
+          z-index: 1;
+          display: grid;
+          place-items: center;
+          width: 46px;
+          height: 46px;
+          margin-bottom: 16px;
+          border: 1px solid #a5b99a;
+          border-radius: 50%;
+          background: #e4eadc;
+          color: #426443;
+        }
+        .proc-icon-inner { display: grid; place-items: center; }
+        .proc-meta {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: baseline;
+          gap: 5px 8px;
+          margin-bottom: 7px;
+        }
+        .proc-meta b {
+          color: #718866;
+          font: 400 13px var(--serif);
+        }
+        .proc-meta i {
+          color: #7d8976;
+          font: normal 7px/1.5 var(--sans);
+          letter-spacing: .1em;
+        }
+        .proc-copy h3 {
+          margin: 0 0 8px;
+          color: #203b2b;
+          font: 400 clamp(20px, 2vw, 26px)/1.2 var(--serif);
+        }
+        .proc-copy p {
+          margin: 0;
+          color: #5c6a58;
+          font: 400 10.5px/1.75 var(--sans);
+        }
+        .proc-step-mark {
+          display: inline-block;
+          margin-top: 12px;
+          color: #839779;
+          font-size: 15px;
+          transition: transform .25s ease;
+        }
+        .proc-step:hover .proc-step-mark { transform: translate(3px, -3px); }
+        .proc-footer {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-top: clamp(22px, 3.5vh, 34px);
+          color: #6a7b62;
+          font: 600 8px/1.6 var(--sans);
+          letter-spacing: .11em;
+        }
+        .proc-footer-line { width: 28px; height: 1px; background: #9aaf8b; }
+        @keyframes proc-photo-drift {
+          from { transform: scale(1.025) translate3d(-.3%, 0, 0); }
+          to { transform: scale(1.08) translate3d(.3%, -0.5%, 0); }
+        }
+        @media (max-width: 900px) and (min-width: 761px) {
+          .proc-slide.gallery-slide#proses {
+            gap: 28px;
+            padding-right: 6%;
+            padding-left: 6%;
+          }
+          .proc-heading h2 { font-size: clamp(34px, 4.1vw, 43px); }
+          .proc-steps { gap: 12px; }
+          .proc-copy p { font-size: 10px; }
+          .proc-meta i { font-size: 6px; }
+        }
+        @media (max-width: 760px) {
+          .proc-slide.gallery-slide#proses {
+            display: flex;
+            height: auto;
+            min-height: 100svh;
+            padding: 34px 6% 82px;
+            gap: 26px;
+            overflow: visible;
+          }
+          .proc-photo-panel {
+            flex: none;
+            width: 100%;
+            height: clamp(220px, 34svh, 310px);
+          }
+          .proc-photo-frame { inset: 11px; }
+          .proc-photo-stamp {
+            top: 22px;
+            left: 22px;
+            gap: 7px;
+            padding: 8px 9px;
+            font-size: 7px;
+          }
+          .proc-photo-caption {
+            right: 20px;
+            bottom: 20px;
+            left: 20px;
+            font-size: 7px;
+          }
+          .proc-content { padding: 0; }
+          .proc-heading h2 {
+            margin: 10px 0 12px;
+            font-size: clamp(35px, 9.4vw, 46px);
+          }
+          .proc-heading > p { font-size: 12px; }
+          .proc-steps {
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 23px;
+          }
+          .proc-line {
+            top: 22px;
+            left: 22px;
+            right: auto;
+            bottom: 15px;
+            width: 1px;
+            height: auto;
+            transform-origin: top center;
+            background: linear-gradient(180deg, #91aa7b9c, #91aa7b00);
+          }
+          .proc-step {
+            display: grid;
+            grid-template-columns: 44px minmax(0, 1fr) 14px;
+            align-items: start;
+            gap: 13px;
+          }
+          .proc-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0;
+          }
+          .proc-meta { margin-bottom: 4px; }
+          .proc-copy h3 { margin-bottom: 4px; font-size: 21px; }
+          .proc-copy p { font-size: 11px; line-height: 1.65; }
+          .proc-step-mark { margin-top: 2px; }
+          .proc-footer { margin-top: 22px; font-size: 7px; }
+        }
+        @media (max-width: 760px) and (max-height: 650px) {
+          .proc-photo-panel { height: 205px; }
+          .proc-slide.gallery-slide#proses { padding-top: 28px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .proc-photo { animation: none; transform: none; }
+          .proc-step-mark { transition: none; }
+        }
+      `}</style>
+    </section>
   );
 }
 
