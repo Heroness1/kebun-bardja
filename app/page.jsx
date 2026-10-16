@@ -73,7 +73,7 @@ export default function Home() {
             transition={{ duration: 0.85, delay: 0.48, ease: [0.2, 0.7, 0.2, 1] }}
           >
             <a className="button button-light" href="/jelajahi">Jelajahi Kebun Kami <ArrowDownRight size={17} /></a>
-            <a className="text-link light-link" href="#hasil-kebun">Jelajahi hasil kebun <ArrowRight size={16} /></a>
+            <a className="text-link light-link" href="/jelajahi#hasil-kebun">Jelajahi hasil kebun <ArrowRight size={16} /></a>
           </motion.div>
         </div>
         <div className="hero-bottom">
