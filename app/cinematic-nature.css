@@ -409,6 +409,7 @@ body { background: #f3f3eb; }
   .gallery-progress button span { width: 4px; height: 4px; }
   .gallery-progress button[aria-current="step"] span { width: 6px; height: 6px; }
   .gallery-progress button::after { display: none; }
+  .gallery-progress[data-active="7"] { opacity: 0; pointer-events: none; }
   .gallery-slide .fruit-card:hover { transform: none; }
   .gallery-slide .process-row:hover { padding-left: 0; }
   .hero.hero--landing { height: calc(100svh - 103px); min-height: 560px; }
