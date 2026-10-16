@@ -157,6 +157,50 @@ const processSteps = [
   },
 ];
 
+const EASE = [0.22, 1, 0.36, 1];
+
+const steps = [
+  {
+    number: "01",
+    title: "Merawat",
+    subtitle: "CARE COMES FIRST",
+    description:
+      "Setiap perjalanan dimulai dari perhatian. Mengenali kondisi pohon, menjaga lingkungan tumbuh, dan merawat kebun dengan konsisten.",
+    icon: Sprout,
+    idle: {
+      animate: { rotate: [-5, 5, -5] },
+      transition: { duration: 4.5, repeat: Infinity, ease: "easeInOut" },
+      origin: "50% 100%",
+    },
+  },
+  {
+    number: "02",
+    title: "Menunggu",
+    subtitle: "GROW AT YOUR OWN PACE",
+    description:
+      "Alam punya waktunya sendiri. Kami belajar menghargai musim dan memberi kesempatan bagi buah untuk berkembang secara alami.",
+    icon: Sun,
+    idle: {
+      animate: { rotate: 360 },
+      transition: { duration: 28, repeat: Infinity, ease: "linear" },
+      origin: "50% 50%",
+    },
+  },
+  {
+    number: "03",
+    title: "Menjaga",
+    subtitle: "ROOTED IN NATURE",
+    description:
+      "Merawat kebun bukan hanya tentang hasil hari ini, tetapi juga tentang menjaga ruang tumbuh untuk musim-musim berikutnya.",
+    icon: TreeDeciduous,
+    idle: {
+      animate: { rotate: [-3, 3, -3] },
+      transition: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
+      origin: "50% 100%",
+    },
+  },
+];
+
 export function ProcessSlide() {
   const reduce = useReducedMotion();
 
