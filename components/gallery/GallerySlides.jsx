@@ -159,21 +159,52 @@ const processSteps = [
 
 export function ProcessSlide() {
   const reduce = useReducedMotion();
-  const rise = {
-    hidden: { opacity: reduce ? 1 : 0, y: reduce ? 0 : 22 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: reduce ? 0 : 0.75, ease: PROCESS_EASE },
-    },
-  };
-  const group = {
+
+  const container = {
     hidden: {},
     show: {
       transition: {
         staggerChildren: reduce ? 0 : 0.12,
-        delayChildren: reduce ? 0 : 0.12,
+        delayChildren: reduce ? 0 : 0.1,
       },
+    },
+  };
+
+  const rise = {
+    hidden: { opacity: 0, y: reduce ? 0 : 26 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reduce ? 0 : 0.8,
+        ease: EASE,
+        delayChildren: reduce ? 0 : 0.25,
+      },
+    },
+  };
+
+  const line = {
+    hidden: {
+      opacity: reduce ? 1 : 0,
+      scaleX: reduce ? 1 : 0,
+      scaleY: reduce ? 1 : 0,
+    },
+    show: {
+      opacity: 1,
+      scaleX: 1,
+      scaleY: 1,
+      transition: { duration: reduce ? 0 : 1.6, ease: EASE },
+    },
+  };
+
+  const pop = {
+    hidden: { opacity: 0, scale: reduce ? 1 : 0.6 },
+    show: {
+      opacity: 1,
+      scale: 1,
+      transition: reduce
+        ? { duration: 0 }
+        : { type: "spring", stiffness: 200, damping: 15 },
     },
   };
 
@@ -184,89 +215,47 @@ export function ProcessSlide() {
       data-gallery-slide
       aria-labelledby="proses-title"
     >
-      <div className="proc-photo-panel">
-        <img
-          className="proc-photo"
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=88"
-          alt="Hamparan kebun hijau di bawah cahaya matahari"
-          loading="lazy"
-        />
-        <div className="proc-photo-shade" />
-        <motion.div
-          className="proc-photo-frame"
-          aria-hidden="true"
-          animate={reduce ? undefined : { rotate: [0, 1.2, 0, -1.2, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div className="proc-photo-stamp" variants={rise}>
-          <Sprout size={20} strokeWidth={1.25} />
-          <span>DITUMBUHKAN DENGAN SABAR</span>
-        </motion.div>
-        <div className="proc-photo-caption">
-          <span>KEBUN ALPUKAT RANCAMAYA</span>
-          <span>MALANGBONG · JAWA BARAT</span>
-        </div>
-      </div>
-
-      <div className="proc-content">
-        <motion.div
-          className="proc-heading"
-          variants={group}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.35 }}
-        >
+      <motion.div
+        className="proc-inner"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.35 }}
+      >
+        <div className="proc-head">
           <motion.span className="proc-index" variants={rise}>
-            CERITA DI BALIK PERTUMBUHAN
+            PROSES
+            <span className="proc-brand"> · KEBUN ALPUKAT RANCAMAYA</span>
           </motion.span>
-          <motion.h2 id="proses-title" variants={rise}>
-            Proses yang
-            <br />
-            <em>punya arti.</em>
-          </motion.h2>
-          <motion.p variants={rise}>
-            Buah yang kita nikmati hanyalah satu bagian dari cerita. Ada
-            perhatian, waktu, dan kepedulian yang menyertai perjalanan sebuah
-            kebun.
-          </motion.p>
-        </motion.div>
 
-        <motion.div
-          className="proc-steps"
-          variants={group}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
-        >
-          <motion.span
-            className="proc-line"
-            aria-hidden="true"
-            initial={{ scaleX: 0, scaleY: 0, opacity: 0 }}
-            whileInView={{ scaleX: 1, scaleY: 1, opacity: 1 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: reduce ? 0 : 1.3, ease: PROCESS_EASE }}
-          />
-          {processSteps.map(({ number, title, subtitle, description, icon: Icon, idle }) => (
+          <motion.h2 className="proc-title" id="proses-title" variants={rise}>
+            Tumbuh mengikuti
+            <br />
+            <em>waktunya sendiri.</em>
+          </motion.h2>
+        </div>
+
+        <div className="proc-steps">
+          <motion.span className="proc-line" variants={line} aria-hidden="true" />
+
+          {steps.map(({ number, title, subtitle, description, icon: Icon, idle }) => (
             <motion.article
               className="proc-step"
               key={number}
               variants={rise}
-              whileHover={reduce ? undefined : { y: -3 }}
+              whileHover={reduce ? undefined : { y: -4 }}
             >
-              <motion.span className="proc-icon" variants={rise}>
+              <motion.span className="proc-icon" variants={pop}>
                 <motion.span
                   className="proc-icon-inner"
                   style={{ transformOrigin: idle.origin }}
-                  animate={reduce ? undefined : { rotate: idle.rotate }}
-                  transition={{
-                    duration: idle.duration,
-                    repeat: Infinity,
-                    ease: idle.linear ? "linear" : "easeInOut",
-                  }}
+                  animate={reduce ? undefined : idle.animate}
+                  transition={idle.transition}
                 >
-                  <Icon size={21} strokeWidth={1.45} />
+                  <Icon size={22} strokeWidth={1.5} />
                 </motion.span>
               </motion.span>
+
               <div className="proc-copy">
                 <span className="proc-meta">
                   <b>{number}</b>
@@ -275,307 +264,225 @@ export function ProcessSlide() {
                 <h3>{title}</h3>
                 <p>{description}</p>
               </div>
-              <span className="proc-step-mark" aria-hidden="true">↗</span>
             </motion.article>
           ))}
-        </motion.div>
-
-        <motion.div className="proc-footer" variants={rise}>
-          <span className="proc-footer-line" />
-          <span>DIRAWAT DENGAN HATI · TUMBUH BERSAMA ALAM</span>
-          <Sprout size={16} strokeWidth={1.35} />
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       <style jsx global>{`
-        .proc-slide.gallery-slide#proses {
-          display: grid;
-          grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-          gap: clamp(28px, 5vw, 76px);
-          align-items: stretch;
+        .proc-slide.gallery-slide {
+          --proc-ink: #eef3e9;
+          --proc-muted: rgba(238, 243, 233, 0.68);
+          --proc-accent: #a9c79b;
+          --proc-icon-bg: #1d4a38;
+
+          height: 100vh;
           height: 100svh;
-          min-height: 620px;
-          padding: clamp(38px, 6vh, 68px) 8.2%;
-          overflow: hidden;
-          background: #f1f2e9;
-          color: #203b2b;
-        }
-        .proc-photo-panel {
-          position: relative;
-          align-self: stretch;
           min-height: 0;
-          overflow: hidden;
-          isolation: isolate;
-          background: #718568;
-        }
-        .proc-photo {
-          position: absolute;
-          inset: 0;
-          z-index: -2;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-          transform: scale(1.025);
-          animation: proc-photo-drift 24s ease-in-out infinite alternate;
-        }
-        .proc-photo-shade {
-          position: absolute;
-          inset: 0;
-          z-index: -1;
-          background: linear-gradient(180deg, #11281c18 25%, #11281ca8 100%);
-        }
-        .proc-photo-frame {
-          position: absolute;
-          inset: 16px;
-          border: 1px solid #f5f5e78c;
-          pointer-events: none;
-        }
-        .proc-photo-frame::before,
-        .proc-photo-frame::after {
-          content: "";
-          position: absolute;
-          width: 35px;
-          height: 35px;
-          border-color: #e0e9cb;
-          border-style: solid;
-        }
-        .proc-photo-frame::before {
-          top: -1px;
-          left: -1px;
-          border-width: 2px 0 0 2px;
-        }
-        .proc-photo-frame::after {
-          right: -1px;
-          bottom: -1px;
-          border-width: 0 2px 2px 0;
-        }
-        .proc-photo-stamp {
-          position: absolute;
-          top: 34px;
-          left: 34px;
-          display: flex;
-          align-items: center;
-          gap: 9px;
-          max-width: calc(100% - 68px);
-          padding: 10px 12px;
-          background: #f5f5e9e8;
-          color: #274a32;
-          font: 600 8px/1.4 var(--sans);
-          letter-spacing: .12em;
-        }
-        .proc-photo-caption {
-          position: absolute;
-          right: 30px;
-          bottom: 29px;
-          left: 30px;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          gap: 8px 16px;
-          color: #f4f4e8;
-          font: 500 8px/1.5 var(--sans);
-          letter-spacing: .14em;
-        }
-        .proc-content {
-          display: flex;
-          flex-direction: column;
+          box-sizing: border-box;
           justify-content: center;
-          min-width: 0;
-          padding: 6px 0;
+          justify-content: safe center;
+          padding: clamp(56px, 9svh, 88px) 10.1% clamp(32px, 6svh, 60px);
+          color: var(--proc-ink);
+          background:
+            radial-gradient(
+              70% 60% at 85% 0%,
+              rgba(120, 150, 108, 0.3),
+              transparent 70%
+            ),
+            #173d2d;
         }
+
+        .proc-inner {
+          width: 100%;
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+
         .proc-index {
           display: block;
-          color: #6a8061;
-          font: 600 9px/1.6 var(--sans);
-          letter-spacing: .18em;
+          font-family: var(--sans);
+          font-size: 9px;
+          letter-spacing: 0.2em;
+          color: var(--proc-accent);
         }
-        .proc-heading h2 {
-          margin: clamp(12px, 2vh, 20px) 0 15px;
-          color: #203b2b;
-          font: 400 clamp(36px, 4vw, 55px)/1.08 var(--serif);
-          letter-spacing: -.055em;
-        }
-        .proc-heading h2 em {
-          color: #69845d;
+
+        .proc-title {
+          font-family: var(--serif);
+          font-size: clamp(30px, min(4.2vw, 6.8svh), 56px);
+          line-height: 1.14;
           font-weight: 400;
+          letter-spacing: -1.7px;
+          margin: clamp(12px, 2.4svh, 23px) 0 0;
+          color: var(--proc-ink);
         }
-        .proc-heading > p {
-          max-width: 430px;
-          margin: 0;
-          color: #596b57;
-          font: 400 12px/1.85 var(--sans);
+
+        .proc-title em {
+          font-weight: 400;
+          color: var(--proc-accent);
         }
+
         .proc-steps {
           position: relative;
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: clamp(12px, 1.8vw, 24px);
-          margin-top: clamp(26px, 4vh, 42px);
+          gap: clamp(24px, 4vw, 56px);
+          margin-top: clamp(28px, 6svh, 64px);
         }
+
         .proc-line {
           position: absolute;
-          top: 23px;
-          left: 23px;
+          top: 28px;
+          left: 28px;
           right: 0;
           height: 1px;
-          transform-origin: left center;
-          background: linear-gradient(90deg, #91aa7b9c, #91aa7b00);
-          pointer-events: none;
+          transform-origin: 0 0;
+          background: linear-gradient(
+            to right,
+            rgba(169, 199, 155, 0.55),
+            rgba(169, 199, 155, 0)
+          );
         }
-        .proc-step { position: relative; min-width: 0; }
+
+        .proc-step {
+          position: relative;
+        }
+
         .proc-icon {
           position: relative;
           z-index: 1;
           display: grid;
           place-items: center;
-          width: 46px;
-          height: 46px;
-          margin-bottom: 16px;
-          border: 1px solid #a5b99a;
+          width: 56px;
+          height: 56px;
           border-radius: 50%;
-          background: #e4eadc;
-          color: #426443;
+          background: var(--proc-icon-bg);
+          border: 1px solid rgba(169, 199, 155, 0.4);
+          color: #cfe3c4;
+          margin-bottom: clamp(14px, 2.6svh, 24px);
         }
-        .proc-icon-inner { display: grid; place-items: center; }
+
+        .proc-icon-inner {
+          display: grid;
+          place-items: center;
+        }
+
         .proc-meta {
           display: flex;
-          flex-wrap: wrap;
           align-items: baseline;
-          gap: 5px 8px;
-          margin-bottom: 7px;
+          gap: 12px;
+          margin-bottom: 8px;
         }
+
         .proc-meta b {
-          color: #718866;
-          font: 400 13px var(--serif);
-        }
-        .proc-meta i {
-          color: #7d8976;
-          font: normal 7px/1.5 var(--sans);
-          letter-spacing: .1em;
-        }
-        .proc-copy h3 {
-          margin: 0 0 8px;
-          color: #203b2b;
-          font: 400 clamp(20px, 2vw, 26px)/1.2 var(--serif);
-        }
-        .proc-copy p {
-          margin: 0;
-          color: #5c6a58;
-          font: 400 10.5px/1.75 var(--sans);
-        }
-        .proc-step-mark {
-          display: inline-block;
-          margin-top: 12px;
-          color: #839779;
+          font-family: var(--serif);
+          font-weight: 400;
           font-size: 15px;
-          transition: transform .25s ease;
+          color: var(--proc-accent);
         }
-        .proc-step:hover .proc-step-mark { transform: translate(3px, -3px); }
-        .proc-footer {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-top: clamp(22px, 3.5vh, 34px);
-          color: #6a7b62;
-          font: 600 8px/1.6 var(--sans);
-          letter-spacing: .11em;
+
+        .proc-meta i {
+          font-style: normal;
+          font-family: var(--sans);
+          font-size: 8px;
+          letter-spacing: 0.16em;
+          color: rgba(238, 243, 233, 0.55);
         }
-        .proc-footer-line { width: 28px; height: 1px; background: #9aaf8b; }
-        @keyframes proc-photo-drift {
-          from { transform: scale(1.025) translate3d(-.3%, 0, 0); }
-          to { transform: scale(1.08) translate3d(.3%, -0.5%, 0); }
+
+        .proc-step h3 {
+          font-family: var(--serif);
+          font-size: clamp(24px, 2.2vw, 30px);
+          font-weight: 400;
+          margin: 0 0 10px;
+          color: var(--proc-ink);
         }
-        @media (max-width: 900px) and (min-width: 761px) {
-          .proc-slide.gallery-slide#proses {
-            gap: 28px;
-            padding-right: 6%;
-            padding-left: 6%;
-          }
-          .proc-heading h2 { font-size: clamp(34px, 4.1vw, 43px); }
-          .proc-steps { gap: 12px; }
-          .proc-copy p { font-size: 10px; }
-          .proc-meta i { font-size: 6px; }
+
+        .proc-step p {
+          font-family: var(--sans);
+          font-size: 12.5px;
+          line-height: 1.85;
+          color: var(--proc-muted);
+          margin: 0;
+          max-width: 340px;
         }
+
         @media (max-width: 760px) {
-          .proc-slide.gallery-slide#proses {
-            display: flex;
-            height: auto;
-            min-height: 100svh;
-            padding: 34px 6% 82px;
-            gap: 26px;
-            overflow: visible;
+          .proc-slide.gallery-slide {
+            padding: clamp(40px, 7svh, 72px) 6% clamp(28px, 5svh, 48px);
           }
-          .proc-photo-panel {
-            flex: none;
-            width: 100%;
-            height: clamp(220px, 34svh, 310px);
+
+          .proc-brand {
+            display: none;
           }
-          .proc-photo-frame { inset: 11px; }
-          .proc-photo-stamp {
-            top: 22px;
-            left: 22px;
-            gap: 7px;
-            padding: 8px 9px;
-            font-size: 7px;
+
+          .proc-title {
+            font-size: clamp(26px, min(8vw, 4.8svh), 34px);
+            letter-spacing: -1px;
           }
-          .proc-photo-caption {
-            right: 20px;
-            bottom: 20px;
-            left: 20px;
-            font-size: 7px;
-          }
-          .proc-content { padding: 0; }
-          .proc-heading h2 {
-            margin: 10px 0 12px;
-            font-size: clamp(35px, 9.4vw, 46px);
-          }
-          .proc-heading > p { font-size: 12px; }
+
           .proc-steps {
             grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 23px;
+            gap: clamp(16px, 3svh, 24px);
+            margin-top: clamp(18px, 3.5svh, 28px);
           }
+
           .proc-line {
             top: 22px;
             left: 22px;
             right: auto;
-            bottom: 15px;
+            bottom: 0;
             width: 1px;
             height: auto;
-            transform-origin: top center;
-            background: linear-gradient(180deg, #91aa7b9c, #91aa7b00);
+            background: linear-gradient(
+              to bottom,
+              rgba(169, 199, 155, 0.55),
+              rgba(169, 199, 155, 0)
+            );
           }
+
           .proc-step {
             display: grid;
-            grid-template-columns: 44px minmax(0, 1fr) 14px;
+            grid-template-columns: 44px 1fr;
+            column-gap: 16px;
             align-items: start;
-            gap: 13px;
           }
+
           .proc-icon {
             width: 44px;
             height: 44px;
             margin: 0;
           }
-          .proc-meta { margin-bottom: 4px; }
-          .proc-copy h3 { margin-bottom: 4px; font-size: 21px; }
-          .proc-copy p { font-size: 11px; line-height: 1.65; }
-          .proc-step-mark { margin-top: 2px; }
-          .proc-footer { margin-top: 22px; font-size: 7px; }
+
+          .proc-icon svg {
+            width: 20px;
+            height: 20px;
+          }
+
+          .proc-meta {
+            margin-bottom: 4px;
+          }
+
+          .proc-step h3 {
+            font-size: 20px;
+            margin-bottom: 4px;
+          }
+
+          .proc-step p {
+            font-size: 11.5px;
+            line-height: 1.6;
+            max-width: none;
+          }
         }
-        @media (max-width: 760px) and (max-height: 650px) {
-          .proc-photo-panel { height: 205px; }
-          .proc-slide.gallery-slide#proses { padding-top: 28px; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .proc-photo { animation: none; transform: none; }
-          .proc-step-mark { transition: none; }
+
+        @media (max-width: 760px) and (max-height: 620px) {
+          .proc-meta i {
+            display: none;
+          }
         }
       `}</style>
     </section>
   );
 }
-
 export function ContactSlide() {
   return (
     <section className="contact-section gallery-slide" id="hubungi" data-gallery-slide>
