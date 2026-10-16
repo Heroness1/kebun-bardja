@@ -130,9 +130,13 @@ export default function Home() {
       target instanceof Element &&
       Boolean(target.closest("a, button, input, textarea, select, summary, [contenteditable='true']"));
 
+    const isEditableTarget = (target) =>
+      target instanceof Element &&
+      Boolean(target.closest("input, textarea, select, [contenteditable='true']"));
+
     const onWheel = (event) => {
       if (window.matchMedia("(max-width: 760px)").matches) return;
-      if (isInteractiveTarget(event.target) || Math.abs(event.deltaY) < 18) return;
+      if (isEditableTarget(event.target) || Math.abs(event.deltaY) < 18) return;
 
       if (navigationLocked.current) {
         event.preventDefault();
