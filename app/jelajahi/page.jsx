@@ -74,6 +74,27 @@ export default function Home() {
     const ratios = new Map();
     let observer;
 
+    const syncActiveFromPosition = () => {
+      let bestIndex = 0;
+      let bestRatio = -1;
+      slides.forEach((slide, index) => {
+        const rect = slide.getBoundingClientRect();
+        const visibleHeight = Math.max(
+          0,
+          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0),
+        );
+        const ratio = visibleHeight / Math.max(1, Math.min(rect.height, window.innerHeight));
+        if (ratio > bestRatio) {
+          bestRatio = ratio;
+          bestIndex = index;
+        }
+      });
+      activeSlideRef.current = bestIndex;
+      setActiveSlide(bestIndex);
+    };
+
+    syncActiveFromPosition();
+
     const syncActiveSlide = (entries) => {
       entries.forEach((entry) => {
         ratios.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0);
@@ -98,6 +119,8 @@ export default function Home() {
         threshold: [0, 0.12, 0.25, 0.4, 0.55, 0.7, 0.85],
       });
       slides.forEach((slide) => observer.observe(slide));
+    } else {
+      window.addEventListener("scroll", syncActiveFromPosition, { passive: true });
     }
 
     const goToSlide = (index) => {
@@ -164,6 +187,7 @@ export default function Home() {
     return () => {
       root.classList.remove("gallery-mode");
       observer?.disconnect();
+      window.removeEventListener("scroll", syncActiveFromPosition);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("keydown", onKeyDown);
       if (navigationTimer.current !== null) {
