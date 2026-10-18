@@ -46,6 +46,7 @@ export default function CinematicIntro({
 }) {
   const [phase, setPhase] = useState("idle");
   const rootRef = useRef(null);
+  const audioRef = useRef(null);
   const countRef = useRef(null);
   const previousFocusRef = useRef(null);
 
@@ -60,6 +61,13 @@ export default function CinematicIntro({
   const active = phase === "playing" || phase === "leaving";
 
   const leave = useCallback(() => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio("/music/intro_230143659.mp3");
+      audioRef.current.volume = 0.45;
+    }
+    audioRef.current.play().catch(() => {
+      // The intro still exits if audio playback is blocked by the browser.
+    });
     setPhase((current) => (current === "playing" ? "leaving" : current));
   }, []);
 
@@ -102,12 +110,10 @@ export default function CinematicIntro({
       raf = requestAnimationFrame(tick);
     }
 
-    const timer = window.setTimeout(leave, total);
     return () => {
       cancelAnimationFrame(raf);
-      window.clearTimeout(timer);
     };
-  }, [phase, duration, leave]);
+  }, [phase, duration]);
 
   // Persist only once the exit starts, so the intro is not marked seen on mount.
   useEffect(() => {
@@ -153,6 +159,15 @@ export default function CinematicIntro({
       role="dialog"
       aria-modal="true"
       aria-label={`${title} intro`}
+      tabIndex={0}
+      onClick={leave}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          leave();
+        }
+      }}
+      style={{ cursor: "pointer" }}
     >
       <div className="kb-intro__bg" aria-hidden="true" />
       <div className="kb-intro__rays" aria-hidden="true" />
