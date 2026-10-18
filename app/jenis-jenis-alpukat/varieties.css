@@ -261,3 +261,21 @@
  .avocado-footer .avocado-brand strong{font-size:15px}
  .avocado-footer>a:last-child{font-size:10px;min-height:40px}
 }
+
+
+/* Gambar buah dibuat penuh, tanpa efek potongan/mask yang membuatnya tampak kecil */
+.avocado-feature-visual{min-height:0;min-width:0}
+.avocado-feature-image{inset:0!important;display:block;overflow:hidden;transform:none!important}
+.avocado-feature-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;mask-image:none!important;-webkit-mask-image:none;filter:none;border-radius:0}
+.avocado-feature-backdrop{filter:none;opacity:.14}
+@media(min-width:641px){
+ .avocado-feature-visual{min-height:610px}
+ .avocado-feature-image img{object-fit:cover}
+}
+@media(max-width:640px){
+ .avocado-feature-visual{width:100%;aspect-ratio:4/3;height:auto;max-height:none;min-height:0}
+ .avocado-feature-image{inset:0!important}
+ .avocado-feature-image img{object-fit:cover;object-position:center}
+ .avocado-feature-vertical{z-index:2;text-shadow:0 1px 8px #000}
+ .avocado-feature-image-caption{z-index:2;text-shadow:0 1px 8px #000}
+}
