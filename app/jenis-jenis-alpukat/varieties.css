@@ -133,3 +133,110 @@
  .avocado-scene-orbit{animation:none!important}
  .avocado-index-image img,.avocado-index-arrow,.avocado-scene-link{transition:none}
 }
+
+
+/* Penyempurnaan khusus layar sentuh dan ponsel */
+.avocado-experience{width:100%;max-width:100%;overflow-x:clip}
+.avocado-experience img{max-width:100%}
+.avocado-experience a,.avocado-experience button{-webkit-tap-highlight-color:transparent}
+.avocado-scene-fruit{z-index:0;pointer-events:none}
+.avocado-scene-content{z-index:2}
+.avocado-scene-orbit{z-index:1}
+.avocado-scene-index,.avocado-scene-caption,.avocado-scene-side-note{z-index:2}
+.avocado-scene-bg{z-index:-3}
+.avocado-scene-grain{z-index:3}
+.avocado-nav-cta,.avocado-detail-link,.avocado-note>a{min-height:44px}
+.avocado-feature-controls>button,.avocado-feature-progress button{touch-action:manipulation}
+.avocado-index-card{touch-action:manipulation}
+@media(max-width:640px){
+ .avocado-topline{height:auto;min-height:34px;padding:8px 4%;gap:8px;letter-spacing:.04em}
+ .avocado-topline>span:first-child{font-size:7px;line-height:1.4}
+ .avocado-topline>a{font-size:8px;white-space:nowrap}
+ .avocado-nav{height:auto;min-height:70px;padding:12px 4%;gap:10px}
+ .avocado-brand{gap:8px;min-width:0}
+ .avocado-brand-mark{flex:0 0 32px;width:32px;height:32px}
+ .avocado-brand strong{font-size:clamp(13px,4vw,16px);letter-spacing:-.4px;line-height:1.15}
+ .avocado-brand small{font-size:7px;letter-spacing:.12em}
+ .avocado-nav-cta{min-height:42px;padding:9px 10px;font-size:9px;white-space:nowrap}
+ .avocado-scene{height:auto;min-height:780px;max-height:none;min-height:calc(100svh - 104px);height:780px}
+ .avocado-scene-content{left:6%;right:6%;top:8%;width:auto;transform:none}
+ .avocado-eyebrow{font-size:8px;line-height:1.6;letter-spacing:.12em;gap:8px;margin-bottom:18px}
+ .avocado-eyebrow span{width:19px;flex:0 0 19px}
+ .avocado-scene h1{font-size:clamp(49px,13.5vw,76px);line-height:.99;letter-spacing:-.055em;margin-bottom:16px;max-width:100%}
+ .avocado-scene-copy{font-size:12px;line-height:1.75;max-width:330px}
+ .avocado-scene-link{min-height:44px;margin-top:14px;gap:12px;font-size:11px}
+ .avocado-scene-fruit{width:min(88vw,390px);height:min(88vw,390px);right:-5%;top:auto;bottom:72px;transform:none}
+ .avocado-scene-fruit img{object-fit:contain}
+ .avocado-scene-orbit.avocado-orbit-one{width:min(100vw,430px);height:min(100vw,430px);right:-14%;top:auto;bottom:45px;transform:rotateX(66deg) rotateZ(-18deg)}
+ .avocado-scene-orbit.avocado-orbit-two{width:min(78vw,340px);height:min(78vw,340px);right:-2%;top:auto;bottom:82px;transform:rotateX(70deg) rotateY(23deg)}
+ .avocado-scene-index{right:5%;bottom:15%;gap:6px;font-size:8px}
+ .avocado-scene-index>span:first-child{font-size:16px}
+ .avocado-scene-index i{width:20px}
+ .avocado-scene-index small{font-size:7px;margin-left:2px}
+ .avocado-scene-caption{left:5%;right:5%;bottom:13px;gap:10px;font-size:6px;line-height:1.5;letter-spacing:.06em}
+ .avocado-scene-caption span:last-child{text-align:right}
+ .avocado-intro{padding:52px 6% 40px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px}
+ .avocado-intro-label{font-size:8px;letter-spacing:.1em;gap:8px}
+ .avocado-intro-copy{min-width:0}
+ .avocado-kicker{font-size:8px;line-height:1.6;letter-spacing:.14em;margin-bottom:14px}
+ .avocado-intro h2{font-size:clamp(35px,9vw,44px);line-height:1.08;overflow-wrap:anywhere}
+ .avocado-intro-copy>p:last-child{font-size:12px;line-height:1.8;margin-top:15px}
+ .avocado-intro-count{gap:8px}
+ .avocado-intro-count strong{font-size:38px}
+ .avocado-intro-count span{font-size:7px}
+ .avocado-feature{display:flex;flex-direction:column;margin:0;min-width:0}
+ .avocado-feature-visual{min-height:0;height:auto;aspect-ratio:1/1;max-height:410px}
+ .avocado-feature-image{inset:7% 5% 9%}
+ .avocado-feature-vertical{left:13px;font-size:7px}
+ .avocado-feature-image-caption{left:16px;right:16px;bottom:14px;font-size:7px;letter-spacing:.1em}
+ .avocado-feature-copy{padding:28px 6% 34px;min-width:0}
+ .avocado-feature-top{font-size:7px;letter-spacing:.09em;padding-bottom:14px}
+ .avocado-feature-kicker{font-size:11px;margin:22px 0 10px}
+ .avocado-feature h2{font-size:clamp(48px,13vw,62px);overflow-wrap:anywhere}
+ .avocado-feature-summary{font-size:13px;line-height:1.75;margin:17px 0 10px}
+ .avocado-feature-detail{font-size:12px;line-height:1.8}
+ .avocado-detail-link{margin-top:21px;padding:13px 0;font-size:11px}
+ .avocado-feature-controls{margin-top:18px}
+ .avocado-feature-controls>button{width:44px;height:44px;flex:0 0 44px}
+ .avocado-feature-progress{gap:8px}
+ .avocado-feature-progress button{width:8px;height:8px}
+ .avocado-index-section{padding:60px 6% 68px}
+ .avocado-index-heading{margin-bottom:25px}
+ .avocado-index-heading h2{font-size:clamp(40px,10vw,48px)}
+ .avocado-index-heading>p{font-size:12px;line-height:1.8;margin-top:14px}
+ .avocado-index-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+ .avocado-index-card{min-width:0}
+ .avocado-index-image{height:auto;aspect-ratio:4/5;transform:none}
+ .avocado-index-card-foot{align-items:center;gap:6px;padding-top:12px}
+ .avocado-index-card-foot>div{gap:5px}
+ .avocado-index-card-foot>div>span{font-size:6px;letter-spacing:.08em;line-height:1.5}
+ .avocado-index-card-foot strong{font-size:clamp(20px,6vw,25px)}
+ .avocado-index-card-foot small{font-size:9px;line-height:1.4}
+ .avocado-index-arrow{width:30px;height:30px}
+ .avocado-note{margin:0 0 50px;padding:30px 6%;display:flex;flex-direction:column;gap:15px}
+ .avocado-note-icon{width:40px;height:40px;flex:0 0 40px}
+ .avocado-note h2{font-size:clamp(32px,8.8vw,40px);line-height:1.1}
+ .avocado-note p:not(.avocado-kicker){font-size:12px;line-height:1.8;margin-top:15px}
+ .avocado-note>a{align-self:flex-start;white-space:normal;line-height:1.5;margin-top:4px}
+ .avocado-footer{padding:24px 6%;gap:15px;overflow-wrap:anywhere}
+ .avocado-footer>span{font-size:7px;letter-spacing:.1em;line-height:1.5}
+ .avocado-footer>a:last-child{min-height:44px}
+}
+@media(max-width:380px){
+ .avocado-topline{align-items:flex-start;flex-direction:column;gap:4px;padding:8px 5%}
+ .avocado-nav{align-items:center}
+ .avocado-brand strong{font-size:13px}
+ .avocado-nav-cta{font-size:8px;padding:8px}
+ .avocado-scene{min-height:740px;height:740px}
+ .avocado-scene-content{top:7%}
+ .avocado-scene h1{font-size:clamp(46px,13vw,54px)}
+ .avocado-scene-fruit{width:88vw;height:88vw;right:-8%;bottom:58px}
+ .avocado-scene-index{bottom:14%}
+ .avocado-index-grid{gap:23px 10px}
+ .avocado-index-card-foot strong{font-size:20px}
+ .avocado-index-arrow{width:27px;height:27px}
+}
+@media(hover:none){
+ .avocado-index-card:hover .avocado-index-image img{transform:none;filter:none}
+ .avocado-index-card:hover .avocado-index-arrow{transform:none}
+}
