@@ -174,44 +174,15 @@ export default function VarietyExperience() {
           <Link href={`/alpukat/${active.slug}`} className="avocado-detail-link">Buka catatan varietas <ArrowUpRight size={17} /></Link>
           <div className="avocado-feature-controls">
             <button type="button" aria-label="Varietas sebelumnya" onClick={() => setActiveIndex((index) => (index + varieties.length - 1) % varieties.length)}><span>←</span></button>
-            <div className="avocado-feature-progress" aria-label={`Varietas ${active.number} dari 06`}>
-              {varieties.map((item, index) => <button type="button" key={item.slug} aria-label={`Pilih alpukat ${item.name}`} aria-pressed={index === activeIndex} className={index === activeIndex ? "is-active" : ""} onClick={() => setActiveIndex(index)} />)}
+            <div className="avocado-variety-rail" aria-label="Pilih jenis alpukat">
+              {varieties.map((item, index) => <button type="button" key={item.slug} aria-label={`Pilih alpukat ${item.name}`} aria-pressed={index === activeIndex} className={index === activeIndex ? "is-active" : ""} onClick={() => setActiveIndex(index)}>{item.name}</button>)}
             </div>
             <button type="button" aria-label="Varietas berikutnya" onClick={() => setActiveIndex((index) => (index + 1) % varieties.length)}><span>→</span></button>
           </div>
         </div>
       </section>
 
-      <section className="avocado-index-section">
-        <div className="avocado-index-heading">
-          <div><p className="avocado-kicker">02 / DAFTAR VARIETAS</p><h2>Temukan<br /><em>jenisnya.</em></h2></div>
-          <p>Pilih varietas untuk membuka halaman detail. Gunakan informasi ini sebagai titik awal, bukan pengganti pemeriksaan bibit dan kondisi kebun.</p>
-        </div>
-        <div className="avocado-index-grid">
-          {varieties.map((item, index) => (
-            <motion.button
-              type="button"
-              key={item.slug}
-              className={index === activeIndex ? "avocado-index-card is-selected" : "avocado-index-card"}
-              onClick={() => { setActiveIndex(index); document.querySelector(".avocado-feature")?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" }); }}
-              whileHover={reducedMotion ? undefined : { y: -7, rotateX: 2, rotateY: index % 2 === 0 ? 2 : -2 }}
-              whileTap={reducedMotion ? undefined : { scale: 0.985 }}
-              style={{ transformStyle: "preserve-3d" }}
-              aria-pressed={index === activeIndex}
-            >
-              <span className="avocado-index-number">{item.number}</span>
-              <div className="avocado-index-image"><img src={item.image} alt="" loading="lazy" /></div>
-              <div className="avocado-index-card-foot"><div><span>{item.note}</span><strong>{item.name}</strong><small>{item.descriptor}</small></div><span className="avocado-index-arrow"><MoveUpRight size={18} /></span></div>
-            </motion.button>
-          ))}
-        </div>
-      </section>
-
-      <section className="avocado-note">
-        <div className="avocado-note-icon"><Leaf size={21} /></div>
-        <div><span className="avocado-kicker">CATATAN TENTANG KOLEKSI</span><h2>Kenali informasinya.<br /><em>Pastikan faktanya.</em></h2><p>Foto pada halaman ini merupakan ilustrasi referensi, bukan dokumentasi hasil panen Rancamaya. Informasi varietas dirangkum dari sumber yang ditautkan pada masing-masing halaman. Kami tidak mengklaim semua varietas ditanam atau tersedia di kebun.</p></div>
-        <Link href="/jelajahi#hubungi">Tanyakan kepada pengelola <ArrowUpRight size={16} /></Link>
-      </section>
+      <p className="avocado-illustration-note">Foto merupakan ilustrasi referensi, bukan dokumentasi panen Rancamaya. Tidak semua varietas pada halaman ini diklaim tersedia di kebun.</p>
 
       <footer className="avocado-footer">
         <Link href="/" className="avocado-brand"><span className="avocado-brand-mark"><Sprout size={22} /></span><span><strong>kebun alpukat rancamaya</strong><small>TUMBUH DENGAN PERAWATAN</small></span></Link>
