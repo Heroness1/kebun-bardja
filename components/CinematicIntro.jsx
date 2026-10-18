@@ -46,6 +46,7 @@ export default function CinematicIntro({
 }) {
   const [phase, setPhase] = useState("idle");
   const rootRef = useRef(null);
+  const audioRef = useRef(null);
   const countRef = useRef(null);
   const previousFocusRef = useRef(null);
 
@@ -60,6 +61,13 @@ export default function CinematicIntro({
   const active = phase === "playing" || phase === "leaving";
 
   const leave = useCallback(() => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio("/music/intro_230143659.mp3");
+      audioRef.current.volume = 0.45;
+    }
+    audioRef.current.play().catch(() => {
+      // The intro still exits if audio playback is blocked by the browser.
+    });
     setPhase((current) => (current === "playing" ? "leaving" : current));
   }, []);
 
