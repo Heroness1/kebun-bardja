@@ -162,7 +162,8 @@ export default function VarietyExperience() {
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
               />
-              <span className="avocado-model-credit">Model 3D: Gewoelbe3DScan · Sketchfab (CC BY)</span>
+              <span className="avocado-model-credit">Model referensi alpukat umum · Gewoelbe3DScan / Sketchfab (CC BY)</span>
+              <a className="avocado-model-open" href="https://sketchfab.com/3d-models/avocado-e6606309d5434f6a9c042d44250cbcd8" target="_blank" rel="noreferrer noopener" aria-label="Buka model 3D alpukat di Sketchfab">Buka di Sketchfab ↗</a>
             </div>
           ) : (
             <motion.div
