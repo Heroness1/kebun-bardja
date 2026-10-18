@@ -19,6 +19,30 @@ export const metadata = {
   robots: { index: true, follow: true }
 };
 
+const varietyItems = ["hass", "miki", "aligator", "kendil", "wina", "pluwang"];
+
 export default function JenisJenisAlpukatPage() {
-  return <VarietyExperience />;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Jenis-Jenis Alpukat — Kebun Alpukat Rancamaya",
+    description: "Panduan visual enam varietas alpukat dengan tautan ke catatan setiap varietas.",
+    inLanguage: "id-ID",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: varietyItems.map((slug, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: slug.charAt(0).toUpperCase() + slug.slice(1),
+        url: `https://kebun-bardja.vercel.app/alpukat/${slug}`
+      }))
+    }
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <VarietyExperience />
+    </>
+  );
 }
