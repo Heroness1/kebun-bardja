@@ -18,7 +18,7 @@ const varieties = [
     slug: "hass",
     number: "01",
     name: "Hass",
-    descriptor: "The creamy classic",
+    descriptor: "Lembut dan pulen",
     image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=1500&q=85",
     short: "Oval, kulit bertekstur, dan daging berkarakter creamy.",
     detail: "Hass dikenal dengan kulit yang cenderung menggelap saat matang dan daging bertekstur creamy. Ciri aktual tetap dipengaruhi kematangan dan penanganan pascapanen.",
@@ -28,7 +28,7 @@ const varieties = [
     slug: "miki",
     number: "02",
     name: "Miki",
-    descriptor: "Soft, rich, tropical",
+    descriptor: "Lembut, gurih, tropis",
     image: "https://images.unsplash.com/photo-1601039641847-7857b994d704?auto=format&fit=crop&w=1500&q=85",
     short: "Kenali karakter daging dan rasa dari referensi budidaya.",
     detail: "Laporan panen BRMP Jambi menggambarkan Miki dengan daging tebal berwarna kuning cerah, tekstur lembut, dan rasa gurih sedikit manis. Hasil dapat berbeda antar lokasi.",
@@ -38,7 +38,7 @@ const varieties = [
     slug: "aligator",
     number: "03",
     name: "Aligator",
-    descriptor: "A distinctive silhouette",
+    descriptor: "Bentuk yang khas",
     image: "https://images.unsplash.com/photo-1592982537447-6f2a6a0b2f53?auto=format&fit=crop&w=1500&q=85",
     short: "Bentuk memanjang menjadi ciri yang mudah dikenali.",
     detail: "Aligator sering dikenali dari bentuk buahnya yang memanjang. Ukuran dan mutu buah di lapangan dipengaruhi bahan tanam, lingkungan, serta teknik budidaya.",
@@ -48,7 +48,7 @@ const varieties = [
     slug: "kendil",
     number: "04",
     name: "Kendil",
-    descriptor: "A generous form",
+    descriptor: "Bentuk yang menarik",
     image: "https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?auto=format&fit=crop&w=1500&q=85",
     short: "Varietas yang tercatat dalam referensi budidaya Indonesia.",
     detail: "Kendil tercantum dalam sumber perbenihan dan buku lapang budidaya alpukat. Data ukuran dari referensi bukan jaminan ukuran yang akan diperoleh di setiap kebun.",
@@ -58,7 +58,7 @@ const varieties = [
     slug: "wina",
     number: "05",
     name: "Wina",
-    descriptor: "Grown in the highlands",
+    descriptor: "Dikenal dari dataran tinggi",
     image: "https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=1500&q=85",
     short: "Wina Bandungan tercatat dalam sumber perbenihan pemerintah.",
     detail: "Referensi budidaya mencatat Wina berasal dari wilayah Bandungan, Semarang, dan dikenal dengan buah besar serta daging tebal. Karakter aktual dapat berbeda di lokasi tanam.",
@@ -68,7 +68,7 @@ const varieties = [
     slug: "pluwang",
     number: "06",
     name: "Pluwang",
-    descriptor: "Worth a closer look",
+    descriptor: "Layak dikenali lebih jauh",
     image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=1500&q=85",
     short: "Kenali informasi varietas dan bukti asal bibit sebelum memilih.",
     detail: "Klaim populer mengenai ukuran Pluwang perlu diperiksa terhadap bukti asal bibit dan catatan panen. Kami tidak menetapkan angka baku tanpa sumber teknis yang memadai.",
@@ -98,9 +98,9 @@ export default function VarietyExperience() {
       <header className="avocado-nav">
         <Link href="/" className="avocado-brand" aria-label="Kebun Alpukat Rancamaya">
           <span className="avocado-brand-mark"><Sprout size={22} strokeWidth={1.5} /></span>
-          <span><strong>kebun alpukat rancamaya</strong><small>GROWN WITH CARE</small></span>
+          <span><strong>kebun alpukat rancamaya</strong><small>TUMBUH DENGAN PERAWATAN</small></span>
         </Link>
-        <div className="avocado-nav-meta"><span>FIELD NOTES</span><i /> <span>VOL. 01 — VARIETAS</span></div>
+        <div className="avocado-nav-meta"><span>CATATAN KEBUN</span><i /> <span>EDISI 01 — VARIETAS</span></div>
         <a className="avocado-nav-cta" href="#explore">Jelajahi varietas <ArrowDownRight size={15} /></a>
       </header>
 
@@ -121,31 +121,31 @@ export default function VarietyExperience() {
         </motion.div>
         <div className="avocado-scene-content">
           <motion.p className="avocado-eyebrow" initial={reducedMotion ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 }}>
-            <span /> A FIELD GUIDE TO AVOCADO
+            <span /> PANDUAN JENIS-JENIS ALPUKAT
           </motion.p>
           <motion.h1 initial={reducedMotion ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
-            Different by<br /><em>nature.</em>
+            Beragam<br /><em>secara alami.</em>
           </motion.h1>
           <motion.p className="avocado-scene-copy" initial={reducedMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.32 }}>
             Enam varietas. Karakter yang berbeda. Kenali buahnya, pahami ceritanya, lalu pilih informasi yang paling sesuai dengan tujuan Anda.
           </motion.p>
           <motion.a className="avocado-scene-link" href="#explore" initial={reducedMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.48 }}>
-            Explore the collection <ArrowDownRight size={17} />
+            Jelajahi koleksi <ArrowDownRight size={17} />
           </motion.a>
         </div>
         <div className="avocado-scene-index"><span>01</span><i /> <span>06</span><small>VARIETAS</small></div>
-        <div className="avocado-scene-caption"><span>BOTANICAL STUDY</span><span>INDONESIA · TROPICAL GROWING</span></div>
-        <div className="avocado-scene-side-note">GROWN WITH CARE · RANCAMAYA</div>
+        <div className="avocado-scene-caption"><span>CATATAN BOTANI</span><span>INDONESIA · BUDIDAYA TROPIS</span></div>
+        <div className="avocado-scene-side-note">TUMBUH TERAWAT · RANCAMAYA</div>
       </section>
 
       <section className="avocado-intro" id="explore">
-        <div className="avocado-intro-label"><span>01 / THE COLLECTION</span><Compass size={19} /></div>
+        <div className="avocado-intro-label"><span>01 / KOLEKSI VARIETAS</span><Compass size={19} /></div>
         <div className="avocado-intro-copy">
-          <p className="avocado-kicker">A CLOSER LOOK AT AVOCADO</p>
-          <h2>Not just a fruit.<br /><em>A world of character.</em></h2>
+          <p className="avocado-kicker">MENGENAL LEBIH DEKAT ALPUKAT</p>
+          <h2>Bukan sekadar buah.<br /><em>Setiap jenis punya ciri.</em></h2>
           <p>Setiap varietas memiliki bentuk, tekstur, dan cerita budidaya yang berbeda. Pilih satu untuk melihat catatan singkat, lalu buka panduan lengkapnya.</p>
         </div>
-        <div className="avocado-intro-count"><strong>06</strong><span>VARIETAS<br />TO EXPLORE</span></div>
+        <div className="avocado-intro-count"><strong>06</strong><span>VARIETAS<br />UNTUK DIKENALI</span></div>
       </section>
 
       <section className="avocado-feature" aria-live="polite">
@@ -161,7 +161,7 @@ export default function VarietyExperience() {
             <img src={active.image} alt={`Foto ilustrasi ${active.name}`} loading="lazy" />
           </motion.div>
           <div className="avocado-feature-vertical">VARIETAS / {active.number}</div>
-          <div className="avocado-feature-image-caption"><span>FIG. {active.number}</span><span>VISUAL REFERENCE</span></div>
+          <div className="avocado-feature-image-caption"><span>FIG. {active.number}</span><span>REFERENSI VISUAL</span></div>
         </div>
         <div className="avocado-feature-copy">
           <div className="avocado-feature-top"><span>{active.note}</span><span>{active.number} / 06</span></div>
@@ -184,7 +184,7 @@ export default function VarietyExperience() {
 
       <section className="avocado-index-section">
         <div className="avocado-index-heading">
-          <div><p className="avocado-kicker">02 / THE INDEX</p><h2>Find your<br /><em>variety.</em></h2></div>
+          <div><p className="avocado-kicker">02 / DAFTAR VARIETAS</p><h2>Temukan<br /><em>jenisnya.</em></h2></div>
           <p>Pilih varietas untuk membuka halaman detail. Gunakan informasi ini sebagai titik awal, bukan pengganti pemeriksaan bibit dan kondisi kebun.</p>
         </div>
         <div className="avocado-index-grid">
@@ -209,14 +209,14 @@ export default function VarietyExperience() {
 
       <section className="avocado-note">
         <div className="avocado-note-icon"><Leaf size={21} /></div>
-        <div><span className="avocado-kicker">A NOTE ON THE COLLECTION</span><h2>Know what is known.<br /><em>Verify what matters.</em></h2><p>Foto pada halaman ini merupakan ilustrasi referensi, bukan dokumentasi hasil panen Rancamaya. Informasi varietas dirangkum dari sumber yang ditautkan pada masing-masing halaman. Kami tidak mengklaim semua varietas ditanam atau tersedia di kebun.</p></div>
+        <div><span className="avocado-kicker">CATATAN TENTANG KOLEKSI</span><h2>Kenali informasinya.<br /><em>Pastikan faktanya.</em></h2><p>Foto pada halaman ini merupakan ilustrasi referensi, bukan dokumentasi hasil panen Rancamaya. Informasi varietas dirangkum dari sumber yang ditautkan pada masing-masing halaman. Kami tidak mengklaim semua varietas ditanam atau tersedia di kebun.</p></div>
         <Link href="/jelajahi#hubungi">Tanyakan kepada pengelola <ArrowUpRight size={16} /></Link>
       </section>
 
       <footer className="avocado-footer">
-        <Link href="/" className="avocado-brand"><span className="avocado-brand-mark"><Sprout size={22} /></span><span><strong>kebun alpukat rancamaya</strong><small>GROWN WITH CARE</small></span></Link>
-        <span>FIELD NOTES · AVOCADO VARIETIES</span>
-        <Link href="/potensi-ekonomi-alpukat">Explore the potential <ArrowRight size={15} /></Link>
+        <Link href="/" className="avocado-brand"><span className="avocado-brand-mark"><Sprout size={22} /></span><span><strong>kebun alpukat rancamaya</strong><small>TUMBUH DENGAN PERAWATAN</small></span></Link>
+        <span>CATATAN KEBUN · JENIS ALPUKAT</span>
+        <Link href="/potensi-ekonomi-alpukat">Kenali potensi alpukat <ArrowRight size={15} /></Link>
       </footer>
     </main>
   );
