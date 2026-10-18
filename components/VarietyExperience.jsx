@@ -18,10 +18,10 @@ const varieties = [
     slug: "hass",
     number: "01",
     name: "Hass",
-    descriptor: "Lembut dan pulen",
+    descriptor: "Lembut dan kaya rasa",
     image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=1500&q=85",
-    short: "Oval, kulit bertekstur, dan daging berkarakter creamy.",
-    detail: "Hass dikenal dengan kulit yang cenderung menggelap saat matang dan daging bertekstur creamy. Ciri aktual tetap dipengaruhi kematangan dan penanganan pascapanen.",
+    short: "Oval, kulit bertekstur, dan daging bertekstur lembut.",
+    detail: "Hass dikenal dengan kulit yang cenderung menggelap saat matang dan daging bertekstur lembut. Ciri aktual tetap dipengaruhi kematangan dan penanganan pascapanen.",
     note: "KARAKTER BUAH",
   },
   {
@@ -161,7 +161,7 @@ export default function VarietyExperience() {
             <img src={active.image} alt={`Foto ilustrasi ${active.name}`} loading="lazy" />
           </motion.div>
           <div className="avocado-feature-vertical">VARIETAS / {active.number}</div>
-          <div className="avocado-feature-image-caption"><span>FIG. {active.number}</span><span>REFERENSI VISUAL</span></div>
+          <div className="avocado-feature-image-caption"><span>GAMBAR {active.number}</span><span>REFERENSI VISUAL</span></div>
         </div>
         <div className="avocado-feature-copy">
           <div className="avocado-feature-top"><span>{active.note}</span><span>{active.number} / 06</span></div>
