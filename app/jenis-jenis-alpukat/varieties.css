@@ -279,3 +279,17 @@
  .avocado-feature-vertical{z-index:2;text-shadow:0 1px 8px #000}
  .avocado-feature-image-caption{z-index:2;text-shadow:0 1px 8px #000}
 }
+
+
+/* Model 3D interaktif: tampilkan hanya saat diminta agar halaman awal tetap ringan */
+.avocado-3d-toggle{position:absolute;z-index:4;top:20px;right:20px;display:flex;align-items:center;gap:12px;padding:12px 15px;border:1px solid #e5eddb70;border-radius:999px;background:#0c241bd9;color:#f5f6eb;font-size:10px;letter-spacing:.04em;cursor:pointer;backdrop-filter:blur(12px);transition:background .2s,transform .2s}
+.avocado-3d-toggle:hover{background:#315b40;transform:translateY(-1px)}
+.avocado-3d-toggle span{font-size:15px;line-height:1}
+.avocado-feature-model{position:absolute;inset:0;background:#111d17;overflow:hidden}
+.avocado-feature-model iframe{display:block;width:100%;height:100%;border:0}
+.avocado-model-credit{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px);padding:6px 8px;background:#07130dcc;color:#e0e8dc;font-size:8px;line-height:1.4;pointer-events:none}
+@media(max-width:640px){
+ .avocado-3d-toggle{top:14px;right:14px;padding:10px 12px;font-size:10px}
+ .avocado-feature-model{min-height:350px}
+ .avocado-model-credit{font-size:7px;max-width:75%}
+}
