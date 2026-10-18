@@ -293,3 +293,14 @@
  .avocado-feature-model{min-height:350px}
  .avocado-model-credit{font-size:7px;max-width:75%}
 }
+
+
+/* Atribusi dan akses alternatif untuk model 3D */
+.avocado-model-open{position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:8px 11px;border:1px solid #dce8d3a6;border-radius:999px;background:#07130de8;color:#f4f6ed!important;font-size:9px;letter-spacing:.02em;text-decoration:none;backdrop-filter:blur(10px);transition:background .2s,transform .2s}
+.avocado-model-open:hover{background:#315b40;transform:translateY(-1px)}
+.avocado-model-open:focus-visible{outline:2px solid #d8e8c9;outline-offset:3px}
+.avocado-model-credit{max-width:calc(100% - 150px)}
+@media(max-width:640px){
+ .avocado-model-open{right:10px;bottom:10px;min-height:38px;padding:9px 10px;font-size:9px}
+ .avocado-model-credit{left:10px;bottom:10px;max-width:calc(100% - 140px);font-size:7px}
+}
