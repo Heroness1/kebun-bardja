@@ -78,6 +78,7 @@ const varieties = [
 
 export default function VarietyExperience() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [show3D, setShow3D] = useState(false);
   const sceneRef = useRef(null);
   const reducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -151,17 +152,39 @@ export default function VarietyExperience() {
       <section className="avocado-feature" aria-live="polite">
         <div className="avocado-feature-visual">
           <div className="avocado-feature-backdrop" />
-          <motion.div
-            key={active.slug}
-            className="avocado-feature-image"
-            initial={reducedMotion ? false : { opacity: 0, scale: 0.94, rotateY: -8 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <img src={active.image} alt={`Foto ilustrasi ${active.name}`} loading="lazy" />
-          </motion.div>
+          {show3D ? (
+            <div className="avocado-feature-model" aria-label="Model alpukat tiga dimensi yang dapat diputar">
+              <iframe
+                title="Model 3D alpukat interaktif"
+                src="https://sketchfab.com/models/e6606309d5434f6a9c042d44250cbcd8/embed?autostart=1&ui_theme=dark"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+              <span className="avocado-model-credit">Model 3D: Gewoelbe3DScan · Sketchfab (CC BY)</span>
+            </div>
+          ) : (
+            <motion.div
+              key={active.slug}
+              className="avocado-feature-image"
+              initial={reducedMotion ? false : { opacity: 0, scale: 0.94, rotateY: -8 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <img src={active.image} alt={`Foto ilustrasi ${active.name}`} loading="lazy" />
+            </motion.div>
+          )}
           <div className="avocado-feature-vertical">VARIETAS / {active.number}</div>
-          <div className="avocado-feature-image-caption"><span>GAMBAR {active.number}</span><span>REFERENSI VISUAL</span></div>
+          <div className="avocado-feature-image-caption"><span>{show3D ? "MODEL 3D" : `GAMBAR ${active.number}`}</span><span>{show3D ? "PUTAR DENGAN JARI" : "REFERENSI VISUAL"}</span></div>
+          <button
+            type="button"
+            className="avocado-3d-toggle"
+            onClick={() => setShow3D((value) => !value)}
+            aria-pressed={show3D}
+          >
+            {show3D ? "Kembali ke foto" : "Putar model 3D"} <span>{show3D ? "↩" : "↗"}</span>
+          </button>
         </div>
         <div className="avocado-feature-copy">
           <div className="avocado-feature-top"><span>{active.note}</span><span>{active.number} / 06</span></div>
@@ -182,7 +205,7 @@ export default function VarietyExperience() {
         </div>
       </section>
 
-      <p className="avocado-illustration-note">Foto merupakan ilustrasi referensi, bukan dokumentasi panen Rancamaya. Tidak semua varietas pada halaman ini diklaim tersedia di kebun.</p>
+      <p className="avocado-illustration-note">Foto merupakan ilustrasi referensi, bukan dokumentasi panen Rancamaya. Model 3D adalah contoh alpukat umum, bukan pemindaian khusus setiap varietas. Tidak semua varietas pada halaman ini diklaim tersedia di kebun.</p>
 
       <footer className="avocado-footer">
         <Link href="/" className="avocado-brand"><span className="avocado-brand-mark"><Sprout size={22} /></span><span><strong>kebun alpukat rancamaya</strong><small>TUMBUH DENGAN PERAWATAN</small></span></Link>
