@@ -107,8 +107,8 @@ export default function VarietyExperience() {
       <section className="avocado-scene" ref={sceneRef}>
         <motion.div className="avocado-scene-bg" style={reducedMotion ? undefined : { y: backgroundY }} />
         <div className="avocado-scene-grain" />
-        <motion.div className="avocado-scene-orbit avocado-orbit-one" animate={reducedMotion ? undefined : { rotate: 360 }} transition={{ duration: 48, repeat: Infinity, ease: "linear" }} />
-        <motion.div className="avocado-scene-orbit avocado-orbit-two" animate={reducedMotion ? undefined : { rotate: -360 }} transition={{ duration: 62, repeat: Infinity, ease: "linear" }} />
+        <div className="avocado-scene-orbit avocado-orbit-one" />
+        <div className="avocado-scene-orbit avocado-orbit-two" />
         <motion.div
           className="avocado-scene-fruit"
           style={reducedMotion ? undefined : { y: fruitY }}
