@@ -24,7 +24,7 @@
 .avocado-scene-orbit{position:absolute;z-index:-1;pointer-events:none;border:1px solid rgba(218,235,202,.24);border-radius:50%;transform-style:preserve-3d}
 .avocado-orbit-one{width:min(68vw,760px);height:min(68vw,760px);right:3%;top:50%;transform:translateY(-50%) rotateX(66deg) rotateZ(-18deg)}
 .avocado-orbit-two{width:min(54vw,610px);height:min(54vw,610px);right:7.5%;top:50%;transform:translateY(-50%) rotateX(70deg) rotateY(23deg)}
-.avocado-scene-fruit{position:absolute;width:min(49vw,610px);height:min(49vw,610px);right:7%;top:48%;transform:translateY(-50%);z-index:-1;filter:drop-shadow(0 38px 45px rgba(0,0,0,.32));transform-style:preserve-3d}
+.avocado-scene-fruit{position:absolute;width:min(49vw,610px);height:min(49vw,610px);right:7%;top:calc(50% - min(24.5vw,305px));z-index:-1;filter:drop-shadow(0 38px 45px rgba(0,0,0,.32));transform-style:preserve-3d}
 .avocado-scene-fruit img{width:100%;height:100%;object-fit:contain;mix-blend-mode:normal;border-radius:48% 52% 46% 54%;mask-image:radial-gradient(ellipse at 50% 48%,#000 42%,rgba(0,0,0,.94) 57%,transparent 73%);filter:saturate(.92) contrast(1.08)}
 .avocado-fruit-glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle,rgba(180,206,141,.12),transparent 65%);pointer-events:none}
 .avocado-scene-content{position:absolute;left:10.2%;top:49%;transform:translateY(-50%);width:min(520px,45%);z-index:2}
@@ -107,7 +107,7 @@
 .avocado-footer>a:last-child{display:flex;align-items:center;gap:10px;font-size:10px}
 .avocado-footer>a:last-child:hover{color:#5c7952}
 @media(max-width:900px){
- .avocado-scene-content{left:7%;width:51%}.avocado-scene-fruit{right:-1%;width:54vw;height:54vw}.avocado-scene-side-note{display:none}
+ .avocado-scene-content{left:7%;width:51%}.avocado-scene-fruit{right:-1%;width:54vw;height:54vw;top:calc(50% - 27vw)}.avocado-scene-side-note{display:none}
  .avocado-intro{padding-left:7%;padding-right:7%;grid-template-columns:.8fr 2fr .45fr;gap:20px}
  .avocado-feature{margin:0 3.5%;grid-template-columns:1fr 1fr;min-height:520px}.avocado-feature-visual{min-height:520px}.avocado-feature-copy{padding:30px}
  .avocado-index-section{padding:90px 7%}.avocado-index-grid{gap:24px 14px}
@@ -119,7 +119,7 @@
  .avocado-scene{height:760px;min-height:calc(100svh - 102px);max-height:850px}
  .avocado-scene-bg{background-position:58% center}.avocado-scene-content{left:7%;top:17%;transform:none;width:86%}
  .avocado-eyebrow{font-size:8px;margin-bottom:20px}.avocado-scene h1{font-size:clamp(58px,15vw,86px);margin-bottom:17px}.avocado-scene-copy{font-size:12px;max-width:330px}.avocado-scene-link{margin-top:20px}
- .avocado-scene-fruit{width:88vw;height:88vw;max-width:450px;max-height:450px;right:-7%;top:69%;transform:translateY(-50%)}
+ .avocado-scene-fruit{width:88vw;height:88vw;max-width:450px;max-height:450px;right:-7%;top:calc(69% - min(44vw,225px))}
  .avocado-scene-orbit.avocado-orbit-one{width:100vw;height:100vw;right:-15%;top:70%}.avocado-scene-orbit.avocado-orbit-two{width:78vw;height:78vw;right:-5%;top:70%}
  .avocado-scene-index{right:6%;bottom:12%;font-size:9px}.avocado-scene-index>span:first-child{font-size:17px}.avocado-scene-caption{left:5%;right:5%;bottom:18px;font-size:7px;letter-spacing:.1em}
  .avocado-intro{padding:66px 7% 48px;grid-template-columns:1fr auto;gap:20px}.avocado-intro-label{grid-column:1/-1;padding-top:0}.avocado-intro-copy{grid-column:1/-1}.avocado-intro h2{font-size:43px}.avocado-intro-copy>p:last-child{font-size:12px;margin-top:17px}.avocado-intro-count{grid-column:1/-1;justify-content:flex-start;padding-top:0}
