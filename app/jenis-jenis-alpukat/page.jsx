@@ -7,8 +7,8 @@ export const metadata = {
   keywords: ["jenis-jenis alpukat", "varietas alpukat", "ciri alpukat Hass", "alpukat Miki", "alpukat Aligator", "alpukat Kendil", "alpukat Wina", "alpukat Pluwang", "Kebun Alpukat Rancamaya"],
   alternates: { canonical: "/jenis-jenis-alpukat" },
   openGraph: {
-    title: "Jenis-Jenis Alpukat — A Field Guide | Kebun Alpukat Rancamaya",
-    description: "Enam varietas alpukat dalam panduan visual interaktif. Kenali karakter buah dan buka catatan tiap varietas.",
+    title: "Jenis-Jenis Alpukat | Kebun Alpukat Rancamaya",
+    description: "Panduan visual interaktif enam jenis alpukat. Kenali ciri buah dan buka catatan tiap varietas.",
     type: "website",
     locale: "id_ID",
     siteName: "Kebun Alpukat Rancamaya",
