@@ -240,3 +240,24 @@
  .avocado-index-card:hover .avocado-index-image img{transform:none;filter:none}
  .avocado-index-card:hover .avocado-index-arrow{transform:none}
 }
+
+
+/* Revisi tata letak: pemilih varietas geser, bukan titik kecil; halaman lebih ringkas */
+.avocado-feature-controls{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:12px;align-items:center}
+.avocado-variety-rail{display:flex;gap:7px;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#a7b79d transparent;padding:8px 2px 10px;-webkit-overflow-scrolling:touch}
+.avocado-variety-rail button{flex:0 0 auto;min-height:40px;padding:0 14px;border:1px solid #b9c6b2;border-radius:999px;background:transparent;color:#435541;font-size:11px;white-space:nowrap;scroll-snap-align:start;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.avocado-variety-rail button.is-active{background:#244832;border-color:#244832;color:#fff}
+.avocado-variety-rail button:focus-visible{outline:2px solid #4f754b;outline-offset:2px}
+.avocado-illustration-note{margin:0;padding:22px 6%;border-top:1px solid #dce2d6;color:#74806f;font-size:10px;line-height:1.7;text-align:center}
+.avocado-footer{min-height:78px}
+@media(max-width:640px){
+ .avocado-feature-controls{grid-template-columns:40px minmax(0,1fr) 40px;gap:7px;margin-top:16px}
+ .avocado-feature-controls>button{width:40px;height:40px;min-width:40px}
+ .avocado-variety-rail{gap:6px;padding:6px 1px 9px}
+ .avocado-variety-rail button{min-height:40px;padding:0 12px;font-size:11px}
+ .avocado-illustration-note{padding:18px 6%;font-size:10px;text-align:left}
+ .avocado-footer{min-height:0;padding:20px 6%;display:flex;flex-wrap:wrap;gap:14px}
+ .avocado-footer>span{display:none}
+ .avocado-footer .avocado-brand strong{font-size:15px}
+ .avocado-footer>a:last-child{font-size:10px;min-height:40px}
+}
