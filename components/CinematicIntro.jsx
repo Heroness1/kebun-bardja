@@ -13,6 +13,9 @@ import "./CinematicIntro.css";
 const EXIT_MS = 700;
 const EXIT_REDUCED_MS = 200;
 
+// Keep the soundtrack alive after the intro component unmounts during navigation.
+let introAudio = null;
+
 const useIsoLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -46,7 +49,6 @@ export default function CinematicIntro({
 }) {
   const [phase, setPhase] = useState("idle");
   const rootRef = useRef(null);
-  const audioRef = useRef(null);
   const countRef = useRef(null);
   const previousFocusRef = useRef(null);
 
@@ -61,11 +63,12 @@ export default function CinematicIntro({
   const active = phase === "playing" || phase === "leaving";
 
   const leave = useCallback(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio("/music/intro_230143659.mp3");
-      audioRef.current.volume = 0.45;
+    if (!introAudio) {
+      introAudio = new Audio("/music/intro_230143659.mp3");
+      introAudio.volume = 0.45;
+      introAudio.loop = true;
     }
-    audioRef.current.play().catch(() => {
+    introAudio.play().catch(() => {
       // The intro still exits if audio playback is blocked by the browser.
     });
     setPhase((current) => (current === "playing" ? "leaving" : current));
