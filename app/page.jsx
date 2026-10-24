@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import FallingLeaves from "../components/FallingLeaves";
@@ -73,14 +74,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.48, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            <a className="button button-light" href="/jelajahi">Jelajahi Kebun Kami <ArrowDownRight size={17} /></a>
-            <a className="text-link light-link" href="/jenis-jenis-alpukat">Kenali jenis alpukat <ArrowRight size={16} /></a>
+            <Link className="button button-light" href="/jelajahi">Jelajahi Kebun Kami <ArrowDownRight size={17} /></Link>
+            <Link className="text-link light-link" href="/jenis-jenis-alpukat">Kenali jenis alpukat <ArrowRight size={16} /></Link>
           </motion.div>
         </div>
         <div className="hero-bottom">
           <span><span className="tiny-sun"><Sun size={15} /></span> DIRAWAT DENGAN ALAM</span>
           <span className="hero-coordinate">INDONESIA · TROPICAL GROWING</span>
-          <a href="/jelajahi" aria-label="Jelajahi isi Kebun Alpukat Rancamaya"><ArrowDownRight size={20} /></a>
+          <Link href="/jelajahi" aria-label="Jelajahi isi Kebun Alpukat Rancamaya"><ArrowDownRight size={20} /></Link>
         </div>
         <div className="hero-stamp"><span>EST.</span><strong>KAR</strong><span>GROW<br />SLOW</span></div>
       </section>

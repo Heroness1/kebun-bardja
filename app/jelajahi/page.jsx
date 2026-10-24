@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
 import TrustSection from "../../components/TrustSection";
 import {
@@ -216,10 +217,10 @@ export default function Home() {
       </div>
 
       <header className="site-header">
-        <a className="brand" href="/" aria-label="Kebun Alpukat Rancamaya, beranda" onClick={closeMenu}>
+        <Link className="brand" href="/" aria-label="Kebun Alpukat Rancamaya, beranda" onClick={closeMenu}>
           <span className="brand-mark"><Sprout size={23} strokeWidth={1.6} /></span>
           <span className="brand-copy"><strong>kebun alpukat rancamaya</strong><small>GROWN WITH CARE</small></span>
-        </a>
+        </Link>
         <nav className={menuOpen ? "nav-links nav-open" : "nav-links"} aria-label="Navigasi utama">
           {navItems.map(([label, href]) => (
             <a href={href} key={href} onClick={closeMenu}>{label}</a>
