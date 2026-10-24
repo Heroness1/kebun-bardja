@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./cinematic-nature.css";
 import "./navigation-refinement.css";
+import "./layout-polish.css";
 import CinematicIntro from "../components/CinematicIntro";
 
 export const metadata = {

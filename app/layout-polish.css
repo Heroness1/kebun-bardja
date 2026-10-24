@@ -1,0 +1,487 @@
+/* Responsive layout polish: consistent widths, breathing room, and safe mobile flow. */
+:root {
+  --layout-gutter: clamp(20px, 5.2vw, 88px);
+  --layout-content: 1440px;
+}
+
+html {
+  scroll-padding-top: 88px;
+  overflow-x: clip;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+.landing-home,
+#jelajahi-top,
+.avocado-experience {
+  width: 100%;
+  min-width: 0;
+}
+
+.site-header {
+  padding-inline: var(--layout-gutter);
+}
+
+.brand-copy strong {
+  max-width: 34vw;
+  overflow-wrap: anywhere;
+}
+
+.nav-links {
+  gap: clamp(10px, 1.35vw, 22px);
+}
+
+.hero-content {
+  width: min(680px, 78%);
+}
+
+.section-pad,
+.intro,
+.fruit-section,
+.process,
+.footer,
+.trust-section,
+.variety-catalog-slide {
+  min-width: 0;
+}
+
+.gallery-slide {
+  scroll-snap-stop: normal;
+}
+
+.gallery-slide > *,
+.gallery-slide .section-heading,
+.gallery-slide .trust-inner,
+.gallery-slide .proc-inner {
+  min-width: 0;
+}
+
+.gallery-slide#cerita,
+.gallery-slide#kepercayaan,
+.gallery-slide#hasil-kebun,
+.gallery-slide.variety-catalog-slide,
+.gallery-slide#proses,
+.gallery-slide#hubungi,
+.gallery-slide.footer {
+  height: auto;
+  min-height: 100svh;
+}
+
+.gallery-slide#cerita {
+  grid-template-columns: minmax(100px, .55fr) minmax(0, 2fr) minmax(180px, .9fr);
+  gap: clamp(18px, 2.5vw, 38px);
+}
+
+.gallery-slide#cerita .intro-main,
+.gallery-slide#cerita .intro-art {
+  min-width: 0;
+}
+
+.gallery-slide#cerita .intro-main h2,
+.gallery-slide .section-heading h2,
+.gallery-slide .process h2 {
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+.gallery-slide#hasil-kebun .fruit-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.gallery-slide#hasil-kebun .fruit-photo {
+  height: clamp(220px, 34vh, 380px);
+}
+
+.gallery-slide#hasil-kebun .fruit-info {
+  align-items: flex-start;
+}
+
+.gallery-slide#hasil-kebun .fruit-info p {
+  max-width: 24ch;
+}
+
+.variety-catalog-slide .variety-directory-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.variety-catalog-slide .variety-directory-link {
+  min-width: 0;
+  gap: 10px;
+}
+
+.variety-catalog-slide .variety-directory-link strong {
+  overflow-wrap: anywhere;
+}
+
+.gallery-slide#hubungi {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+}
+
+.gallery-slide#hubungi .contact-text {
+  min-width: 0;
+  padding-inline: clamp(28px, 7vw, 120px);
+}
+
+.gallery-slide#hubungi .contact-art {
+  min-width: 0;
+}
+
+.gallery-slide.footer {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 30px);
+}
+
+.gallery-progress {
+  z-index: 110;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 761px) {
+  .gallery-slide {
+    padding-inline: clamp(32px, 8vw, 140px);
+  }
+
+  .gallery-slide#cerita {
+    padding-inline: clamp(32px, 8vw, 140px);
+  }
+
+  .gallery-slide#hasil-kebun,
+  .gallery-slide.variety-catalog-slide,
+  .gallery-slide#proses {
+    padding-top: clamp(48px, 7vh, 88px);
+    padding-bottom: clamp(52px, 7vh, 88px);
+  }
+
+  .gallery-slide#kepercayaan {
+    padding-inline: clamp(32px, 8vw, 140px) !important;
+  }
+
+  .gallery-slide#hubungi {
+    padding-inline: 0;
+  }
+
+  .gallery-slide#hubungi .contact-text {
+    padding-left: clamp(38px, 9vw, 150px);
+    padding-right: clamp(28px, 5vw, 80px);
+  }
+
+  .gallery-slide.footer {
+    padding-inline: var(--layout-gutter);
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .brand-copy strong {
+    font-size: clamp(16px, 1.7vw, 20px);
+    max-width: 240px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 10px;
+  }
+
+  .nav-cta {
+    padding-inline: 10px;
+  }
+
+  .gallery-slide#cerita {
+    grid-template-columns: minmax(85px, .45fr) minmax(0, 2fr) minmax(150px, .8fr);
+  }
+
+  .gallery-slide#cerita .intro-main h2 {
+    font-size: clamp(34px, 4vw, 48px);
+  }
+
+  .gallery-slide#hubungi .contact-text {
+    padding-left: 6vw;
+    padding-right: 3vw;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --layout-gutter: 6%;
+  }
+
+  html {
+    scroll-padding-top: 72px;
+    scroll-snap-type: y proximity;
+  }
+
+  .site-header {
+    padding-inline: 5%;
+  }
+
+  .brand-copy strong {
+    max-width: min(63vw, 260px);
+    font-size: clamp(16px, 4.5vw, 20px);
+    letter-spacing: -.45px;
+    line-height: 1.08;
+  }
+
+  .brand-copy small {
+    font-size: 7px;
+    letter-spacing: .17em;
+  }
+
+  .hero.hero--landing {
+    min-height: max(620px, calc(100svh - 103px));
+    height: auto;
+  }
+
+  .hero-content {
+    top: 44%;
+    width: 86%;
+  }
+
+  .hero h1 {
+    max-width: 13ch;
+    font-size: clamp(40px, 10vw, 62px);
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .hero-content > p {
+    max-width: 34ch;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hero-actions .button {
+    width: fit-content;
+    max-width: 100%;
+    gap: 12px;
+    padding-inline: 15px;
+  }
+
+  .hero-stamp {
+    right: 6%;
+    bottom: 13%;
+  }
+
+  .hero-bottom {
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  .gallery-slide {
+    padding-left: 6%;
+    padding-right: 6%;
+    scroll-snap-stop: normal;
+  }
+
+  .gallery-slide#cerita {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding-top: 46px;
+    padding-bottom: 92px;
+  }
+
+  .gallery-slide#cerita .intro-art {
+    display: block;
+    width: min(100%, 440px);
+    justify-self: end;
+    padding-top: 8px;
+  }
+
+  .gallery-slide#cerita .intro-photo {
+    height: clamp(190px, 58vw, 280px);
+  }
+
+  .gallery-slide#cerita .intro-main h2,
+  .gallery-slide .section-heading h2,
+  .gallery-slide .process h2 {
+    font-size: clamp(34px, 9vw, 46px);
+    letter-spacing: -1.1px;
+    line-height: 1.1;
+  }
+
+  .gallery-slide#kepercayaan {
+    padding: 44px 6% 92px !important;
+  }
+
+  .gallery-slide#kepercayaan .profile-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .gallery-slide#kepercayaan .profile-facts strong {
+    overflow-wrap: anywhere;
+    font-size: clamp(13px, 3.8vw, 18px);
+  }
+
+  .gallery-slide#hasil-kebun {
+    padding-top: 48px;
+    padding-bottom: 96px;
+  }
+
+  .gallery-slide#hasil-kebun .section-heading {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .gallery-slide#hasil-kebun .fruit-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .gallery-slide#hasil-kebun .fruit-photo {
+    height: clamp(230px, 72vw, 350px);
+  }
+
+  .gallery-slide#hasil-kebun .fruit-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .gallery-slide#hasil-kebun .fruit-info h3 {
+    font-size: clamp(26px, 7vw, 32px);
+  }
+
+  .gallery-slide#hasil-kebun .fruit-info p {
+    max-width: 42%;
+    font-size: 11px;
+  }
+
+  .variety-catalog-slide {
+    padding-top: 48px;
+    padding-bottom: 96px;
+  }
+
+  .variety-catalog-slide .section-heading {
+    gap: 14px;
+  }
+
+  .variety-catalog-slide .variety-directory-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .variety-catalog-slide .variety-directory-link {
+    min-height: 54px;
+    padding: 12px 10px;
+    grid-template-columns: 24px minmax(0, 1fr) 18px;
+  }
+
+  .variety-catalog-slide .variety-directory-link strong {
+    font-size: 14px;
+  }
+
+  .variety-catalog-slide .variety-economy-home-link {
+    gap: 12px;
+    padding: 17px;
+  }
+
+  .gallery-slide.manifesto {
+    min-height: 620px;
+  }
+
+  .gallery-slide#proses {
+    padding-top: 48px;
+    padding-bottom: 96px;
+  }
+
+  .gallery-slide#hubungi {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 0 94px;
+  }
+
+  .gallery-slide#hubungi .contact-text {
+    padding: 66px 6% 38px;
+  }
+
+  .gallery-slide#hubungi .contact-art {
+    min-height: 280px;
+  }
+
+  .gallery-slide.footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 22px;
+    padding: 42px 6% 100px;
+  }
+
+  .gallery-progress {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    max-width: calc(100vw - 24px);
+  }
+
+  .avocado-scene-content {
+    width: 86%;
+  }
+}
+
+@media (max-width: 420px) {
+  .announcement {
+    gap: 7px;
+    letter-spacing: .07em;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-copy strong {
+    max-width: 62vw;
+    font-size: 16px;
+  }
+
+  .hero-content {
+    top: 42%;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 46px);
+  }
+
+  .hero-stamp {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-stamp strong {
+    font-size: 17px;
+  }
+
+  .gallery-slide#hasil-kebun .fruit-info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .gallery-slide#hasil-kebun .fruit-info p {
+    max-width: 100%;
+  }
+
+  .gallery-progress {
+    gap: 2px;
+    padding-inline: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-slide {
+    scroll-snap-stop: normal;
+  }
+}
